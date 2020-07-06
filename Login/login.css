@@ -22,10 +22,11 @@ body {
 }
 
 label{
-    width: 100px;
+    width: 130px;
     display: inline-block;
     font-family: 'Oswald';
     font-size: 25px;
+    text-align: left;
 }
 
 input{

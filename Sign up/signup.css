@@ -26,6 +26,7 @@ label{
     display: inline-block;
     font-family: 'Oswald';
     font-size: 25px;
+    text-align: left;
 }
 
 input{

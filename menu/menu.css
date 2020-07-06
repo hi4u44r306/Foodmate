@@ -54,13 +54,13 @@ body {
     margin-top:0px;
     font-size:30px;
   }
-  .more {
+  .card-more {
     grid-area: more; 
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background: rgb(255, 0, 0);
+    
   }
  
   .card:hover {
@@ -74,7 +74,8 @@ a {
 }
 
 .learnmore-btn {
-    color: white;
+    color: rgb(0, 0, 0);
+    font-style: oblique;
 }
 
 .learnmore-btn:hover, a:hover {

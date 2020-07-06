@@ -55,3 +55,40 @@ body{
     line-height: 40px;
     width: 0px;
 }
+\\\\event card 
+
+.eventcard {
+    box-shadow: 0 4px 8px 0 rgba(252, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+  
+.eventtitle {
+    color: grey;
+    font-size: 20px;
+}
+  
+.learnmore-btn {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+}
+  
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+  
+.learnmore-btn:hover, a:hover {
+    opacity: 0.7;
+}

@@ -4,15 +4,15 @@ body{
 
 .title{
     display: flex;
-    text-align: left;
-    justify-content: left;
+    position: absolute;
     font-family:'Lobster';
     font-size: 15px;
+    left: 30%;
 }
 
 .search-box{
     position: absolute;
-    top: 50%;
+    top: 8%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
@@ -22,7 +22,7 @@ body{
 }
 
 .search-box:hover > .search-txt{
-    width: 240px;
+    width: 300px;
     padding: 0 6px;
 }
 

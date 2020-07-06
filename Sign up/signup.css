@@ -1,0 +1,67 @@
+body {
+    background-color:cornsilk;
+    text-align:center; 
+    font-family:'Lobster';
+}
+
+.title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family:'Lobster';
+    font-size: 25px;
+    border-bottom: 10px solid #000000;
+}
+
+.title2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family:'Oswald';
+    font-size: 15px;
+}
+
+label{
+    width: 150px;
+    display: inline-block;
+    font-family: 'Oswald';
+    font-size: 25px;
+}
+
+input{
+    padding: 6px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.Login-button{
+    text-decoration: none;
+    font-family:'Oswald';
+    font-size: 24px;
+    background-color: #FFD562;
+    color: black;
+    border-radius: 9px;
+    padding: 12px 19px;
+}
+
+a.Login-button:hover{
+    text-decoration: none;
+    background-color:#e0bc59;
+    color: black;
+}
+
+.Googlesignup-button{
+    text-decoration: none;
+    font-family:'Oswald';
+    font-size: 24px;
+    background-color:  #77a9f5;
+    color: black;
+    border-radius: 9px;
+    padding: 12px 19px;
+}
+
+a.Googlesignup-button:hover{
+    text-decoration: none;
+    background-color: #4889eb;
+    color: black;
+}

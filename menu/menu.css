@@ -143,7 +143,7 @@ a {
 .search-box{
     position: absolute;
     top: 5%;
-    right: 10%;
+    right: 58%;
     transform: translate(0%,0%);
     background: #2f3640;
     height: 30px;
@@ -155,10 +155,10 @@ a {
     padding: 0 6px;
 }
 .search-box:hover > .search-btn{
-    background:white;
+    background:rgb(252, 0, 0);
 }
 .search-btn{
-    color:rgb(255, 0, 0);
+    color:cornsilk;
     float: right;
     width: 32px;
     height: 32px;
@@ -190,7 +190,7 @@ a {
   background-color:cornsilk ;
 }
 
-li, a, .contact-btn{
+li, a, .profile-btn{
   font-family:'roboto';
   font-weight: 500;
   font-size: 16px;
@@ -200,14 +200,16 @@ li, a, .contact-btn{
 
 header{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 30px 10%;
 }
 
 .logo{
-  width: 25%;
-  height: 25%;
+  width: 5%;
+  height: 5%;
+  cursor: pointer;
+  margin-right: auto;
 }
 
 .nav_links{
@@ -227,7 +229,8 @@ header{
   color: #0088a9;
 }
 
-.contact-btn{
+.profile-btn{
+  margin-right: 20px;
   padding: 9px 25px;
   background-color: rgba(0,136,169,1);
   border-radius: 50px;
@@ -235,6 +238,6 @@ header{
   transition: 0.4s ease 0s;
 }
 
-.contact-btn:hover{
+.profile-btn:hover{
   background-color: rgba(0,136,169,0.8);
 }

@@ -10,15 +10,15 @@ body {
 .title{
   display: flex;
   position: absolute;
-  top:1%;
+  top:5%;
   font-family:'Lobster';
-  font-size: 20px;
-  left: 10%;
+  font-size: 60px;
+  left: 5%;
 }
 .card {
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
+  grid-template-rows: 150px 125px 60px;
   grid-template-areas: "image" "text" "stats";
 
   border-radius: 18px;
@@ -137,7 +137,7 @@ a {
 }
 
 .learnmore-btn:hover, a:hover {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .search-box{
@@ -146,7 +146,7 @@ a {
     left: 50%;
     transform: translate(-50%,-50%);
     background: #2f3640;
-    height: 40px;
+    height: 30px;
     border-radius: 40px;
     padding:10px;
 }
@@ -156,13 +156,12 @@ a {
 }
 .search-box:hover > .search-btn{
     background:white;
-
 }
 .search-btn{
     color:rgb(255, 0, 0);
     float: right;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background:#2f3640;
     display: flex;
@@ -179,7 +178,6 @@ a {
     color: white;
     font-size: 16px;
     transition: 0.4s;
-    line-height: 40px;
+    line-height: 30px;
     width: 0px;
 }
-

@@ -1,9 +1,9 @@
-body {
+.eventbody {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: cornsilk;
   overflow: hidden;
 }
@@ -18,9 +18,9 @@ body {
 /*event card*/
 .card {
   display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 150px 125px 60px;
-  grid-template-areas: "image" "text" "stats";
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px ,110px, 10px;
+  grid-template-areas: "image image text" "image image stats" "image image stats";
 
   border-radius: 18px;
   background: white;
@@ -31,14 +31,14 @@ body {
 
   transition: 0.5s ease;
   cursor: pointer;
-  margin:30px;
+  margin:40px;
 }
 .card-image {
   grid-area: image;
   background: url("hot-pot.jpg");
   border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
+  border-bottom-left-radius: 15px;
+  background-size:cover;
 }
 
 .card-text {
@@ -47,23 +47,23 @@ body {
 }
 .card-text .date {
   color: rgb(255, 7, 110);
-  font-size:13px;
+  font-size:16px;
 }
 .card-text p {
   color: grey;
-  font-size:15px;
+  font-size:17px;
   font-weight: 300;
 }
 .card-text h2 {
   margin-top:0px;
-  font-size:28px;
+  font-size:35px;
 }
 .card-stats {
   grid-area: stats; 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns:  1fr;
   grid-template-rows: 1fr;
-  border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 0px;
   border-bottom-right-radius: 15px;
   background: rgb(255, 7, 110);
 }
@@ -183,7 +183,7 @@ a {
 }
 
 /*navegation bar*/
-.navegation-body {
+.navegation-body{
   box-sizing: border-box;
   margin: 0;
   padding: 0;

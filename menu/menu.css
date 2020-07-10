@@ -1,18 +1,28 @@
 body{
+  background-color: cornsilk;
   overflow: hidden;
 }
 .container{
   margin-top: 20%;
   margin-left: 10%;
+  
 }
 
 img{
   width:180px;
   height: 300px;
   object-fit: cover;
+  border-radius: 30px;
 }
 
 .navbar-brand img{
   width: 50px;
   height: 50px;
+}
+
+.card{
+  top: 10%;
+  border-radius: 40px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
 }

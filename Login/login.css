@@ -1,67 +1,94 @@
 body {
-    background-color:cornsilk;
-    text-align:center; 
-    font-family:'Lobster';
+    background-color: #fffdfa;
+    background-image:url("background.jpg");
+    background-image: url("white.jpg");
+
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+
+    background-position: bottom;
+    background-position: top;
+
+    background-size: cover;
+    background-size: unset;
+
+    text-align:center;
+    justify-content: center;
+    font-family:'Avanir';
+    overflow: hidden;
 }
 
+#rectangle{
+    width: 200px;
+    height: 200px;
+    background:white;
+}
+
+.maintitle{
+    display: flex;
+    font-family:'lobster';
+    justify-content: center;
+    font-size: 40px;
+}
 .title{
     display: flex;
     text-align: center;
     justify-content: center;
-    font-family:'Lobster';
-    font-size: 25px;
-    border-bottom: 10px solid #000000;
+    font-family:'Avanir';
+    font-size: 15px;
+    border-bottom: 3px solid #000000;
 }
 
 .title2{
     display: flex;
     text-align: center;
     justify-content: center;
-    font-family:'Oswald';
-    font-size: 15px;
+    font-family:'Avanir';
+    font-size: 12px;
 }
 
 label{
-    width: 130px;
+    width: 150px;
     display: inline-block;
-    font-family: 'Oswald';
-    font-size: 25px;
+    font-family: 'Avanir';
+    font-size: 20px;
     text-align: left;
 }
 
 input{
+    width: 200px;
     padding: 6px;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 4px;
 }
 .Menu-button{
     text-decoration: none;
     font-family:'Oswald';
-    font-size: 24px;
-    background-color: #FFD562;
+    font-size: 15px;
+    background-color: #fbaf02;
     color: black;
-    border-radius: 9px;
+    border-radius: 15px;
     padding: 12px 19px;
 }
 
 a.Menu-button:hover{
     text-decoration: none;
-    background-color:#e0bc59;
+    background-color:#f8d36c;
     color: black;
 }
 
 .Signup-button{
     text-decoration: none;
     font-family:'Oswald';
-    font-size: 24px;
-    background-color:  #77a9f5;
+    font-size: 15px;
+    background-color:  #4b93ff;
     color: black;
-    border-radius: 9px;
+    border-radius: 15px;
     padding: 12px 19px;
 }
 
 a.Signup-button:hover{
     text-decoration: none;
-    background-color: #4889eb;
+    background-color: #a4c5f8;
     color: black;
 }

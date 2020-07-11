@@ -1,94 +1,79 @@
 body {
     background-color: #fffdfa;
-    background-image:url("background.jpg");
-    background-image: url("white.jpg");
-
-    background-repeat: no-repeat;
-    background-repeat: no-repeat;
-
-    background-position: bottom;
-    background-position: top;
-
-    background-size: cover;
-    background-size: unset;
-
     text-align:center;
     justify-content: center;
     font-family:'Avanir';
-    overflow: hidden;
 }
 
-#rectangle{
-    width: 200px;
-    height: 200px;
-    background:white;
+.mainbody{
+    position: absolute;
+    top: 10%;
+    left: 21.5%;
 }
-
 .maintitle{
     display: flex;
     font-family:'lobster';
     justify-content: center;
-    font-size: 40px;
-}
-.title{
-    display: flex;
+    font-size: 60px;
     text-align: center;
-    justify-content: center;
-    font-family:'Avanir';
-    font-size: 15px;
-    border-bottom: 3px solid #000000;
 }
 
-.title2{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-family:'Avanir';
-    font-size: 12px;
-}
-
-label{
-    width: 150px;
+.username, .password{
+    width: 380px;
     display: inline-block;
     font-family: 'Avanir';
     font-size: 20px;
     text-align: left;
 }
 
-input{
-    width: 200px;
-    padding: 6px;
+.make-account-label{
+    color: black;
     font-size: 15px;
-    border-radius: 4px;
 }
-.Menu-button{
+.text-line {
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #050505 1px;
+    padding: 10px;
+}
+
+input{
+    width: 320px;
+    font-size: 15px;
+}
+.Login-button{
+    display: block;
     text-decoration: none;
     font-family:'Oswald';
     font-size: 15px;
     background-color: #fbaf02;
     color: black;
     border-radius: 15px;
-    padding: 12px 19px;
+    padding: 12px 10px;
 }
 
-a.Menu-button:hover{
+a.Login-button:hover{
     text-decoration: none;
     background-color:#f8d36c;
     color: black;
 }
 
-.Signup-button{
-    text-decoration: none;
-    font-family:'Oswald';
-    font-size: 15px;
-    background-color:  #4b93ff;
-    color: black;
-    border-radius: 15px;
-    padding: 12px 19px;
+.mainicon{
+    width: 9%;
+    height: 9%;
 }
 
-a.Signup-button:hover{
-    text-decoration: none;
-    background-color: #a4c5f8;
+.forgot-p{
     color: black;
+    font-size: 15px;
+}
+
+.signup{
+    color: cornflowerblue;
+    font-size: 15px;
 }

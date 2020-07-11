@@ -2,7 +2,7 @@ body {
     background-color: #fffdfa;
     text-align:center;
     justify-content: center;
-    font-family:'Avanir';
+    font-family:'Avenir';
 }
 
 .mainbody{
@@ -12,16 +12,16 @@ body {
 }
 .maintitle{
     display: flex;
-    font-family:'lobster';
+    font-family:'Avenir';
     justify-content: center;
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
 }
 
 .username, .password{
     width: 380px;
     display: inline-block;
-    font-family: 'Avanir';
+    font-family: 'Avenir';
     font-size: 20px;
     text-align: left;
 }
@@ -45,11 +45,12 @@ body {
 input{
     width: 320px;
     font-size: 15px;
+    font-size: 'Avenir';
 }
 .Login-button{
     display: block;
     text-decoration: none;
-    font-family:'Oswald';
+    font-family:'Avenir';
     font-size: 15px;
     background-color: #fbaf02;
     color: black;

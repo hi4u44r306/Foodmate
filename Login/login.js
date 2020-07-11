@@ -18,3 +18,6 @@ firebase.auth().signOut().then(function() {
     // An error happened.
   });
   
+  document.querySelector('.img__btn').addEventListener('click', function() {
+  document.querySelector('.cont').classList.toggle('s--signup');
+  });

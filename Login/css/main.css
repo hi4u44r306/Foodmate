@@ -40,6 +40,10 @@
   src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
 }
 
+@font-face {
+  font-family: fontawesome;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/

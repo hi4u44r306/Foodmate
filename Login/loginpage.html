@@ -3,7 +3,7 @@
 <head>
 	<title>Foodmate Login</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=smalldevice-width, initial-scale=1">
+	<meta name="viewport" content="width=bigdevice-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -11,7 +11,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 <!--===============================================================================================-->	
@@ -67,10 +67,13 @@
 					</div>
 			
 
-					<div class="container-login100-form-btn">
+					<div >
 						<button class="login100-form-btn">
+							<a href="C:\Users\mcu\Desktop\senior project\Foodmate website\menu\menu.html"  class="container-login100-form-btn">
 							Login
+							</a>
 						</button>
+						
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
@@ -78,18 +81,18 @@
 							or sign up using
 						</span>
 					</div>
-
+					
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
-							<i class="fab fa-facebook-f" aria-hidden="true"></i>
+							G
                         </a>
                         <a href="#" class="login100-form-social-item flex-c-m bg3 m-r-5">
-							<i class="fas fa-user" aria-hidden="true"></i>
+							U+
 						</a>
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				<div class="login100-more" style="background-image: url('background2.jpg');">
 				</div>
 			</div>
 		</div>
@@ -115,7 +118,31 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
-    <script src="login.js"></script>
+	<script src="js/login.js"></script>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
+    authDomain: "food-friends-49103.firebaseapp.com",
+    databaseURL: "https://food-friends-49103.firebaseio.com",
+    projectId: "food-friends-49103",
+    storageBucket: "food-friends-49103.appspot.com",
+    messagingSenderId: "733403414941",
+    appId: "1:733403414941:web:0cc62d9ee1e99c78dcef74",
+    measurementId: "G-SE6VKRMV60"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 
 </body>
 </html>

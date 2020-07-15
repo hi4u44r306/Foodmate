@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=bigdevice-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/main icon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -26,9 +26,29 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<script>
+	function SignIn()
+	{ 
+	
+	    var CorrectPwd="abcd";
+		var InputPwd = document.getElementById("UserPwd").value;
+
+			if (InputPwd=="abcd")
+			{
+				window.location.href="..\\menu\\menu.html";
+				alert('Welcome');
+				return false;
+			}
+			else
+			{
+				alert("Password Incorrect")
+			}		
+    }
+</script>
 </head>
 <body style="background-color: #666666;">
 	
+  <div id="X"></div>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -39,14 +59,14 @@
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email">
+						<input id="UserName" class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Username or Email</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input id="UserPwd" value="" class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -68,9 +88,9 @@
 			
 
 					<div >
-						<button class="login100-form-btn">
-							<a href="C:\Users\mcu\Desktop\senior project\Foodmate website\menu/menu.html"  class="container-login100-form-btn">
-							Login
+						<button class="login100-form-btn" onclick="SignIn()">
+							<a>
+								Login
 							</a>
 						</button>
 						
@@ -84,15 +104,15 @@
 					
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
-							G
+							<b>G</b>
                         </a>
-                        <a href="#" class="login100-form-social-item flex-c-m bg3 m-r-5">
-							U+
+                        <a href="C:\Users\mcu\Desktop\senior project\Foodmate website\Sign up/signuppage.html" class="login100-form-social-item flex-c-m bg3 m-r-5">
+							<b>U+</b>
 						</a>
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('background2.jpg');">
+				<div class="login100-more" style="background-image: url('images/background2.jpg');">
 				</div>
 			</div>
 		</div>

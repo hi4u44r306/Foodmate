@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=bigdevice-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icons/main icon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -38,13 +38,13 @@
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "Valid Username is required: ABC123">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Username</span>
 					</div>
           
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          			<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
@@ -54,18 +54,27 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
-          </div>
-          
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-           				<input class="input100" type="text" name="email">
+					 </div>
+					 
+					 <div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Birthday</span>
-          </div>
+						<span class="label-input100">Verify Password</span>
+         			</div>
           
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email">
+          			<div class="wrap-input100 validate-input" data-validate = "Valid birthday is required: XXXX/XX/XX">
+						<input class="input100" type="date" name="birthday"/>
 						<span class="focus-input100"></span>
-						<span class="label-input100">Gender</span>
+					
+          			</div>
+          
+          			<div class="wrap-input100 validate-input" data-validate = "Valid Gender is required: Male,Female,Other">
+						<select class="wrap-input100" type="select" name="gender">
+							<option>Male</option>
+							<option>Female</option>
+							<option>Other</option>
+						</select>
+						<span class="focus-input100"></span>
 					</div>
 
 					<div>
@@ -73,8 +82,7 @@
 							<a href="C:\Users\mcu\Desktop\senior project\Foodmate website\Login/loginpage.html"  class="container-login100-form-btn">
 							Sign up
 							</a>
-						</button>
-						
+						</button>	
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
@@ -86,16 +94,50 @@
 					<div class="login100-form-social flex-c-m">
 						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<b>G</b>
-            </a>
-          </div>
-          <div class="login100-more" style="background-image: url('background3.jpg');">
+            			</a>
+					  </div>
+				</form>	  
 			</div>
+          	<div class="login100-more" style="background-image: url('background2.jpg');"></div>
 		</div>
 	</div>
 	
 	
 
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
 	
+	<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
+		authDomain: "food-friends-49103.firebaseapp.com",
+		databaseURL: "https://food-friends-49103.firebaseio.com",
+		projectId: "food-friends-49103",
+		storageBucket: "food-friends-49103.appspot.com",
+		messagingSenderId: "733403414941",
+		appId: "1:733403414941:web:0cc62d9ee1e99c78dcef74",
+		measurementId: "G-SE6VKRMV60"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+
+	  const auth = firebase.auth();
+	  const db = firebase.firestore();
+
+
+
+	  db.settings({ timestampsInSnapshots: true });
+	</script>	
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -115,29 +157,7 @@
     <script src="js/main.js"></script>
 	<script src="js/login.js"></script>
 	
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
-    authDomain: "food-friends-49103.firebaseapp.com",
-    databaseURL: "https://food-friends-49103.firebaseio.com",
-    projectId: "food-friends-49103",
-    storageBucket: "food-friends-49103.appspot.com",
-    messagingSenderId: "733403414941",
-    appId: "1:733403414941:web:0cc62d9ee1e99c78dcef74",
-    measurementId: "G-SE6VKRMV60"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
 
 </body>
 </html>

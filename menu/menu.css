@@ -1,5 +1,5 @@
 body{
-  background-color: cornsilk;
+  background-color: white;
 }
 .container{
   margin-top: 20%;
@@ -19,6 +19,10 @@ img{
 }
 
 .card{
+  background: -webkit-linear-gradient(white,rgb(247, 173, 151));
+  background: -o-linear-gradient(white,rgb(247, 173, 151));
+  background: -moz-linear-gradient(white,rgb(247, 173, 151));
+  background: linear-gradient(white,rgb(247, 173, 151))
   top: 10%;
   border-radius:20px ;
 }

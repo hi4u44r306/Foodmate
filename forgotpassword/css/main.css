@@ -194,13 +194,13 @@ iframe {
 
 
 /*//////////////////////////////////////////////////////////////////
-[ login ]*/
+[ forgot]*/
 .limiter {
   width: 100%;
   margin: 0 auto;
 }
 
-.container-login100 {
+.container-forgot100 {
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -215,7 +215,7 @@ iframe {
 }
 
 
-.wrap-login100 {
+.wrap-forgot100 {
   width: 100%;
   background: #fff;
   overflow: hidden;
@@ -231,8 +231,8 @@ iframe {
 }
 
 /*==================================================================
-[ login more ]*/
-.login100-more {
+[ forgot more ]*/
+.forgot100-more {
   width: calc(100% - 560px);
   background-repeat: no-repeat;
   background-size: cover;
@@ -241,7 +241,7 @@ iframe {
   z-index: 1;
 }
 
-.login100-more::before {
+.forgot100-more::before {
   content: "";
   display: block;
   position: absolute;
@@ -258,7 +258,7 @@ iframe {
 /*==================================================================
 [ Form ]*/
 
-.login100-form {
+.forgot100-form {
   width: 560px;
   min-height: 100vh;
   display: block;
@@ -266,7 +266,7 @@ iframe {
   padding: 173px 55px 55px 55px;
 }
 
-.login100-form-title {
+.forgot100-form-title {
   width: 100%;
   display: block;
   font-family: Poppins-Regular;
@@ -458,7 +458,7 @@ input.input100 {
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-login100-form-btn {
+.container-forgot100-form-btn {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -469,7 +469,7 @@ input.input100 {
   justify-content: center;
 }
 
-.login100-form-btn {
+.forgot100-form-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -496,7 +496,7 @@ input.input100 {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
+.forgot100-form-btn:hover {
   background: #333333;
 }
 
@@ -506,29 +506,29 @@ input.input100 {
 [ Responsive ]*/
 
 @media (max-width: 992px) {
-  .login100-form {
+  .forgot100-form {
     width: 50%;
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  .login100-more {
+  .forgot100-more {
     width: 50%;
   }
 }
 
 @media (max-width: 768px) {
-  .login100-form {
+  .forgot100-form {
     width: 100%;
   }
 
-  .login100-more {
+  .forgot100-more {
     display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .login100-form {
+  .forgot100-form {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 70px;
@@ -609,7 +609,7 @@ input.input100 {
 
 /*==================================================================
 [ Social ]*/
-.login100-form-social-item {
+.forgot100-form-social-item {
   width: 36px;
   height: 36px;
   font-size: 18px;
@@ -617,7 +617,7 @@ input.input100 {
   border-radius: 50%;
 }
 
-.login100-form-social-item:hover {
+.forgot100-form-social-item:hover {
   background: #333333;
   color: #fff;
 }

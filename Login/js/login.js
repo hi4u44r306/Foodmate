@@ -59,3 +59,4 @@ firebase.auth().signOut().then(function() {
     ui.start('#firebaseui-auth-container', uiConfig);
   }
 });
+

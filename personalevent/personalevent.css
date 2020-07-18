@@ -1,0 +1,29 @@
+body{
+    background-color: white;
+  }
+  .container{
+    margin-top: 20%;
+    margin-left: 10%;
+    
+  }
+  
+  img{
+    width:180px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .navbar-brand img{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .card{
+    background: -webkit-linear-gradient(white,rgb(247, 173, 151));
+    background: -o-linear-gradient(white,rgb(247, 173, 151));
+    background: -moz-linear-gradient(white,rgb(247, 173, 151));
+    background: linear-gradient(white,rgb(247, 173, 151))
+    top: 10%;
+    border-radius:20px ;
+  }
+  

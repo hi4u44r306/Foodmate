@@ -1,0 +1,18 @@
+body {
+  background-color: white;
+}
+.container {
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+img {
+  width: 180px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.navbar-brand img {
+  width: 30px;
+  height: 30px;
+}

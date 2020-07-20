@@ -72,21 +72,28 @@
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    document.getElementById("login div").style.display = "block";
+    document.getElementById("login div").style.display = "initial";
+    // User is signed in.
   } else {
     document.getElementById("login div").style.display = "none";
+    // No user is signed in.
   }
 });
 
 function login() {
   var InputUse = document.getElementById("UserName").value;
   var InputPwd = document.getElementById("UserPwd").value;
+}
 
-  firebase.auth().signInWithEmailAndPassword(InputUse, InputPwd).catch(function (error) {
+{
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(InputUse, InputPwd)
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      window.alert("Error: " + errormessage);
       // ...
+      window.alert(InputUse + "   " + InputPwd);
     });
 }

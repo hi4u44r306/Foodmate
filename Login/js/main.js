@@ -72,7 +72,10 @@
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    document.getElementById("login div").style.display = "initial";
+    document.getElementById("login div");
+
+    return (location.href = "..\\Loginloginpage.html");
+
     // User is signed in.
   } else {
     document.getElementById("login div").style.display = "none";
@@ -83,9 +86,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 function login() {
   var InputUse = document.getElementById("UserName").value;
   var InputPwd = document.getElementById("UserPwd").value;
-}
 
-{
   firebase
     .auth()
     .signInWithEmailAndPassword(InputUse, InputPwd)

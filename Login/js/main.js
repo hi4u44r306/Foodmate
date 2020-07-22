@@ -69,13 +69,9 @@
 })(jQuery);
 
 /*--------------------login function-----------------------------------*/
-
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    document.getElementById("login div");
-
-    return (location.href = "..\\Loginloginpage.html");
-
+    document.getElementById("login div").style.display = "block";
     // User is signed in.
   } else {
     document.getElementById("login div").style.display = "none";

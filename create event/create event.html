@@ -138,16 +138,6 @@
               Create event
             </span>
 
-            <!--enter event name-->
-            <div
-              class="wrap-input100 validate-input"
-              data-validate="Valid Username is required: ABC123"
-            >
-              <input class="input100" type="text" name="eventname" />
-              <span class="focus-input100"></span>
-              <span class="label-input100">Event name...</span>
-            </div>
-
             <!--enter food category--><!--add dropdown list-->
             <div
               class="wrap-input100 validate-input"
@@ -155,6 +145,7 @@
             >
             <div class="wrap-input100 validate-input" data-validate = "Select one type of food!!!">
               <select class="wrap-input100" type="select" name="food type">
+                <option>Select...</option>
                 <option>Italian cuisine</option>
                 <option>Thai food</option>
                 <option>Japanese food</option>
@@ -162,6 +153,15 @@
                 <option>American food</option>
                 <option>Hong Kong food</option>
               </select>
+              <span class="focus-input100"></span>
+            </div>
+
+            <!--enter event name-->
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid Username is required: ABC123"
+            >
+              <input class="input100" type="text" placeholder="Event Name.." name="eventname"/>
               <span class="focus-input100"></span>
             </div>
 
@@ -179,12 +179,19 @@
               class="wrap-input100 validate-input"
               data-validate="Password is required"
             >
-              <input class="input100" type="number" name="members" />
+              <input class="input100" type="number" placeholder="Members..." name="members" />
               <span class="focus-input100"></span>
-              <span class="label-input100">Members</span>
             </div>
+            
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid Username is required: ABC123"
+            >
+              <input class="input100" type="text" placeholder="Description..." name="eventname" />
+              <span class="focus-input100"></span>
 
-            <div>
+            </div>
+          
               <!--Send data from foodmate to firebase-->
               <button class="create100-form-btn">
                 <a

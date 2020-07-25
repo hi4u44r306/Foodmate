@@ -301,10 +301,10 @@ iframe {
 .create100-form-title {
   width: 100%;
   display: block;
-  font-family: Poppins-Regular;
+  font-family: "Poppins-Regular";
   font-size: 25px;
   color: #333333;
-  line-height: 1.2;
+  line-height: 0;
   text-align: center;
 }
 
@@ -649,3 +649,4 @@ input.input100 {
   background: #333333;
   color: #fff;
 }
+

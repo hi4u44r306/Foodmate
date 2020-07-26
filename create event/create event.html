@@ -43,19 +43,18 @@
   <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
     <!--navbar-->
 
-    <a href="#" class="navbar-brand"><img src="main icon.png" /></a>
+    <a href="../menu/menu.html" class="navbar-brand"><img src="main icon.png" /></a>
     <span class="col-mb-4"></span>
-    <!--can put our app name-->
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="navbar-nav mr-auto">
+      <ul class="nav nav-pills mr-auto">
         <li class="nav-item">
           <a href="../menu/menu.html" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
-          <a href="create event.html" class="nav-link">Creat-Event</a>
+          <a href="create event.html" class="nav-link active">Creat-Event</a>
         </li>
         <li class="nav-item">
           <a href="../chatpage/chat.html" class="nav-link">Message</a>
@@ -76,17 +75,16 @@
 
   <div class="limiter">
     <div class="container-create100">
-      <!--<div class="wrap-create100">-->
       <form class="create100-form validate-form">
         <span class="create100-form-title p-b-43">
-          Create vent
+          Create Event
         </span>
 
         <!--enter food category-->
-        <div class="wrap-input100 validate-input" data-validate="Valid email is required: xxx">
+        <div class="wrap-input100 validate-input">
           <div class="wrap-input100 validate-input" data-validate="Select one type of food!!!">
-            <select class="wrap-input100" type="select" name="food type">
-              <option>Select Food Type...</option>
+            <select class="wrap-input100 dropright" type="select" name="food type">
+              <option>Food Type...</option>
               <option>Italian cuisine</option>
               <option>Thai food</option>
               <option>Japanese food</option>
@@ -99,13 +97,13 @@
 
           <!--enter event name-->
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input class="input100" type="text" placeholder="Event Name.." name="eventname" />
+            <input class="input100" type="text" placeholder="Event Name..." name="eventname" />
             <span class="focus-input100"></span>
           </div>
 
           <!--select what date-->
           <div class="wrap-input100 validate-input">
-            <input class="input100" placeholder="Select date and time.." id="datetimepicker">
+            <input class="input100" placeholder="Date & Time..." id="datetimepicker">
             <span class="focus-input100"></span>
 
             <script>
@@ -116,7 +114,7 @@
           <!--select how many members-->
           <div class="wrap-input100 validate-input" data-validate="Members is required">
             <span class="focus-input100"></span>
-            <select class="wrap-input100" type="select" placeholder="Select Members" name="food type">
+            <select class="wrap-input100" type="select" placeholder="Members..." name="food type">
               <option>Select Members</option>
               <option>1</option>
               <option>2</option>
@@ -135,7 +133,7 @@
           <!--Description-->
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
             <input class="input100" type="text" placeholder="Description...
-              " name="Description" />
+              " name="Description..." />
             <span class="focus-input100"></span>
 
           </div>
@@ -143,7 +141,7 @@
 
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
             <input class="input100" type="text" placeholder="Location
-              " name="Location" />
+              " name="Location..." />
             <span class="focus-input100"></span>
 
           </div>
@@ -156,6 +154,7 @@
           </button>
         </div>
       </form>
+
     </div>
   </div>
   </div>

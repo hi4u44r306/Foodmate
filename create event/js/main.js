@@ -95,3 +95,19 @@ function login() {
     });
 }
 
+//=================location autocomplete===========================//
+var locateInput = 'locate input';
+
+$(document).ready(function () {
+  var autocomplete;
+  autocomplete = new google.maps.places.Autocomplete((document.getElementById(locateInput)), {
+    types: ['geocode'],
+    /*componentRestrictions: {
+     country: "USA"
+    }*/
+  });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    var near_place = autocomplete.getPlace();
+  });
+});

@@ -36,7 +36,26 @@
   <link rel="stylesheet" href="jquery.datetimepicker.min.css">
   <script src="jquery.js"></script>
   <script src="jquery.datetimepicker.full.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyADhsAl5mMzxQlJTxGC3hmIlshQNDRLPeU"></script>
 
+  <script>
+    var locateInput = 'locate-input';
+
+    $(document).ready(function () {
+      var autocomplete;
+      autocomplete = new google.maps.places.Autocomplete((document.getElementById(locateInput)), {
+        types: ['geocode'],
+        /*componentRestrictions: {
+        country: "USA"
+        }*/
+      });
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -66,7 +85,7 @@
           <a href="#" class="nav-link">Notification</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">More...</a>
+          <a href="#" class="nav-link">Google Map</a>
         </li>
       </ul>
 
@@ -141,7 +160,7 @@
 
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
             <input class="input100" type="text" placeholder="Location
-              " name="Location..." />
+              " name="Location..." id="locate-input" />
             <span class="focus-input100"></span>
 
           </div>
@@ -154,6 +173,13 @@
           </button>
         </div>
       </form>
+
+      <p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.4596512914472!2d121.34018011414403!3d24.984492583995536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e8f88001f51%3A0xde8e62ebe5442d75!2z6YqY5YKz5aSn5a24Leahg-Wckum-nOWxseagoeWNgA!5e0!3m2!1szh-TW!2stw!4v1595772897065!5m2!1szh-TW!2stw"
+          width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+      </p>
 
     </div>
   </div>

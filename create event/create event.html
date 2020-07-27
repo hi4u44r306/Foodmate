@@ -40,7 +40,7 @@
     src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyADhsAl5mMzxQlJTxGC3hmIlshQNDRLPeU"></script>
 
   <script>
-    var locateInput = 'locate-input';
+    var locateInput = 'address';
 
     $(document).ready(function () {
       var autocomplete;
@@ -55,6 +55,60 @@
         var near_place = autocomplete.getPlace();
       });
     });
+  </script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+  </script>
+  <script type="text/javascript">
+    var map;
+    var marker;
+    var myLatlng = new google.maps.LatLng(24.984801, 121.342575);
+    var geocoder = new google.maps.Geocoder();
+    var infowindow = new google.maps.InfoWindow();
+    function initialize() {
+      var mapOptions = {
+        zoom: 18,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      map = new google.maps.Map(document.getElementById("myMap"), mapOptions);
+
+      marker = new google.maps.Marker({
+        map: map,
+        position: myLatlng,
+        draggable: true
+      });
+
+      geocoder.geocode({ 'latLng': myLatlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            $('#latitude,#longitude').show();
+            $('#address').val(results[0].formatted_address);
+            $('#latitude').val(marker.getPosition().lat());
+            $('#longitude').val(marker.getPosition().lng());
+            infowindow.setContent(results[0].formatted_address);
+            infowindow.open(map, marker);
+          }
+        }
+      });
+
+      google.maps.event.addListener(marker, 'dragend', function () {
+
+        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              $('#address').val(results[0].formatted_address);
+              $('#latitude').val(marker.getPosition().lat());
+              $('#longitude').val(marker.getPosition().lng());
+              infowindow.setContent(results[0].formatted_address);
+              infowindow.open(map, marker);
+            }
+          }
+        });
+      });
+
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
   </script>
 </head>
 
@@ -95,15 +149,15 @@
   <div class="limiter">
     <div class="container-create100">
       <form class="create100-form validate-form">
-        <span class="create100-form-title p-b-43">
+        <span class="create100-form-title p-b-35">
           Create Event
         </span>
 
         <!--enter food category-->
-        <div class="wrap-input100 validate-input">
-          <div class="wrap-input100 validate-input" data-validate="Select one type of food!!!">
-            <select class="wrap-input100 dropright" type="select" name="food type">
-              <option>Catgory...</option>
+        <div class="validate-input">
+          <div class="dropdown dropright">
+            <select class="wrap-input100 p-3 ">
+              <option>Category...</option>
               <option>Italian cuisine</option>
               <option>Thai food</option>
               <option>Japanese food</option>
@@ -131,9 +185,8 @@
           </div>
 
           <!--select how many members-->
-          <div class="wrap-input100 validate-input" data-validate="Members is required">
-            <span class="focus-input100"></span>
-            <select class="wrap-input100" type="select" placeholder="Members..." name="food type">
+          <div class="dropdown dropright" data-validate="Members is required">
+            <select class="wrap-input100 p-3" type="select" placeholder="Members..." name="food type">
               <option>Member...</option>
               <option>1</option>
               <option>2</option>
@@ -160,7 +213,7 @@
 
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
             <input class="input100" type="text" placeholder="Location
-              " name="Location..." id="locate-input" />
+              " name="Location..." id="address" />
             <span class="focus-input100"></span>
 
           </div>
@@ -173,14 +226,7 @@
           </button>
         </div>
       </form>
-
-      <p>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.4596512914472!2d121.34018011414403!3d24.984492583995536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e8f88001f51%3A0xde8e62ebe5442d75!2z6YqY5YKz5aSn5a24Leahg-Wckum-nOWxseagoeWNgA!5e0!3m2!1szh-TW!2stw!4v1595772897065!5m2!1szh-TW!2stw"
-          width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-          tabindex="0"></iframe>
-      </p>
-
+      <div id="myMap"></div>
     </div>
   </div>
   </div>

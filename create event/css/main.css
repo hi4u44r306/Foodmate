@@ -249,8 +249,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;
-  background: url(../images/background2.jpg);
+  background: #f2f2f2;  
 }
 
 .wrap-create100 {
@@ -653,3 +652,6 @@ input.input100 {
   color: #fff;
 }
 
+#myMap {
+  height: 550px;
+  width: 800px;

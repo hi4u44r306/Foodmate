@@ -249,7 +249,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #f2f2f2;  
+  background: #ffffff;  
 }
 
 .wrap-create100 {
@@ -653,6 +653,7 @@ input.input100 {
 }
 
 #myMap {
-  height: 635px;
-  width: 800px;
+  height: 100vh;
+  width: 50vw;
+  position: relative;
 }

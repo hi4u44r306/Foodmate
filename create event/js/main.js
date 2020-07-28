@@ -68,29 +68,20 @@
   }
 })(jQuery);
 
-/*--------------------login function-----------------------------------*/
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    document.getElementById("login div").style.display = "block";
-    // User is signed in.
-  } else {
-    document.getElementById("login div").style.display = "none";
-    // No user is signed in.
-  }
-});
+/*--------------------create event function-----------------------------------*/
 
-function login() {
-  var InputUse = document.getElementById("UserName").value;
-  var InputPwd = document.getElementById("UserPwd").value;
-
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(InputUse, InputPwd)
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      window.alert(InputUse + "   " + InputPwd);
-    });
-}
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
+  authDomain: "food-friends-49103.firebaseapp.com",
+  databaseURL: "https://food-friends-49103.firebaseio.com",
+  projectId: "food-friends-49103",
+  storageBucket: "food-friends-49103.appspot.com",
+  messagingSenderId: "733403414941",
+  appId: "1:733403414941:web:0cc62d9ee1e99c78dcef74",
+  measurementId: "G-SE6VKRMV60"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+console.log(firebase);

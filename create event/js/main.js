@@ -85,3 +85,18 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 console.log(firebase);
+
+
+//===============google map=========================//
+var locateInput = 'address';
+
+$(document).ready(function () {
+  var autocomplete;
+  autocomplete = new google.maps.places.Autocomplete((document.getElementById(locateInput)), {
+    types: ['geocode'], componentRestrictions: { 'country': ['TW'] }
+  });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    var near_place = autocomplete.getPlace();
+  });
+});

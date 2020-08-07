@@ -29,14 +29,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/menu.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=roboto" />
     <link rel="stylesheet" href="jquery.datetimepicker.min.css">
-    <script src="jquery.js"></script>
-    <script src="jquery.datetimepicker.full.js"></script>
+
 
 </head>
 
@@ -58,7 +53,7 @@
                     <a href="../create event/create event.html" class="nav-link">Creat-Event</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../chatpage/chat.html" class="nav-link">Message</a>
+                    <a href="../chatpage/chat.html" class="nav-link">Chat</a>
                 </li>
                 <li class="nav-item">
                     <a href="profile.html" class="nav-link active">Profile</a>
@@ -73,32 +68,141 @@
         </div>
     </nav>
 
-    <header>
-        <div class="container">
-            <div class="profile">
-                <div class="profile-image">
-                    <img src="./images/user.jpg" alt="..">
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="https://images.chinatimes.com/newsphoto/2020-06-02/900/20200602002942.jpg" alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                        </div>
+                    </div>
                 </div>
-                <div class="profile-user-settings">
-                    <h1 class="profile-user-name">Victor</h1>
-                    <button class="btn profile-edit-btn">Edit Profile</button>
-                    <button class="btn profile-setting-btn" aria-label="Profile Setting"><i class="fas fa-cog"
-                            aria-hidden></i></button>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            Lisa (BlackPink)
+                        </h5>
+                        <h6>
+                            Boom Ba Yah
+                        </h6>
+                        <p class="proile-rating">RANKINGS : <span>5 / 5</span></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="profile-stats">
-                    <ul>
-                        <li><span class="profile-stat-count">Name:</span>Victor</li>
-                        <li><span class="profile-stat-count">Age:</span>20</li>
-                        <li><span class="profile-stat-count">Gender:</span>Male</li>
-                    </ul>
-                </div>
-                <div class="profile-bio">
-                    <p><span class="profile-real-name"></span>MCU ICAC3 FOODMATE PROJECT</p>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
                 </div>
             </div>
-        </div>
-    </header>
-
+            <div class="row">
+                <div class="col-md-4 ml-auto mr-auto">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>User Id</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Lisa 12345</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Lalisa Manoban</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>lisa@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Profession</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Sing & Dance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Experience</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Hourly Rate</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>10$/hr</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Total Projects</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>230</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>English Level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Availability</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Bio</label><br />
+                                    <p>Your detail description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"

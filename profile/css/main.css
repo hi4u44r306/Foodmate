@@ -547,6 +547,9 @@ img{
   height: 30px;
 }
 
+.primary{
+  color: #f1c573;
+}
 /*Profile*/
 body{
   background: -webkit-linear-gradient(left, #eec511, #e7ae64);

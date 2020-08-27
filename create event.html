@@ -116,49 +116,44 @@
 <body>
   <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
     <!--navbar-->
-
     <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
     <span class="col-mb-4"></span>
+    <!--can put our app name-->
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="nav nav-pills mr-auto">
         <li class="nav-item">
-          <a href="menu.html" class="nav-link">Home</a>
+          <a href="menu.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
         </li>
         <li class="nav-item">
-          <a href="create event.html" class="nav-link active">Creat-Event</a>
+          <a href="create event.html" class="nav-link active"><i class="fas fa-plus"></i> Creat-Event</a>
         </li>
         <li class="nav-item">
-          <a href="chat.html" class="nav-link">Chat</a>
+          <a href="chat.html" class="nav-link"><i class="fas fa-comments"></i> Chat</a>
         </li>
         <li class="nav-item">
-          <a href="profile.html" class="nav-link">Profile</a>
+          <a href="profile.html" class="nav-link"><i class="fas fa-id-card-alt"></i> Profile</a>
         </li>
         <li class="nav-item">
-          <a href="notification.html" class="nav-link">Notification </a>
+          <a href="notification.html" class="nav-link"><i class="fas fa-bell"></i> Notification</a>
         </li>
         <li class="nav-item">
-          <a href="googlemap.html" class="nav-link">Google Map</a>
+          <a href="googlemap.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Google Map</a>
         </li>
       </ul>
-
     </div>
   </nav>
 
   <div class="limiter">
     <div class="container-create100">
       <form class="create100-form validate-form">
-        <span class="create100-form-title p-b-35">
-          Create Event
-        </span>
-
         <!--enter food category-->
         <div class="validate-input">
           <div class="dropdown dropright">
             <select class="wrap-input100 p-3 ">
-              <option>Category...</option>
+              <option>Food Category...</option>
               <option>Italian cuisine</option>
               <option>Thai food</option>
               <option>Japanese food</option>
@@ -179,9 +174,7 @@
           <div class="wrap-input100 validate-input">
             <input class="input100" placeholder="Date & Time..." id="datetimepicker">
             <span class="focus-input100"></span>
-            <script>
-                $('#datetimepicker').datetimepicker();
-            </script>
+
           </div>
 
           <!--select how many members-->
@@ -261,6 +254,9 @@
   <!-- Add Firebase products that you want to use -->
   <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
   <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+  <script>
+      $('#datetimepicker').datetimepicker();
+  </script> 
 </body>
 
 </html>

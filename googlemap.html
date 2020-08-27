@@ -3,6 +3,12 @@
 <head>
     <title>Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="google-signin-client_id"
+        content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+        content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -30,12 +36,13 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
         <!--navbar-->
-        <a href="menu.html" class="navbar-brand"><img src="./images/icons/main icon.png" /></a>
+        <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
         <span class="col-mb-4"></span>
         <!--can put our app name-->
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -44,26 +51,131 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
             <ul class="nav nav-pills mr-auto">
                 <li class="nav-item">
-                    <a href="menu.html" class="nav-link">Home</a>
+                    <a href="menu.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="create event.html" class="nav-link">Creat-Event</a>
+                    <a href="create event.html" class="nav-link"><i class="fas fa-plus"></i> Creat-Event</a>
                 </li>
                 <li class="nav-item">
-                    <a href="chat.html" class="nav-link">Chat</a>
+                    <a href="chat.html" class="nav-link"><i class="fas fa-comments"></i> Chat</a>
                 </li>
                 <li class="nav-item">
-                    <a href="profile.html" class="nav-link">Profile</a>
+                    <a href="profile.html" class="nav-link"><i class="fas fa-id-card-alt"></i> Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a href="notification.html" class="nav-link">Notification</a>
+                    <a href="notification.html" class="nav-link"><i class="fas fa-bell"></i> Notification</a>
                 </li>
                 <li class="nav-item">
-                    <a href="googlemap.html" class="nav-link active">Google Map</a>
+                    <a href="googlemap.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Google
+                        Map</a>
                 </li>
             </ul>
         </div>
     </nav>
-</body>
+
+    <head>
+        <title>foodmate user location</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            html {
+                height: 100%;
+                width: 100%;
+                background-image: linear-gradient(45deg, #808080 0%, #fad0c4 99%, #fad0c4 100%);
+            }
+
+
+            #map {
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 100vw;
+            }
+
+            /* Optional: Makes the sample page fill the window. */
+            html,
+            body {
+                height: 100%;
+                width: 100vw;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            h1,
+            h2 {
+                text-align: center;
+            }
+
+            h2 {
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.45);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="body">
+            <div class="row justify-cotent-center">
+                <div class=" col-md-8 col-md-offset-2" text-align="center">
+
+                </div>
+
+                </style>
+                </head>
+
+                <body>
+                    <div id="map"></div>
+                    <script>
+                        // Note: This example requires that you consent to location sharing when
+                        // prompted by your browser. If you see the error "The Geolocation service
+                        // failed.", it means you probably did not give permission for the browser to
+                        // locate you.
+                        var map, infoWindow;
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: { lat: -34.397, lng: 150.644 },
+                                zoom: 16.5
+
+                            });
+
+                            infoWindow = new google.maps.InfoWindow;
+
+                            // Try HTML5 geolocation.
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function (position) {
+                                    var pos = {
+                                        lat: position.coords.latitude,
+                                        lng: position.coords.longitude
+                                    };
+
+                                    infoWindow.setPosition(pos);
+                                    infoWindow.setContent('Location found.');
+                                    infoWindow.open(map);
+                                    map.setCenter(pos);
+                                }, function () {
+                                    handleLocationError(true, infoWindow, map.getCenter());
+                                });
+                            } else {
+                                // Browser doesn't support Geolocation
+                                handleLocationError(false, infoWindow, map.getCenter());
+                            }
+                        }
+
+
+
+                        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+                            infoWindow.open(map);
+                        }
+                    </script>
+                    <script defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwM_U53QG13-4nSLY5YTExVc85euaD_CQ&callback=initMap">
+                        </script>
+                </body>
+    </body>
 
 </html>

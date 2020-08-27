@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>foodmate user location</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+</head>
+
+<body>
+    //Modify the Form Fields to suit the needs of your website.
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Schedule an Appointment</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">First Name</label>
+                            <input type="text" class="form-control" name="fname" id="fname">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Last Name</label>
+                            <input type="text" class="form-control" name="lname" id="lname">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class='col-md-6'>
+                        <div class="form-group">
+                            <label class="control-label">Appointment Time</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+</body>
+
+</html>

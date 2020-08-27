@@ -44,6 +44,9 @@
       https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
 
+  <!--Google sign in-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -108,6 +111,12 @@
               or sign up using
             </span>
           </div>
+
+          <img src="User.png" class="center">
+          <div class="g-signin2" data-onsuccess="onSignIn" , class="center"></div>
+          <p>Don't have a Google account?</p><b> Register</b><a
+            href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F&hl=en&dsh=S721647489%3A1597818428281484&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp">
+            here!</a>
 
           <div class="login100-form-social flex-c-m">
             <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">

@@ -297,7 +297,7 @@ iframe {
   min-height: 100vh;
   display: block;
   background-color: #fff;
-  padding: 60px 55px 55px 55px;
+  padding: 6px 55px 55px 55px;
 }
 
 .create100-form-title {
@@ -669,3 +669,4 @@ img {
   width: 30px;
   height: 30px;
 }
+

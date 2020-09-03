@@ -297,7 +297,7 @@ iframe {
   min-height: 100vh;
   display: block;
   background-color: #fff;
-  padding: 6px 55px 55px 55px;
+  padding: 30px 55px 55px 55px;
 }
 
 .create100-form-title {
@@ -322,7 +322,7 @@ iframe {
   flex-wrap: wrap;
   align-items: flex;
   width: 100%;
-  height: 60px;
+  height: 45px;
   position: relative;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
@@ -361,7 +361,7 @@ iframe {
   font-size: 18px;
   color: #555555;
   line-height: 1.2;
-  padding: 0 26px;
+  padding: 0 12px;
 }
 
 input.input100 {

@@ -721,7 +721,7 @@ body{
 }
 .profile-head .nav-tabs .nav-link.active{
   border: none;
-  border-bottom:2px solid #ff0000;
+  border-bottom:3px solid #ff0000;
 }
 .profile-work{
   padding: 14%;

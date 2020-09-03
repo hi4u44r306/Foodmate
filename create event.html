@@ -95,11 +95,6 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
-
-
-  <script>
-    $('#datetimepicker').datetimepicker();
-  </script>
 </head>
 
 <body>
@@ -140,8 +135,8 @@
       <form class="create100-form validate-form">
         <!--enter food category-->
         <div class="validate-input">
-          <div class="dropdown dropright">
-            <select class="wrap-input100 p-2 ">
+          <div class="dropdown">
+            <select class="wrap-input100 p-2">
               <option>Food Category...</option>
               <option>Italian cuisine</option>
               <option>Thai food</option>
@@ -162,14 +157,18 @@
           <!--select what date-->
           <div class="wrap-input100 validate-input">
             <input class="input100" placeholder="Date & Time..." id="datetimepicker">
+            <script type="text/javascript">
+              $(function () {
+                $('#datetimepicker').datetimepicker();
+              });
+            </script>
             <span class="focus-input100"></span>
-
           </div>
 
           <!--select how many members-->
           <div class="dropdown dropright" data-validate="Members is required">
             <select class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
-              <option>Member...</option>
+              <option>Members...</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -185,7 +184,7 @@
           </div>
 
           <!--Description-->
-          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+          <div class="wrap-input100 validate-input">
             <input class="input100" type="text" placeholder="Description...
               " name="Description..." />
             <span class="focus-input100"></span>
@@ -193,7 +192,7 @@
           </div>
           <!--Location-->
 
-          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+          <div class="wrap-input100 validate-input">
             <input class="input100" type="text" placeholder="Location
               " name="Location..." id="address" />
             <span class="focus-input100"></span>
@@ -204,7 +203,7 @@
           <button class="create100-form-btn" id="current_location">
             <div class="link-bar">
               <a href="#" class="container-create100-form-btn">
-                Current Location
+                Nearby Restaurant
               </a>
             </div>
           </button>
@@ -218,6 +217,7 @@
               </a>
             </div>
           </button>
+
         </div>
 
       </form>

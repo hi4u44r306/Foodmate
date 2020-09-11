@@ -31,6 +31,32 @@
   <link rel="stylesheet" type="text/css" href="css/util.css" />
   <link rel="stylesheet" type="text/css" href="css/login.css" />
   <!--===============================================================================================-->
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
+      authDomain: "food-friends-49103.firebaseapp.com",
+      databaseURL: "https://food-friends-49103.firebaseio.com",
+      projectId: "food-friends-49103",
+      storageBucket: "food-friends-49103.appspot.com",
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        //document.getElementById("login div").style.display = "block";
+        var test = user.value();
+
+        alert(user);
+
+        // User is signed in.
+      } else {
+        //document.getElementById("login div").style.display = "none";
+        // No user is signed in.
+
+      }
+    });
+  </script>
+  <!--===============================================================================================-->
+
 </head>
 
 <body style="background-color: #666666;">
@@ -47,29 +73,13 @@
   <!--Google sign in-->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyC_eeA-HV7Tt9fCrwmz75XvbsHmbxbcPqU",
-      authDomain: "food-friends-49103.firebaseapp.com",
-      databaseURL: "https://food-friends-49103.firebaseio.com",
-      projectId: "food-friends-49103",
-      storageBucket: "food-friends-49103.appspot.com",
-      messagingSenderId: "733403414941",
-      appId: "1:733403414941:web:0cc62d9ee1e99c78dcef74",
-      measurementId: "G-SE6VKRMV60",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
 
 
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100" id="login div">
-        <form class="login100-form validate-form">
-          <span class="login100-form-title p-b-43">
+        <div class="login100-form validate-form">
+          <span class="login100-form-title p-b-23">
             Foodmate Login
           </span>
 
@@ -99,10 +109,8 @@
           </div>
 
           <div>
-            <button class="login100-form-btn" onclick="signIn()" id="signIn">
-              <a>
-                Login
-              </a>
+            <button class="login100-form-btn" onclick="login()" id="login">
+              Login
             </button>
           </div>
 
@@ -112,12 +120,6 @@
             </span>
           </div>
 
-          <img src="User.png" class="center">
-          <div class="g-signin2" data-onsuccess="onSignIn" , class="center"></div>
-          <p>Don't have a Google account?</p><b> Register</b><a
-            href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2F&hl=en&dsh=S721647489%3A1597818428281484&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp">
-            here!</a>
-
           <div class="login100-form-social flex-c-m">
             <a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
               <b>G</b>
@@ -126,7 +128,7 @@
               <b>U+</b>
             </a>
           </div>
-        </form>
+        </div>
 
         <div class="login100-more" style="background-image: url('images/background.jpg');"></div>
       </div>

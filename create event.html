@@ -25,6 +25,7 @@
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="css/util.css" />
   <link rel="stylesheet" type="text/css" href="css/create event.css" />
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
   <!--===============================================================================================-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
@@ -163,20 +164,17 @@
 
           <!--enter event name-->
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input class="input100" type="text" placeholder="Title..." name="eventname" />
+            <input class="input100" type="text" placeholder="Event Name..." name="eventname" />
             <span class="focus-input100"></span>
           </div>
 
           <!--select what date-->
-          <div class="wrap-input100 validate-input">
-            <input class="input100" placeholder="Date & Time..." id="datetimepicker">
-            <script type="text/javascript">
-              $(function () {
-                $('#datetimepicker').datetimepicker();
-              });
-            </script>
+          <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
+            <input class="input100" type="date" name="birthday" />
             <span class="focus-input100"></span>
           </div>
+
+
 
           <!--select how many members-->
           <div class="dropdown dropright" data-validate="Members is required">
@@ -198,7 +196,7 @@
 
           <!--Description-->
           <div class="wrap-input100 validate-input">
-            <input class="input100" type="text" placeholder="Description...
+            <input class="input100" type="text" placeholder="Event Description...
               " name="Description..." />
             <span class="focus-input100"></span>
 

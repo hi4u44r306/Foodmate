@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/chat.css" />
+    <link rel="stylesheet" type="text/css" href="css/google map.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
@@ -69,20 +69,10 @@
                     <a href="googlemap.html" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Google
                         Map</a>
                 </li>
-                <!--設定-->
-                <div class="dropdown">
-                    <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cog"></i>
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Log Out</a>
-                        <a class="dropdown-item" href="#"></a>
-                        <a class="dropdown-item" href="#"></a>
-                    </div>
-                </div>
             </ul>
+            <form>
+                <button>Log out</button>
+            </form>
         </div>
     </nav>
 
@@ -147,7 +137,7 @@
                         var map, infoWindow;
                         function initMap() {
                             map = new google.maps.Map(document.getElementById('map'), {
-                                center: { lat: -34.397, lng: 150.644 },
+                                center: { lat: -34.397, lng: 141.644 },
                                 zoom: 16.5
 
                             });

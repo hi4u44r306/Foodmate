@@ -69,60 +69,57 @@
 })(jQuery);
 
 /*--------------------login function-----------------------------------*/
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyDsdhPvgN77OI8NmoDyKUe6skFt0tICQaE",
-  authDomain: "foodm-25102.firebaseapp.com",
-  databaseURL: "https://foodm-25102.firebaseio.com",
-  projectId: "foodm-25102",
-  storageBucket: "foodm-25102.appspot.com",
-  messagingSenderId: "445892133338",
-  appId: "1:445892133338:web:added75b00be7925bac0e3"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+function login() {
+
+  var InputUse = document.getElementById("UserName").value;
+  var InputPwd = document.getElementById("UserPwd").value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(InputUse, InputPwd)
+    .then(function (user) {
+      window.location.href = "..//Menu.html";
 
 
+    }).catch(function (error) {
+      alert(error.message)
+    });
+}
+
+//signup//
 const auth = firebase.auth();
 
-
-function signIn() {
+function signUp() {
 
   var email = document.getElementById("email");
   var password = document.getElementById("password");
 
-  const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+  const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
   promise.catch(e => alert(e.message));
 
-
-
-  //Take user to a different or home page
+  alert("Signed Up");
 
 }
+
+//Logout//
 
 function signOut() {
 
   auth.signOut();
-  alert("Signed Out");
-
+  alert("Signed out")
 }
-
 
 auth.onAuthStateChanged(function (user) {
 
   if (user) {
 
     var email = user.email;
-    window.location.href = 'file:///C:/Users/mcu/Downloads/Foodmate%20website%20firebase%20works/menu/menu.html';
-
-    //is signed in
+    alert("Active User" + email);
 
   } else {
+    alert("No Active User");
 
-    alert("Welcome to Foodmate")
-  };
+  }
 
-  //no user is signed in   
 });
-
 

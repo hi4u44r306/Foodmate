@@ -2,155 +2,173 @@
 <html>
 
 <head>
-    <title>foodmate user location</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/test.css" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU">
+    <style>
+        .container {
+            
+        }
+
+        #map {
+            background: #CCC;
+        }
+
+        ul {
+            padding-top: 16px;
+        }
+
+        .media img {
+            max-width: 64px;
+        }
+
+        .media h5,
+        p {
+            font-size: 14px;
+        }
+
+        .mdeia p {
+            margin-bottom: 6px;
+        }
+
+        .media h6 {
+            font-size: 12px;
+            color: #CCC;
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            left: 16px;
+            bottom: 0;
+            max-width: 320px;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <!------ Include the above in your HEAD tag ---------->
+    <div id="app" class="container">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div class="container">
+        <!-- 搜尋框 -->
         <div class="row">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Brand</a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Link</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">Notification (<b>2</b>)</a>
-                                <ul class="dropdown-menu notify-drop">
-                                    <div class="notify-drop-title">
-                                        <div class="row">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">Bildirimler (<b>2</b>)</div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right"><a href=""
-                                                    class="rIcon allRead" data-tooltip="tooltip" data-placement="bottom"
-                                                    title="tümü okundu."><i class="fa fa-dot-circle-o"></i></a></div>
-                                        </div>
-                                    </div>
-                                    <!-- end notify title -->
-                                    <!-- notify content -->
-                                    <div class="drop-content">
-                                        <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                <div class="notify-img"><img src="http://placehold.it/45x45" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a>
-                                                yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i
-                                                        class="fa fa-dot-circle-o"></i></a>
-
-                                                <hr>
-                                                <p class="time">Şimdi</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                <div class="notify-img"><img src="http://placehold.it/45x45" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a>
-                                                yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i
-                                                        class="fa fa-dot-circle-o"></i></a>
-                                                <p>Lorem ipsum sit dolor amet consilium.</p>
-                                                <p class="time">1 Saat önce</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                <div class="notify-img"><img src="http://placehold.it/45x45" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a>
-                                                yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i
-                                                        class="fa fa-dot-circle-o"></i></a>
-                                                <p>Lorem ipsum sit dolor amet consilium.</p>
-                                                <p class="time">29 Dakika önce</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                <div class="notify-img"><img src="http://placehold.it/45x45" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a>
-                                                yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i
-                                                        class="fa fa-dot-circle-o"></i></a>
-                                                <p>Lorem ipsum sit dolor amet consilium.</p>
-                                                <p class="time">Dün 13:18</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                                <div class="notify-img"><img src="http://placehold.it/45x45" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a>
-                                                yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i
-                                                        class="fa fa-dot-circle-o"></i></a>
-                                                <p>Lorem ipsum sit dolor amet consilium.</p>
-                                                <p class="time">2 Hafta önce</p>
-                                            </div>
-                                        </li>
-                                    </div>
-                                    <div class="notify-drop-footer text-center">
-                                        <a href=""><i class="fa fa-eye"></i> Tümünü Göster</a>
-                                    </div>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
+            <div class="col google-map">
+                <h5>Search：</h5>
+                <div class="form-group">
+                    <input type="text" class="form-control" ref="site" v-model="site">
+                </div>
+            </div>
         </div>
+
+        <!-- 放google map的div -->
+        <div class="row">
+            <div class="col google-map">
+                <h5>Google Map：</h5>
+                <div id="map" class="embed-responsive embed-responsive-16by9"></div>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <!-- 放評論摘要的div -->
+        <div class="row" v-if="place != null">
+            <div class="col" v-if="place.reviews != null">
+                <h5>評論：</h5>
+                <div class="row" v-for="p in place.reviews">
+                    <div class="col">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img :src="p.profile_photo_url" class="mr-3">
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-1">
+                                        <a target="_blank" :href="p.author_url">{{ p.author_name }}</a>
+                                    </h5>
+                                    <p>{{ p.text }}</p>
+                                    <h6>{{ p.relative_time_description }}</h6>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- 將 YOUR_API_KEY 替換成你的 API Key 即可 -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+
+    <!-- map -->
     <script>
-        $(function () {
-            $('[data-tooltip="tooltip"]').tooltip()
-        });
+        const googleMap = new Vue({
+            el: '#app',
+            data: {
+                map: null,
+                autocomplete: null,
+                site: '', // place API要綁定的搜尋框
+                place: null // 存place確定後回傳的資料
+            },
+            methods: {
+                // init google map
+                initMap() {
+
+                    let location = {
+                        lat: 25.0374865,
+                        lng: 121.5647688
+                    };
+
+                    this.map = new google.maps.Map(document.getElementById('map'), {
+                        center: location,
+                        zoom: 16
+                    });
+                },
+                // 地址自動完成 + 地圖的中心移到輸入結果的地址上
+                siteAuto() {
+
+                    let options = {
+                        componentRestrictions: { country: 'tw' } // 限制在台灣範圍
+                    };
+                    this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
+                    this.autocomplete.addListener('place_changed', () => {
+                        this.place = this.autocomplete.getPlace();
+                        if (this.place.geometry) {
+                            let searchCenter = this.place.geometry.location;
+                            this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
+
+                            // 放置標記
+                            let marker = new google.maps.Marker({
+                                position: searchCenter,
+                                map: this.map
+                            });
+
+                            // info window
+                            let infowindow = new google.maps.InfoWindow({
+                                content: this.place.formatted_address
+                            });
+                            infowindow.open(this.map, marker);
+
+                        }
+                    });
+                }
+            },
+            mounted() {
+                window.addEventListener('load', () => {
+
+                    this.initMap();
+                    this.siteAuto();
+
+                });
+            }
+        })
     </script>
+
 </body>
 
 </html>
+<link>

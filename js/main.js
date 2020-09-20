@@ -78,8 +78,7 @@ function login() {
     .auth()
     .signInWithEmailAndPassword(InputUse, InputPwd)
     .then(function (user) {
-      window.location.href = "..//Menu.html";
-
+      window.location.href = "menu.html";
 
     }).catch(function (error) {
       alert(error.message)

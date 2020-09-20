@@ -297,7 +297,7 @@ iframe {
   min-height: 100vh;
   display: block;
   background-color: #fff;
-  padding: 17px 55px 55px 55px;
+  padding: 40px 55px 55px 55px;
 }
 
 .create100-form-title {
@@ -653,12 +653,6 @@ input.input100 {
   color: #fff;
 }
 
-#myMap {
-  height: 100vh;
-  width: 50vw;
-  position: relative;
-}
-
 img {
   width: 180px;
   height: 300px;
@@ -670,3 +664,14 @@ img {
   height: 30px;
 }
 
+/*Map*/
+#map {
+  background: #CCC;
+}
+
+#map {
+  height: 50vh;
+  width: 50vw;
+  position: relative;
+  background: #CCC;
+}

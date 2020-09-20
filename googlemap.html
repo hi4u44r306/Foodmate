@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Chat</title>
+    <title>Google Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="google-signin-client_id"
         content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com">
@@ -137,7 +137,7 @@
                         var map, infoWindow;
                         function initMap() {
                             map = new google.maps.Map(document.getElementById('map'), {
-                                center: { lat: -34.397, lng: 141.644 },
+                                center: { lat: -34.397, lng: 150.644 },
                                 zoom: 16.5
 
                             });
@@ -153,8 +153,17 @@
                                     };
 
                                     infoWindow.setPosition(pos);
-                                    infoWindow.setContent('Location found.');
+                                    infoWindow.setContent('You are here.');
                                     infoWindow.open(map);
+
+
+                                    var marker = new google.maps.Marker({
+                                        position: pos,
+                                        map: map,
+                                        title: 'Hello World!',
+                                        icon: 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png',
+                                    });
+                                    infoWindow.open(marker);
                                     map.setCenter(pos);
                                 }, function () {
                                     handleLocationError(true, infoWindow, map.getCenter());

@@ -29,11 +29,9 @@
   <!--===============================================================================================-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="jquery.datetimepicker.min.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.datetimepicker.full.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyADhsAl5mMzxQlJTxGC3hmIlshQNDRLPeU"></script>
+  
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
@@ -120,6 +118,7 @@
             <span class="focus-input100"></span>
           </div>
 
+          <!--select what time-->
 
 
           <!--select how many members-->
@@ -159,18 +158,14 @@
           <br>
           <!--Send data from foodmate to firebase-->
           <button class="create100-form-btn">
-            <div class="link-bar">
-              <a href="../menu/menu.html" class="container-create100-form-btn">
-                Create
-              </a>
-            </div>
+            Create Event
           </button>
 
         </div>
 
       </form>
 
-      <form>
+      <div>
         <div id="app" class="container">
 
           <!-- 搜尋框 -->
@@ -197,8 +192,8 @@
           <div class="row" v-if="place != null">
             <div class="col" v-if="place.reviews != null">
               <h5>評論：</h5>
-              <div class="row" v-for="p in place.reviews">
-                <div class="col">
+              <div class="row google-map" v-for="p in place.reviews">
+                <div class="col google-map">
                   <ul class="list-unstyled">
                     <li class="media">
                       <img :src="p.profile_photo_url" class="mr-3">
@@ -286,7 +281,7 @@
             }
           })
         </script>
-      </form>
+      </div>
     </div>
   </div>
   </div>

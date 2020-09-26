@@ -10,14 +10,15 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/menu.css" />
- 
-  
+
+
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: rgba(243, 214, 151, 0.911);">
     <!--navbar-->
     <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
     <!--can put our app name-->
@@ -44,20 +45,6 @@
         <li class="nav-item">
           <a href="googlemap.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Google Map</a>
         </li>
-
-        <!--設定-->
-        <li class="dropdown">
-          <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-cog"></i>
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" onclick="signOut()" id="signOut">Log Out</a>
-            <a class="dropdown-item" href="#"></a>
-            <a class="dropdown-item" href="#"></a>
-          </div>
-        </li>
       </ul>
       <form class="form-inline">
         <!--search bar-->
@@ -67,16 +54,17 @@
     </div>
   </nav>
 
-  <div class="row row-cols-1 row-cols-md-3 ml-auto mr-auto">
+  <!--Top Categorys-->
+  <h4 class="topcat">Top Categorys</h4>
+  <div class="row row-cols-1 row-cols-md-4 ml-auto mr-auto">
     <!--Card-->
-    <div class="col mb-4">
+    <div class="col mb-4" onclick="location.href='hot pot.html'">
       <!--Hot pot by victor-->
       <div class="card h-100">
         <img src="images/event img/hot-pot.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Hot Pot</h5>
           <p class="card-text">Creator : Victor</p>
-          <button class="btn btn-primary" onclick="location.href='hot pot.html'">More...</button>
         </div>
       </div>
     </div>
@@ -87,7 +75,6 @@
         <div class="card-body">
           <h5 class="card-title">Thai Food</h5>
           <p class="card-text">Creator : Bew</p>
-          <button class="btn btn-success">More...</button>
         </div>
       </div>
     </div>
@@ -98,7 +85,6 @@
         <div class="card-body">
           <h5 class="card-title">Fried Chicken</h5>
           <p class="card-text">Creator : Adonique</p>
-          <button class="btn btn-danger">More...</button>
         </div>
       </div>
     </div>
@@ -109,10 +95,14 @@
         <div class="card-body">
           <h5 class="card-title">Sushi</h5>
           <p class="card-text">Creator : Oat</p>
-          <button class="btn btn-warning">More...</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <!--Events Title-->
+  <h4 class="topcat">Events</h4>
+  <div class="row row-cols-1 row-cols-md-4 ml-auto mr-auto">
     <div class="col mb-4">
       <!--Indonesian food by kezia-->
       <div class="card h-100">
@@ -120,7 +110,6 @@
         <div class="card-body">
           <h5 class="card-title">Indonesian food</h5>
           <p class="card-text">Creator : kezia</p>
-          <button class="btn btn-info">More...</button>
         </div>
       </div>
     </div>
@@ -131,7 +120,6 @@
         <div class="card-body">
           <h5 class="card-title">Hong Kong food</h5>
           <p class="card-text">Creator : Thomas</p>
-          <button class="btn btn-light">More...</button>
         </div>
       </div>
     </div>

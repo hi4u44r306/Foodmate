@@ -156,13 +156,20 @@
                                     infoWindow.setContent('You are here.');
                                     infoWindow.open(map);
 
+                                    var icon = {
+                                        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRK66UvyzrpBCnwoqvYjYTdJTbGRvju7Lny9Q&usqp=CAU", // url
+                                        scaledSize: new google.maps.Size(50, 50), // scaled size
+                                        origin: new google.maps.Point(0, 0), // origin
+                                        anchor: new google.maps.Point(0, 0) // anchor
+                                    };
 
                                     var marker = new google.maps.Marker({
                                         position: pos,
                                         map: map,
                                         title: 'Hello World!',
-                                        icon: 'https://maps.google.com/mapfiles/kml/shapes/info-i_maps.png',
+                                        icon: icon
                                     });
+
                                     infoWindow.open(marker);
                                     map.setCenter(pos);
                                 }, function () {

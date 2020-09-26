@@ -27,10 +27,11 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css" />
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css  " />
+    <script src="./js/sweetalert2.js"></script>
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="jquery.datetimepicker.min.css">
 
 
 </head>
@@ -64,147 +65,115 @@
                 <li class="nav-item">
                     <a href="googlemap.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Google Map</a>
                 </li>
-                <!--設定-->
-                <div class="dropdown">
-                    <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cog"></i>
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Log Out</a>
-                        <a class="dropdown-item" href="#"></a>
-                        <a class="dropdown-item" href="#"></a>
-                    </div>
-                </div>
             </ul>
         </div>
     </nav>
 
-    <div class="container emp-profile">
-        <form method="post">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img src="https://images.chinatimes.com/newsphoto/2020-06-02/900/20200602002942.jpg" alt="" />
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file" />
+    <body class="bg-light">
+        <div class="container-fluid">
+            <div class="row mx-1">
+                <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-primary">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 p-4 bg-primary divCover">
+                            <img src="../images/.png" alt="Any background">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                        <h5>
-                            Lisa
-                        </h5>
-                        <h6>
-                            Blackpink
-                        </h6>
-                        <p class="proile-rating">RANKINGS : <span>5 / 5</span></p>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                    aria-controls="home" aria-selected="true">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                    aria-controls="profile" aria-selected="false">History Event</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 ml-auto mr-auto">
-                    <div class="tab-content profile-tab" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>User Id</label>
+                        <div class="col-lg-6 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
+                            <div id="profileSection">
+                                <div class="col-12 col-12 mb-3 text-center">
+                                    <img id="userAvatar" src="./images/icons/main icon.png" alt="Logo, I guess?">
                                 </div>
-                                <div class="col-md-6">
-                                    <p>Lisa 12345</p>
+                                <div class="col-12 col-12 mb-4 text-center">
+                                    <span class="h3" id="userPfFullName">Name</span>
+                                    <span class="h3" id="userPfSurname">Surname</span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 mb-4 text-center">
+                                    <p id="userPfBio">Biography</p>
+                                </div>
+                                <div class="col-lg-12 col-md-12 text-center">
+                                    <button type="button" class="btn btn-outline-primary btn-block text-uppercase mb-3"
+                                        onclick="showEditProfileForm()">
+                                        Edit Profile<small></small></button>
+                                    <button type="button" class="btn btn-outline-secondary text-uppercase"
+                                        onclick="signOut()">
+                                        Sign Out<small></small></button>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Name</label>
+                            <div id="editProfileForm">
+                                <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
+                                <div class="form-group">
+                                    <label for="userFullName">Name<span class="text-danger ml-1">*</span></label>
+                                    <input type="text" class="form-control" id="userFullName"
+                                        onblur="checkUserFullName()" placeholder="Firma Adı">
                                 </div>
-                                <div class="col-md-6">
-                                    <p>Lalisa Manoban</p>
+                                <div class="form-group">
+                                    <label for="userSurname">Surname<span class="text-danger ml-1">*</span></label>
+                                    <input type="text" class="form-control" id="userSurname" onblur="checkUserSurname()"
+                                        placeholder="Firma Faliyet Alanı">
+                                    <small id="userSurnameError" class="form-text text-danger">Please fill the
+                                        field.</small>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Email</label>
+                                <div class="form-group">
+                                    <label for="userBio">Biography<span class="text-danger ml-1">*</span></label>
+                                    <textarea class="form-control" id="userBio" rows="4"
+                                        onblur="checkUserBio()"></textarea>
                                 </div>
-                                <div class="col-md-6">
-                                    <p>lisa@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Phone</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>123 456 7890</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Hobby</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>Sing & Dance</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="col mb-3">
-                                <!--Hot pot by victor-->
-                                <div class="card h-100">
-                                    <img src="images/event img/hot-pot.jpg" class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Hot Pot</h5>
-                                        <p class="card-text">Creator : Victor</p>
-                                        <button class="btn btn-primary" onclick="location.href='hot pot.html'">Learn
-                                            More...</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-3">
-                                <!--Hot pot by victor-->
-                                <div class="card h-100">
-                                    <img src="images/event img/fried chicken.jpg" class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Fried Chicken</h5>
-                                        <p class="card-text">Creator : Sunny Chen</p>
-                                        <button class="btn btn-primary" onclick="location.href='hot pot.html'">Learn
-                                            More...</button>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn btn-outline-primary btn-block text-uppercase mb-3"
+                                    onclick="saveProfile()">Save</button>
+                                <button type="button" class="btn btn-outline-secondary btn-block text-uppercase"
+                                    onclick="hideEditProfileForm()">Cancel</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 
+        <!-- Firebase -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
 
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyDGDnsGlZosVvxHN1_szI7Bz8wUO6Ma0n0",
+                authDomain: "edit-profile-42a46.firebaseapp.com",
+                databaseURL: "https://edit-profile-42a46.firebaseio.com",
+                projectId: "edit-profile-42a46",
+                storageBucket: "edit-profile-42a46.appspot.com",
+                messagingSenderId: "509040913701",
+                appId: "1:509040913701:web:7ef26e3db293e3d11c7ecc",
+                measurementId: "G-84K3PWYR4S"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+
+        <!-- Custom JavaScript -->
+        <script src="./js/app.js"></script>
+    </body>
 </body>
 
 </html>

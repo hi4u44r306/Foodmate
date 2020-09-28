@@ -552,7 +552,7 @@ img{
 }
 /*Profile*/
 body{
-  background: -webkit-linear-gradient(left, #eec511, #e7ae64);
+  background-color: white;
 }
 .emp-profile{
   padding: 3%;
@@ -671,4 +671,6 @@ img{
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-
+.nav-link { 
+  color: rgb(0, 0, 0); 
+} 

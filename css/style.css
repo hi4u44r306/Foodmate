@@ -6,13 +6,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .divCover img{
     width: 480px;
     height: 490px;
 }
+
 a{
     text-decoration: none !important;
 }
+
 #userFullNameError, #userQualificationError, #userLocationError, #userEmailError, #userPasswordError, #userSIEmailError, #userSIPasswordError, #userBioError, #editProfileForm{
     display: none;
 }
@@ -20,4 +23,8 @@ a{
 #userAvatar{
     width: 120px;
     height: 120px;
+}
+
+.bg-profile{
+    border-radius: 20px;
 }

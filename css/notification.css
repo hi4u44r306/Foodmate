@@ -657,5 +657,7 @@ input.input100 {
   width: 30px;
   height: 30px;
 }
-
+.nav-link { 
+  color: rgb(0, 0, 0); 
+} 
 

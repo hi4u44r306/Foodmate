@@ -177,7 +177,7 @@ function signIn() {
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
             swal({
                 type: 'successfull',
-                title: 'Succesfully signed in',
+                title: 'Welcome to Foodmate',
             }).then((value) => {
                 setTimeout(function () {
                     window.location.replace("menu.html");

@@ -5,6 +5,9 @@
   <title>Create event</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!--===============================================================================================-->
+  <!-- Load the Firebase SDKs before loading this file -->
+  <script src="/__/firebase/init.js"></script>
+  <!--===============================================================================================-->
   <link rel="icon" type="image/png" href="images/icons/main icon.png" />
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
@@ -12,8 +15,6 @@
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
   <!--===============================================================================================-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
   <!--===============================================================================================-->
@@ -28,21 +29,26 @@
   <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
   <!--===============================================================================================-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <!--===============================================================================================-->
   <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.datetimepicker.full.js"></script>
-  
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="js/main.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-  </script>
 
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
 </head>
 
 <body>
+  <script>
+    firebase.initializeApp({
+      projectId: 'foodmate-database-test'
+    });
+    var db = firebase.firestore();
+  </script>
+  <script>
+    initialize();
+  </script>
   <nav class="navbar sticky-top navbar-expand-sm navbar-light" style="background-color: rgba(243, 214, 151, 0.911);">
     <!--navbar-->
     <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
@@ -71,31 +77,19 @@
         <li class="nav-item">
           <a href="googlemap.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Google Map</a>
         </li>
-        <!--設定-->
-        <div class="dropdown">
-          <a class="btn btn-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-cog"></i>
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Log Out</a>
-            <a class="dropdown-item" href="#"></a>
-            <a class="dropdown-item" href="#"></a>
-          </div>
-        </div>
       </ul>
     </div>
   </nav>
 
   <div class="limiter">
     <div class="container-create100">
-      <form class="create100-form validate-form">
+      <div class="create100-form validate-form">
+
         <!--enter food category-->
         <div class="validate-input">
-          <div class="dropdown">
-            <select class="wrap-input100 p-2">
-              <option>Food Category...</option>
+          <div class="dropdown dropright">
+            <select Id="FoodCategory" class="wrap-input100 p-2 ">
+              <option>Category...</option>
               <option>Italian cuisine</option>
               <option>Thai food</option>
               <option>Japanese food</option>
@@ -108,23 +102,20 @@
 
           <!--enter event name-->
           <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input class="input100" type="text" placeholder="Event Name..." name="eventname" />
+            <input Id="EventName" class="input100" type="text" placeholder="Title..." name="eventname" />
             <span class="focus-input100"></span>
           </div>
 
           <!--select what date-->
           <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
-            <input class="input100" type="date" name="birthday" />
+            <input Id="EventDate" class="input100" type="date" name="birthday" />
             <span class="focus-input100"></span>
           </div>
 
-          <!--select what time-->
-
-
           <!--select how many members-->
           <div class="dropdown dropright" data-validate="Members is required">
-            <select class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
-              <option>Members...</option>
+            <select Id="Member" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
+              <option>Member...</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -140,30 +131,29 @@
           </div>
 
           <!--Description-->
-          <div class="wrap-input100 validate-input">
-            <input class="input100" type="text" placeholder="Event Description...
+          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+            <input id="Description" class="input100" type="text" placeholder="Description...
               " name="Description..." />
             <span class="focus-input100"></span>
 
           </div>
           <!--Location-->
 
-          <div class="wrap-input100 validate-input">
+          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
             <input class="input100" type="text" placeholder="Location
               " name="Location..." id="address" />
             <span class="focus-input100"></span>
 
           </div>
 
+
           <br>
           <!--Send data from foodmate to firebase-->
-          <button class="create100-form-btn">
+          <button onclick="CreateOneEvent()" class="create100-form-btn">
             Create Event
           </button>
-
         </div>
-
-      </form>
+      </div>
 
       <div>
         <div id="app" class="container">
@@ -186,31 +176,6 @@
           </div>
 
           <hr>
-
-
-          <!-- 放評論摘要的div -->
-          <div class="row" v-if="place != null">
-            <div class="col" v-if="place.reviews != null">
-              <h5>評論：</h5>
-              <div class="row google-map" v-for="p in place.reviews">
-                <div class="col google-map">
-                  <ul class="list-unstyled">
-                    <li class="media">
-                      <img :src="p.profile_photo_url" class="mr-3">
-                      <div class="media-body">
-                        <h5 class="mt-0 mb-1">
-                          <a target="_blank" :href="p.author_url">{{ p.author_name }}</a>
-                        </h5>
-                        <p>{{ p.text }}</p>
-                        <h6>{{ p.relative_time_description }}</h6>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <!-- 將 YOUR_API_KEY 替換成你的 API Key 即可 -->
@@ -296,13 +261,12 @@
     crossorigin="anonymous"></script>
 
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="/__/firebase/6.2.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-app.js"></script>
 
   <!-- Add Firebase products that you want to use -->
-  <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
-  <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.21.0/firebase-firestore.js"></script>
 
 </body>
 

@@ -37,6 +37,105 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
+        defer></script>
+
+    <script>
+        // This example displays a marker at the center of Australia.
+        // When the user clicks the marker, an info window opens.
+        function initMap() {
+            const name1 = { lat: 24.988469, lng: 121.343767 };
+            const name2 = { lat: 24.989672, lng: 121.344226 };
+            const name3 = { lat: 24.988666, lng: 121.343277 };
+            const name4 = { lat: 24.990219, lng: 121.344342 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 17,
+                center: name1,
+                center: name2,
+                center: name3,
+                center: name4,
+            });
+            const contentString1 =
+                '<div id="content1">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h4 id="firstHeading" class="firstHeading"><b>里吉拿</b></h4>' +
+                '<div id="bodyContent">' +
+                "<p>營業時間: 早上11點至晚上9點</p>" +
+                "</div>" +
+                "</div>";
+            const contentString2 =
+                '<div id="content2">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h4 id="firstHeading" class="firstHeading"><b>酸辣粉</b></h4>' +
+                '<div id="bodyContent">' +
+                "<p>營業時間: 早上11點至晚上9點</p>" +
+                "</div>" +
+                "</div>";
+            const contentString3 =
+                '<div id="content3">' +
+                '<div id="siteNotice">' +
+                "</div>" +
+                '<h4 id="firstHeading" class="firstHeading"><b>品誠豆花</b></h4>' +
+                '<div id="bodyContent">' +
+                "<p>營業時間: 早上11點至晚上9點</p>" +
+                "</div>" +
+                "</div>";
+            const contentString4 =
+                '<div id="content4">' +
+                '<h4><b>泰皇</b></h4>' +
+                "<p>營業時間: 早上11點至晚上9點</p>" +
+                "</div>";
+            const infowindow1 = new google.maps.InfoWindow({
+                content: contentString1,
+            });
+            const infowindow2 = new google.maps.InfoWindow({
+                content: contentString2,
+            });
+            const infowindow3 = new google.maps.InfoWindow({
+                content: contentString3,
+            });
+            const infowindow4 = new google.maps.InfoWindow({
+                content: contentString4,
+            });
+            const marker1 = new google.maps.Marker({
+                position: name1,
+                map,
+                title: "1",
+            });
+            const marker2 = new google.maps.Marker({
+                position: name2,
+                map,
+                title: "2",
+            });
+            const marker3 = new google.maps.Marker({
+                position: name3,
+                map,
+                title: "3",
+            });
+            const marker4 = new google.maps.Marker({
+                position: name4,
+                map,
+                title: "4",
+            });
+            marker1.addListener("click", () => {
+                infowindow1.open(map, marker1);
+            });
+            marker2.addListener("click", () => {
+                infowindow2.open(map, marker2);
+            });
+            marker3.addListener("click", () => {
+                infowindow3.open(map, marker3);
+            });
+            marker4.addListener("click", () => {
+                infowindow4.open(map, marker4);
+            });
+        }
+    </script>
+
 </head>
 
 <body>
@@ -70,131 +169,12 @@
                         Map</a>
                 </li>
             </ul>
-            <form>
-                <button>Log out</button>
-            </form>
         </div>
     </nav>
 
-    <head>
-        <title>foodmate user location</title>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-        <meta charset="utf-8">
-        <style type="text/css" media="screen">
-            html {
-                height: 100%;
-                width: 100%;
-                background-image: linear-gradient(45deg, #808080 0%, #fad0c4 99%, #fad0c4 100%);
-            }
-
-
-            #map {
-                position: absolute;
-                left: 0;
-                height: 100%;
-                width: 100vw;
-            }
-
-            /* Optional: Makes the sample page fill the window. */
-            html,
-            body {
-                height: 100%;
-                width: 100vw;
-                position: relative;
-                top: 0;
-                left: 0;
-            }
-
-            h1,
-            h2 {
-                text-align: center;
-            }
-
-            h2 {
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.45);
-            }
-        </style>
-    </head>
-
     <body>
-        <div class="body">
-            <div class="row justify-cotent-center">
-                <div class=" col-md-8 col-md-offset-2" text-align="center">
+        <div id="map"></div>
 
-                </div>
-
-                </style>
-                </head>
-
-                <body>
-                    <div id="map"></div>
-                    <script>
-                        // Note: This example requires that you consent to location sharing when
-                        // prompted by your browser. If you see the error "The Geolocation service
-                        // failed.", it means you probably did not give permission for the browser to
-                        // locate you.
-                        var map, infoWindow;
-                        function initMap() {
-                            map = new google.maps.Map(document.getElementById('map'), {
-                                center: { lat: -34.397, lng: 150.644 },
-                                zoom: 16.5
-
-                            });
-
-                            infoWindow = new google.maps.InfoWindow;
-
-                            // Try HTML5 geolocation.
-                            if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(function (position) {
-                                    var pos = {
-                                        lat: position.coords.latitude,
-                                        lng: position.coords.longitude
-                                    };
-
-                                    infoWindow.setPosition(pos);
-                                    infoWindow.setContent('You are here.');
-                                    infoWindow.open(map);
-
-                                    var icon = {
-                                        url: "http://www.robotwoods.com/dev/misc/bluecircle.png", // url
-                                        scaledSize: new google.maps.Size(13, 13), // scaled size
-                                        origin: new google.maps.Point(0, 0), // origin
-                                        anchor: new google.maps.Point(0, 0) // anchor
-                                    };
-
-                                    var marker = new google.maps.Marker({
-                                        position: pos,
-                                        map: map,
-                                        title: 'Hello World!',
-                                        icon: icon
-                                    });
-
-                                    infoWindow.open(marker);
-                                    map.setCenter(pos);
-                                }, function () {
-                                    handleLocationError(true, infoWindow, map.getCenter());
-                                });
-                            } else {
-                                // Browser doesn't support Geolocation
-                                handleLocationError(false, infoWindow, map.getCenter());
-                            }
-                        }
-
-
-
-                        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                            infoWindow.setPosition(pos);
-                            infoWindow.setContent(browserHasGeolocation ?
-                                'Error: The Geolocation service failed.' :
-                                'Error: Your browser doesn\'t support geolocation.');
-                            infoWindow.open(map);
-                        }
-                    </script>
-                    <script defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap">
-                        </script>
-                </body>
     </body>
 
 </html>

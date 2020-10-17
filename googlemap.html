@@ -85,6 +85,11 @@
                 '<a href="menu.html">' +
                 "Join</a> " +
                 "</div>";
+
+            const image = {
+                url: "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
+
+            };
             const infowindow1 = new google.maps.InfoWindow({
                 content: contentString1,
             });
@@ -101,11 +106,13 @@
                 position: name1,
                 map,
                 title: "1",
+                icon: image,
             });
             const marker2 = new google.maps.Marker({
                 position: name2,
                 map,
                 title: "2",
+
             });
             const marker3 = new google.maps.Marker({
                 position: name3,

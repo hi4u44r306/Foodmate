@@ -32,6 +32,9 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
+    <!--=read url==============================================================================================-->
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 
 </head>
@@ -71,15 +74,15 @@
 
     <body class="bg-light">
         <div class="container-fluid">
-            <div class="row mx-30">
+            <div class="row mx-10">
                 <div class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-danger">
                     <div class="row bg-profile">
-
-                        <div class="col-lg-6 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
+                        <div class="col-lg-12 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
                             <div id="profileSection">
                                 <div class="col-12 col-12 mb-3 text-center">
-                                    <img id="userAvatar" src="./images/icons/main icon.png" alt="Logo, I guess?">
+                                    <img id="p-image" src="#" alt="your image" />
                                 </div>
+                                <!--display user name-->
                                 <div class="col-12 col-12 mb-4 text-center">
                                     <span class="h3" id="userPfFullName">Name</span>
                                     <span class="h3" id="userPfSurname">Surname</span>
@@ -98,6 +101,10 @@
                             </div>
                             <div id="editProfileForm">
                                 <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
+                                <div class="col-12 col-12 mb-3 text-center">
+                                    <input type='file' onchange="readURL(this);" />
+                                    <img id="p-image" src="#" alt="your image" />
+                                </div>
                                 <div class="form-group">
                                     <label for="userFullName">Name<span class="text-danger ml-1">*</span></label>
                                     <input type="text" class="form-control" id="userFullName"

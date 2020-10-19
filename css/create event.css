@@ -672,7 +672,7 @@ img {
 }
 
 #map {
-  height: 50vh;
+  height: 100vh;
   width: 50vw;
   position: relative;
   background: #CCC;

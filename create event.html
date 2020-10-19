@@ -37,6 +37,109 @@
 
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
+    defer></script>
+
+  <script>
+    function sendlc() {
+      alert(test);
+    };
+    // This example displays a marker at the center of Australia.
+    // When the user clicks the marker, an info window opens.
+    function initMap() {
+      const name1 = { lat: 24.988469, lng: 121.343767 };
+      const name2 = { lat: 24.989672, lng: 121.344226 };
+      const name3 = { lat: 24.988666, lng: 121.343277 };
+      const name4 = { lat: 24.990219, lng: 121.344342 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 17,
+        center: name1,
+        center: name2,
+        center: name3,
+        center: name4,
+      });
+      const contentString1 =
+        '<div id="content1">' +
+        '<h4><b>里吉拿義大利麵</b></h4>' +
+        "<p>營業時間: 早上11點至晚上9點</p>" +
+        '<a href="menu.html">' +
+        "Select this place</a> " +
+        "</div>";
+      const contentString2 =
+        '<div id="content2">' +
+        '<h4><b>八哥重慶酸辣粉</b></h4>' +
+        "<p>營業時間: 早上11點至晚上9點</p>" +
+        '<a href="menu.html">' +
+        "Select this place</a> " +
+        "</div>";
+      const contentString3 =
+        '<div id="content3">' +
+        '<h4><b>品誠豆花</b></h4>' +
+        "<p>營業時間: 早上11點至晚上9點</p>" +
+        '<a href="menu.html">' +
+        "Select this place</a> " +
+        "</div>";
+      const contentString4 =
+        '<div id="content4">' +
+        '<h4 id="address"><b>泰皇泰式料理</b></h4>' +
+        "<p>營業時間: 早上11點至晚上9點</p>" +
+        '<button onclick="sendlc(document.getElementById("address"))">' +
+        "Select this place</button> " +
+        "</div>";
+
+      const image = {
+        url: "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
+        size: new google.maps.Size(20, 32),
+      };
+      const infowindow1 = new google.maps.InfoWindow({
+        content: contentString1,
+      });
+      const infowindow2 = new google.maps.InfoWindow({
+        content: contentString2,
+      });
+      const infowindow3 = new google.maps.InfoWindow({
+        content: contentString3,
+      });
+      const infowindow4 = new google.maps.InfoWindow({
+        content: contentString4,
+      });
+      const marker1 = new google.maps.Marker({
+        position: name1,
+        map,
+        title: "1",
+      });
+      const marker2 = new google.maps.Marker({
+        position: name2,
+        map,
+        title: "2",
+
+      });
+      const marker3 = new google.maps.Marker({
+        position: name3,
+        map,
+        title: "3",
+      });
+      const marker4 = new google.maps.Marker({
+        position: name4,
+        map,
+        title: "4",
+      });
+      marker1.addListener("click", () => {
+        infowindow1.open(map, marker1);
+      });
+      marker2.addListener("click", () => {
+        infowindow2.open(map, marker2);
+      });
+      marker3.addListener("click", () => {
+        infowindow3.open(map, marker3);
+      });
+      marker4.addListener("click", () => {
+        infowindow4.open(map, marker4);
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -155,98 +258,7 @@
         </div>
       </div>
 
-      <div>
-        <div id="app" class="container">
-
-          <!-- 搜尋框 -->
-          <div class="row">
-            <div class="col google-map">
-              <h5>Search restaurant：</h5>
-              <div class="form-group">
-                <input type="text" class="form-control" ref="site" v-model="site">
-              </div>
-            </div>
-          </div>
-
-          <!-- 放google map的div -->
-          <div class="row">
-            <div class="col google-map">
-              <div id="map" class="embed-responsive embed-responsive-16by9"></div>
-            </div>
-          </div>
-
-          <hr>
-        </div>
-
-        <!-- 將 YOUR_API_KEY 替換成你的 API Key 即可 -->
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-
-        <!-- map -->
-        <script>
-          const googleMap = new Vue({
-            el: '#app',
-            data: {
-              map: null,
-              autocomplete: null,
-              site: '', // place API要綁定的搜尋框
-              place: null // 存place確定後回傳的資料
-            },
-            methods: {
-              // init google map
-              initMap() {
-
-                let location = {
-                  lat: 24.985208,
-                  lng: 121.343280
-                };
-
-                this.map = new google.maps.Map(document.getElementById('map'), {
-                  center: location,
-                  zoom: 17
-                });
-              },
-              // 地址自動完成 + 地圖的中心移到輸入結果的地址上
-              siteAuto() {
-
-                let options = {
-                  componentRestrictions: { country: 'tw' } // 限制在台灣範圍
-                };
-                this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
-                this.autocomplete.addListener('place_changed', () => {
-                  this.place = this.autocomplete.getPlace();
-                  if (this.place.geometry) {
-                    let searchCenter = this.place.geometry.location;
-                    this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
-
-                    // 放置標記
-                    let marker = new google.maps.Marker({
-                      position: searchCenter,
-                      map: this.map
-                    });
-
-                    // info window
-                    let infowindow = new google.maps.InfoWindow({
-                      content: this.place.formatted_address
-                    });
-                    infowindow.open(this.map, marker);
-
-                  }
-                });
-              }
-            },
-            mounted() {
-              window.addEventListener('load', () => {
-
-                this.initMap();
-                this.siteAuto();
-
-              });
-            }
-          })
-        </script>
-      </div>
+      <div id="map"></div>
     </div>
   </div>
   </div>

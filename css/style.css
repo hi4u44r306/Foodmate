@@ -28,3 +28,9 @@ a{
 .bg-profile{
     border-radius: 20px;
 }
+
+/*profile image*/
+.p-image{
+    width: 30px;
+    height: 30px;
+}

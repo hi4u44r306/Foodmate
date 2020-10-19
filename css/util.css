@@ -2983,6 +2983,11 @@
 	bottom: 0px;
 }
 
+/*navbar brand image*/
+.navbar-brand img{
+	width: 40px;
+	height: 40px;
+  }
 
 
 

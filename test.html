@@ -2,173 +2,266 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU">
+    <title>Sushi Finder</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css">
     <style>
-        .container {
-            
-        }
+         
+           #map {
+               height: 100%;
+               background-color: grey;
+           }
 
-        #map {
-            background: #CCC;
-        }
+         
+           html,
+           body {
+               height: 100%;
+               margin: 0;
+               padding: 0;
+           }
 
-        ul {
-            padding-top: 16px;
-        }
+           
+           #panel {
+               height: 100%;
+               width: null;
+               background-color: white;
+               position: fixed;
+               z-index: 1;
+               overflow-x: hidden;
+               transition: all .2s ease-out;
+           }
 
-        .media img {
-            max-width: 64px;
-        }
+           .open {
+               width: 250px;
+           }
 
-        .media h5,
-        p {
-            font-size: 14px;
-        }
+         
+           .hero {
+               width: 100%;
+               height: auto;
+               max-height: 166px;
+               display: block;
+           }
 
-        .mdeia p {
-            margin-bottom: 6px;
-        }
+           .place,
+           p {
+               font-family: 'open sans', arial, sans-serif;
+               padding-left: 18px;
+               padding-right: 18px;
+           }
 
-        .media h6 {
-            font-size: 12px;
-            color: #CCC;
-        }
+           .details {
+               color: darkslategrey;
+           }
 
-        .fixed-bottom {
-            position: fixed;
-            left: 16px;
-            bottom: 0;
-            max-width: 320px;
-        }
+           a {
+               text-decoration: none;
+               color: cadetblue;
+           }
     </style>
-
 </head>
 
 <body>
+   
+    <div id="panel"></div>
 
-    <div id="app" class="container">
+   
+    <div id="map"></div>
 
-        <!-- 搜尋框 -->
-        <div class="row">
-            <div class="col google-map">
-                <h5>Search：</h5>
-                <div class="form-group">
-                    <input type="text" class="form-control" ref="site" v-model="site">
-                </div>
-            </div>
-        </div>
-
-        <!-- 放google map的div -->
-        <div class="row">
-            <div class="col google-map">
-                <h5>Google Map：</h5>
-                <div id="map" class="embed-responsive embed-responsive-16by9"></div>
-            </div>
-        </div>
-
-        <hr>
-
-
-        <!-- 放評論摘要的div -->
-        <div class="row" v-if="place != null">
-            <div class="col" v-if="place.reviews != null">
-                <h5>評論：</h5>
-                <div class="row" v-for="p in place.reviews">
-                    <div class="col">
-                        <ul class="list-unstyled">
-                            <li class="media">
-                                <img :src="p.profile_photo_url" class="mr-3">
-                                <div class="media-body">
-                                    <h5 class="mt-0 mb-1">
-                                        <a target="_blank" :href="p.author_url">{{ p.author_name }}</a>
-                                    </h5>
-                                    <p>{{ p.text }}</p>
-                                    <h6>{{ p.relative_time_description }}</h6>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- 將 YOUR_API_KEY 替換成你的 API Key 即可 -->
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-
-    <!-- map -->
     <script>
-        const googleMap = new Vue({
-            el: '#app',
-            data: {
-                map: null,
-                autocomplete: null,
-                site: '', // place API要綁定的搜尋框
-                place: null // 存place確定後回傳的資料
-            },
-            methods: {
-                // init google map
-                initMap() {
+   
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    function initMap() {
+     
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+     
+      infoPane = document.getElementById('panel');
 
-                    let location = {
-                        lat: 25.0374865,
-                        lng: 121.5647688
-                    };
+     
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
 
-                    this.map = new google.maps.Map(document.getElementById('map'), {
-                        center: location,
-                        zoom: 16
-                    });
-                },
-                // 地址自動完成 + 地圖的中心移到輸入結果的地址上
-                siteAuto() {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('You are here!!!!!!!!!!!!!!!!');
+          infoWindow.open(map);
+          map.setCenter(pos);
 
-                    let options = {
-                        componentRestrictions: { country: 'tw' } // 限制在台灣範圍
-                    };
-                    this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
-                    this.autocomplete.addListener('place_changed', () => {
-                        this.place = this.autocomplete.getPlace();
-                        if (this.place.geometry) {
-                            let searchCenter = this.place.geometry.location;
-                            this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
+       
+          getNearbyPlaces(pos);
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    }
 
-                            // 放置標記
-                            let marker = new google.maps.Marker({
-                                position: searchCenter,
-                                map: this.map
-                            });
+    // Handle a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // Set default location to Sydney, Australia
+      pos = { lat: -33.856, lng: 151.215 };
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
+      });
 
-                            // info window
-                            let infowindow = new google.maps.InfoWindow({
-                                content: this.place.formatted_address
-                            });
-                            infowindow.open(this.map, marker);
+      // Display an InfoWindow at the map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
 
-                        }
-                    });
-                }
-            },
-            mounted() {
-                window.addEventListener('load', () => {
+      // Call Places Nearby Search on the default location
+      getNearbyPlaces(pos);
+    }
 
-                    this.initMap();
-                    this.siteAuto();
+    // Perform a Places Nearby Search Request
+    function getNearbyPlaces(position) {
+      let request = {
+        location: position,
+        rankBy: google.maps.places.RankBy.DISTANCE,
+        keyword: 'sushi'
+      };
 
-                });
-            }
-        })
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, nearbyCallback);
+    }
+
+    // Handle the results (up to 20) of the Nearby Search
+    function nearbyCallback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMarkers(results);
+      }
+    }
+
+    // Set markers at the location of each place result
+    function createMarkers(places) {
+      places.forEach(place => {
+        let marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
+
+       
+        // Add click listener to each marker
+        google.maps.event.addListener(marker, 'click', () => {
+          let request = {
+            placeId: place.place_id,
+            fields: ['name', 'formatted_address', 'geometry', 'rating',
+              'website', 'photos']
+          };
+
+         
+          service.getDetails(request, (placeResult, status) => {
+            showDetails(placeResult, marker, status)
+          });
+        });
+
+        // Adjust the map bounds to include the location of this marker
+        bounds.extend(place.geometry.location);
+      });
+      /* Once all the markers have been placed, adjust the bounds of the map to
+       * show all the markers within the visible area. */
+      map.fitBounds(bounds);
+    }
+
+   
+    // Builds an InfoWindow to display details above the marker
+    function showDetails(placeResult, marker, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        let placeInfowindow = new google.maps.InfoWindow();
+        let rating = "None";
+        if (placeResult.rating) rating = placeResult.rating;
+        placeInfowindow.setContent('<div><strong>' + placeResult.name +
+          '</strong><br>' + 'Rating: ' + rating + '</div>');
+        placeInfowindow.open(marker.map, marker);
+        currentInfoWindow.close();
+        currentInfoWindow = placeInfowindow;
+        showPanel(placeResult);
+      } else {
+        console.log('showDetails failed: ' + status);
+      }
+    }
+
+   
+    // Displays place details in a sidebar
+    function showPanel(placeResult) {
+      // If infoPane is already open, close it
+      if (infoPane.classList.contains("open")) {
+        infoPane.classList.remove("open");
+      }
+
+      // Clear the previous details
+      while (infoPane.lastChild) {
+        infoPane.removeChild(infoPane.lastChild);
+      }
+
+     
+      // Add the primary photo, if there is one
+      if (placeResult.photos) {
+        let firstPhoto = placeResult.photos[0];
+        let photo = document.createElement('img');
+        photo.classList.add('hero');
+        photo.src = firstPhoto.getUrl();
+        infoPane.appendChild(photo);
+      }
+
+      // Add place details with text formatting
+      let name = document.createElement('h1');
+      name.classList.add('place');
+      name.textContent = placeResult.name;
+      infoPane.appendChild(name);
+      if (placeResult.rating) {
+        let rating = document.createElement('p');
+        rating.classList.add('details');
+        rating.textContent = `Rating: ${placeResult.rating} \u272e`;
+        infoPane.appendChild(rating);
+      }
+      let address = document.createElement('p');
+      address.classList.add('details');
+      address.textContent = placeResult.formatted_address;
+      infoPane.appendChild(address);
+      if (placeResult.website) {
+        let websitePara = document.createElement('p');
+        let websiteLink = document.createElement('a');
+        let websiteUrl = document.createTextNode(placeResult.website);
+        websiteLink.appendChild(websiteUrl);
+        websiteLink.title = placeResult.website;
+        websiteLink.href = placeResult.website;
+        websitePara.appendChild(websiteLink);
+        infoPane.appendChild(websitePara);
+      }
+
+      // Open the infoPane
+      infoPane.classList.add("open");
+    }
     </script>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places&callback=initMap">
+    </script>
 </body>
 
 </html>
-<link>

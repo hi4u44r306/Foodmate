@@ -143,16 +143,18 @@
 </head>
 
 <body>
+  <!--send data to firebase-->
   <script>
     firebase.initializeApp({
       projectId: 'foodmate-database-test'
     });
     var db = firebase.firestore();
   </script>
+  <!--init firebase-->
   <script>
     initialize();
   </script>
-  <nav class="navbar sticky-top navbar-expand-sm navbar-light" style="background-color: rgba(243, 214, 151, 0.911);">
+  <nav class="navbar sticky-top navbar-expand-sm navbar-light" style="background-color: rgb(255, 172, 77)">
     <!--navbar-->
     <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
     <!--can put our app name-->
@@ -184,7 +186,7 @@
   </nav>
 
   <div class="limiter">
-    <div class="container-create100">
+    <div class="container-create100" style="background-color: cornsilk">
       <div class="create100-form validate-form">
         <!--enter food category-->
         <div class="validate-input">

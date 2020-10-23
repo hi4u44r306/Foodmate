@@ -53,12 +53,14 @@
       const name2 = { lat: 24.989672, lng: 121.344226 };
       const name3 = { lat: 24.988666, lng: 121.343277 };
       const name4 = { lat: 24.990219, lng: 121.344342 };
+      const name5 = { lat: 24.989890, lng: 121.343559 };
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 17,
         center: name1,
         center: name2,
         center: name3,
         center: name4,
+        center: name5,
       });
       const contentString1 =
         '<div id="content1">' +
@@ -88,7 +90,13 @@
         '<button onclick="sendlc(document.getElementById("address"))">' +
         "Select this place</button> " +
         "</div>";
-
+        const contentString5 =
+        '<div id="content5">' +
+        '<h4 id="address"><b>小判拉麵</b></h4>' +
+        "<p>營業時間: 早上11點至晚上9點</p>" +
+        '<button onclick="sendlc(document.getElementById("address"))">' +
+        "Select this place</button> " +
+        "</div>";
       const image = {
         url: "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
         size: new google.maps.Size(20, 32),
@@ -105,26 +113,34 @@
       const infowindow4 = new google.maps.InfoWindow({
         content: contentString4,
       });
+      const infowindow5 = new google.maps.InfoWindow({
+        content: contentString5,
+      });
       const marker1 = new google.maps.Marker({
         position: name1,
         map,
-        title: "1",
+        title: "里吉拿義大利麵",
       });
       const marker2 = new google.maps.Marker({
         position: name2,
         map,
-        title: "2",
+        title: "八哥重慶酸辣粉",
 
       });
       const marker3 = new google.maps.Marker({
         position: name3,
         map,
-        title: "3",
+        title: "品誠豆花",
       });
       const marker4 = new google.maps.Marker({
         position: name4,
         map,
-        title: "4",
+        title: "泰皇泰式料理",
+      });
+      const marker5 = new google.maps.Marker({
+        position: name5,
+        map,
+        title: "小判拉麵",
       });
       marker1.addListener("click", () => {
         infowindow1.open(map, marker1);
@@ -137,6 +153,9 @@
       });
       marker4.addListener("click", () => {
         infowindow4.open(map, marker4);
+      });
+      marker5.addListener("click", () => {
+        infowindow5.open(map, marker5);
       });
     }
   </script>

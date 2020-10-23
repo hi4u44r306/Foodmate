@@ -249,7 +249,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #ffffff;  
+  background: #ffffff;
 }
 
 .wrap-create100 {
@@ -516,8 +516,7 @@ input.input100 {
   width: 100%;
   height: 50px;
   border-radius: 10px;
-  background: #f5bb64
-  ;
+  background: #f5bb64;
 
   font-family: Montserrat-Bold;
   font-size: 20px;
@@ -659,17 +658,17 @@ img {
   object-fit: cover;
 }
 
-.nav-link { 
-  color: rgb(0, 0, 0); 
-} 
+.nav-link {
+  color: rgb(0, 0, 0);
+}
 /*Map*/
 #map {
-  background: #CCC;
+  background: #ccc;
 }
 
 #map {
   height: 100vh;
   width: 50vw;
   position: relative;
-  background: #CCC;
+  background: #ccc;
 }

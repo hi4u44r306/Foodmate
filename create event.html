@@ -33,11 +33,11 @@
   <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
 
-
-
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-
+  <!--==========================================Firebase stuff=====================================================-->
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script> 
+ <!--==========================================Google map stuff=====================================================-->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
     defer></script>
@@ -162,17 +162,7 @@
 </head>
 
 <body>
-  <!--send data to firebase-->
-  <script>
-    firebase.initializeApp({
-      projectId: 'foodmate-database-test'
-    });
-    var db = firebase.firestore();
-  </script>
-  <!--init firebase-->
-  <script>
-    initialize();
-  </script>
+  
   <nav class="navbar sticky-top navbar-expand-sm navbar-light" style="background-color: rgb(255, 172, 77)">
     <!--navbar-->
     <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
@@ -231,9 +221,14 @@
             <input Id="EventDate" class="input100" type="date" name="birthday" />
             <span class="focus-input100"></span>
           </div>
+          <!--select what time-->
+          <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
+            <input class="input100" type="time" id="Eventtime" name="appt" min="09:00" max="18:00" required>
+            <span class="focus-input100"></span>
+          </div>
           <!--select how many members-->
           <div class="dropdown dropright" data-validate="Members is required">
-            <select Id="Member" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
+            <select Id="Eventmember" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
               <option>Member...</option>
               <option>1</option>
               <option>2</option>
@@ -262,8 +257,20 @@
           </div>
           <br>
           <!--Send data from foodmate to firebase-->
-          <button onclick="CreateOneEvent()" class="create100-form-btn">
+          <button id="create" class="create100-form-btn">
             Create Event
+          </button>
+          <br>
+          <button id="select" class="create100-form-btn">
+            Select Event
+          </button>
+          <br>
+          <button id="update" class="create100-form-btn">
+            Update Event
+          </button>
+          <br>
+          <button id="delete" class="create100-form-btn">
+            Delete Event
           </button>
         </div>
       </div>
@@ -281,14 +288,55 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
 
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="/__/firebase/7.21.0/firebase-app.js"></script>
+<!----------------------------------Firebase stuff------------------------------------------------->
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="/__/firebase/7.21.0/firebase-auth.js"></script>
-  <script src="/__/firebase/7.21.0/firebase-firestore.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
+<script id="MainScript">
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyBTvis3u3Lqoa_YjCb4xR656_vxdrrjXnk",
+    authDomain: "foodmate-database-test.firebaseapp.com",
+    databaseURL: "https://foodmate-database-test.firebaseio.com",
+    projectId: "foodmate-database-test",
+    storageBucket: "foodmate-database-test.appspot.com",
+    messagingSenderId: "535444672685",
+    appId: "1:535444672685:web:4ca54611ad1e8267a7b624",
+    measurementId: "G-CNQ002VP5X"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+//-------------------------Ready data----------------------------//
+      var cateV, nameV, dateV, timeV, memberV, descV, addressV;
+
+      function Ready(){
+        cateV = document.getElementById('FoodCategory').value;
+        nameV = document.getElementById('EventName').value;
+        dateV = document.getElementById('EventDate').value;
+        timeV = document.getElementById('Eventtime').value;
+        memberV = document.getElementById('Eventmember').value;
+        descV = document.getElementById('Description').value;
+        addressV = document.getElementById('address').value;
+      }
+      
+//-------------------------Ready data----------------------------//
+      document.getElementById('create').onclick = function(){
+         Ready();
+         firebase.database().ref('Event/'+nameV).set({
+            CateofEvent: cateV, 
+            NameofEvent: nameV,
+            DateofEvent: dateV,
+            TimeofEvent: timeV,
+            MemberofEvent: memberV,
+            DescriptionofEvent: descV,
+            LocationofEvent: addressV
+         })
+      }
+</script>
 </body>
 
 </html>

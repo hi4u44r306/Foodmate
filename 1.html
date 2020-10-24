@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Create event</title>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+  </head>
+
+  <body>
+    <select id="FoodCategory" class="wrap-input100 p-2">
+      <option>Category...</option>
+      <option>Italian cuisine</option>
+      <option>Thai food</option>
+      <option>Japanese food</option>
+      <option>Taiwanese food</option>
+      <option>American food</option>
+      <option>Hong Kong food</option>
+    </select>
+    <br />
+    <input
+      id="EventName"
+      class="input100"
+      type="text"
+      placeholder="Title..."
+      name="eventname"
+    />
+    <br />
+    <input id="EventDate" class="input100" type="date" name="birthday" />
+    <br />
+    <input
+      class="input100"
+      type="time"
+      id="Eventtime"
+      name="appt"
+      min="09:00"
+      max="18:00"
+      required
+    />
+    <br />
+    <select
+      id="Eventmember"
+      class="wrap-input100 p-2"
+      type="select"
+      placeholder="Members..."
+      name="food type"
+    >
+      <br />
+      <option>Member...</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+    </select>
+    <br />
+    <input
+      id="Description"
+      class="input100"
+      type="text"
+      placeholder="Description...
+              "
+      name="Description..."
+    />
+    <br />
+    <input
+      class="input100"
+      type="text"
+      placeholder="Location
+              "
+      name="Location..."
+      id="address"
+    />
+    <br />
+    <!--Send data from foodmate to firebase-->
+    <button id="create" class="create100-form-btn">Create Event</button>
+    <br />
+    <button id="select" class="create100-form-btn">Select Event</button>
+    <br />
+    <button id="update" class="create100-form-btn">Update Event</button>
+    <br />
+    <button id="delete" class="create100-form-btn">Delete Event</button>
+
+    <!----------------------------------Firebase stuff------------------------------------------------->
+    <script id="MainScript">
+      var firebaseConfig = {
+        apiKey: "AIzaSyBQ82dOmyoQDLaWTGQrWEgSXFkLDcSGP7A",
+        authDomain: "create-event-test.firebaseapp.com",
+        databaseURL: "https://create-event-test.firebaseio.com",
+        projectId: "create-event-test",
+        storageBucket: "create-event-test.appspot.com",
+        messagingSenderId: "88437951827",
+        appId: "1:88437951827:web:b927e38b008d1a1e99e5a6",
+        measurementId: "G-EMZH5X2CPH",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      //-------------------------Ready data----------------------------//
+      var cateV, nameV, dateV, timeV, memberV, descV, addressV;
+
+      function Ready() {
+        cateV = document.getElementById("FoodCategory").value;
+        nameV = document.getElementById("EventName").value;
+        dateV = document.getElementById("EventDate").value;
+        timeV = document.getElementById("Eventtime").value;
+        memberV = document.getElementById("Eventmember").value;
+        descV = document.getElementById("Description").value;
+        addressV = document.getElementById("address").value;
+      }
+
+      //-------------------------Ready data----------------------------//
+      document.getElementById("create").onclick = function () {
+        alert("成功");
+        Ready();
+        firebase
+          .database()
+          .ref("Event/" + nameV)
+          .set({
+            CateofEvent: cateV,
+            NameofEvent: nameV,
+            DateofEvent: dateV,
+            TimeofEvent: timeV,
+            MemberofEvent: memberV,
+            DescriptionofEvent: descV,
+            LocationofEvent: addressV,
+          });
+      };
+    </script>
+  </body>
+</html>

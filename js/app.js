@@ -323,3 +323,32 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+/*Forgot Password*/
+$("#btn-resetPassword").click(function()
+{
+    var auth = firebase.auth();
+    var email = $("#userSIEmail").val();
+
+    if(email != "")
+    {
+        auth.sendPasswordResetEmail(email).then(function()
+        {
+            window.alert("Email has been sent to you, Please check and Verify");
+        })
+        .catch(function(error)
+        {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            console.log(errorCode);
+            onsole.log(errorMessage);
+
+            window.alert("Message : " + errorMessage);
+        });
+    }
+    else
+    {
+        window.alert("Please write your email first");
+    }
+});

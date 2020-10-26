@@ -408,4 +408,3 @@ function uploadFile(){
         });
     });
 }
-https://www.youtube.com/watch?v=4ZCy1AK7x4I

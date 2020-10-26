@@ -139,18 +139,6 @@
             <div class="row bg-profile">
               <div class="col-lg-12 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
                 <div id="profileSection">
-                  <label class="col-12 col-12 mb-3 text-center">
-                    Upload img
-                    <input type="file" class="upload-group" id="file" />
-                  </label>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    id="uploadButton"
-                    onclick="uploadFile()"
-                  >
-                    Submit
-                  </button>
                   <!--display user name-->
                   <div class="col-12 col-12 mb-4 text-center">
                     <span class="h3" id="userPfFullName">Name</span>
@@ -178,7 +166,18 @@
                 </div>
                 <div id="editProfileForm">
                   <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
-
+                  <label class="col-12 col-12 mb-3 text-center">
+                    Upload img
+                    <input type="file" class="upload-group" id="file" />
+                  </label>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-block text-uppercase mb-3"
+                    id="uploadButton"
+                    onclick="uploadFile()"
+                  >
+                    Submit
+                  </button>
                   <div class="form-group">
                     <label for="userFullName"
                       >Name<span class="text-danger ml-1">*</span></label

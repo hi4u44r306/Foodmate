@@ -368,6 +368,7 @@ $("#file").on("change", function(event){
 
 /*Submit function*/
 function uploadFile(){
+    alert('You have been upload your profile picture!!!!')
     // Create a root reference
     var filename = selectedFile.name;
     var storageRef = firebase.storage().ref('/profileImage' + filename);
@@ -395,7 +396,15 @@ function uploadFile(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-        console.log('File available at', downloadURL);
+            var postKey = firebase.database().ref().push().key;
+            var updates = {};
+            var postData= {
+                url : downloadURL,
+                user : user.uid,
+            }
+            updates['/Posts/'+postKey] = postData;
+            firebase.database().ref().update(updates);
+            console.log('File available at', downloadURL);
         });
     });
 }

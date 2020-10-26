@@ -139,9 +139,18 @@
             <div class="row bg-profile">
               <div class="col-lg-12 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
                 <div id="profileSection">
-                  <div class="col-12 col-12 mb-3 text-center">
-                    <img id="p-image" src="#" alt="your image" />
-                  </div>
+                  <label class="col-12 col-12 mb-3 text-center">
+                    Upload img
+                    <input type="file" class="upload-group" id="file" />
+                  </label>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="uploadButton"
+                    onclick="uploadFile()"
+                  >
+                    Submit
+                  </button>
                   <!--display user name-->
                   <div class="col-12 col-12 mb-4 text-center">
                     <span class="h3" id="userPfFullName">Name</span>
@@ -169,10 +178,7 @@
                 </div>
                 <div id="editProfileForm">
                   <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
-                  <div class="col-12 col-12 mb-3 text-center">
-                    <input type="file" onchange="readURL(this);" />
-                    <img id="p-image" src="#" alt="your image" />
-                  </div>
+
                   <div class="form-group">
                     <label for="userFullName"
                       >Name<span class="text-danger ml-1">*</span></label
@@ -252,16 +258,17 @@
       <!-- Firebase -->
 
       <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
 
       <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-      <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
       <!-- Add Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
 
-      <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
 
       <script>
         var firebaseConfig = {

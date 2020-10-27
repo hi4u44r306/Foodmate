@@ -415,13 +415,13 @@ function uploadFile(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            var postKey = firebase.database().ref('Posts/').push().key;
+            var postKey = firebase.database().ref('/UserProfileImg/').push().key;
             var updates = {};
             var postData= {
                 url : downloadURL,
                 user : user.uid,
             };
-            updates['/Posts/'+postKey] = postData;
+            updates['/UserProfileImg/'+postKey] = postData;
             firebase.database().ref().update(updates);
             console.log('File available at', downloadURL);
         });
@@ -429,3 +429,46 @@ function uploadFile(){
 }
 
 /*=====================================Display Profile Image=============================================== */
+$(document).ready(function(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          var token = firebase.auth().currentUser.uid;
+          queryDatabase(token);
+        } else {
+          // No user is signed in.
+          window.location = "loginpage.html";
+        }
+      });
+});
+
+
+function queryDatabase(token){
+        var userId = firebase.auth().currentUser.uid;
+            return firebase.database().ref('/UserProfileImg/').once('value').then(function(snapshot) {
+                var PostObject = snapshot.val();
+                var username= (snapshot.val() && snapshot.val().username) || 'Anonymous';
+                var keys = Object.keys(PostObject);
+                var currentRow;
+                for (var i = 0; i < keys.length; i++){
+                    var currentObject = PostObject[keys[i]];
+                    if (i % 3 ==0){
+                        currentRow= document.createElement("div");
+                        $(currentRow).addClass("row");
+                        $("#contentHolder").append(currentRow);
+                    }
+                    var col = document.createElement("div");
+                    $(col).addClass("col-lg-4");
+                    var image = document.createElement("img");
+                    $(image).addClass("ContentImage");
+                    image.src = currentObject.url;
+                    var p = document.createElement("p");
+                    $(p).html(currentObject.caption);
+                    $(col).append(image);
+                    $(col).append(p);
+                    $(currentRow).append(col);
+                }
+
+                // ...
+      });
+}

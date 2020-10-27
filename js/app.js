@@ -429,6 +429,11 @@ function uploadFile(){
 }
 
 /*=====================================Display Profile Image=============================================== */
+var user = firebase.auth().currentUser;
+var uid;
+            if (user != null) {
+                uid = user.uid;
+            }
 $(document).ready(function(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -437,7 +442,6 @@ $(document).ready(function(){
           queryDatabase(token);
         } else {
           // No user is signed in.
-          window.location = "loginpage.html";
         }
       });
 });

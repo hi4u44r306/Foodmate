@@ -137,12 +137,17 @@
             class="col-lg-10 col-md-10 offset-lg-1 offset-md-1 bg-white shadow my-5 border border-danger"
           >
             <div class="row bg-profile">
-              <div class="col-lg-12 col-md-6 p-lg-5 p-md-5 px-3 py-4 text-dark">
+              <div
+                class="col-lg-12 col-md-12 p-lg-5 p-md-5 px-3 py-4 text-dark"
+              >
                 <div id="profileSection">
                   <!--display user name-->
                   <div class="col-12 col-12 mb-4 text-center">
                     <span class="h3" id="userPfFullName">Name</span>
                     <span class="h3" id="userPfSurname">Surname</span>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfAge">Age</p>
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfBio">Biography</p>
@@ -204,6 +209,18 @@
                     <small id="userSurnameError" class="form-text text-danger"
                       >Please fill the field.</small
                     >
+                  </div>
+                  <div class="form-group">
+                    <label for="userAge"
+                      >Age<span class="text-danger ml-1">*</span></label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="userAge"
+                      rows="1"
+                      onblur="checkUserAge()"
+                      placeholder="Age"
+                    ></textarea>
                   </div>
                   <div class="form-group">
                     <label for="userBio"

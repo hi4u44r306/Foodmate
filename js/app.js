@@ -57,6 +57,16 @@ function checkUserPassword() {
         document.getElementById("userPasswordError").style.display = "none";
     }
 }
+// xxxxxxxxxx Check user Agexxxxxxxxxx
+function checkUserAge() {
+    var userAge = document.getElementById("userAge").value;
+    var flag = false;
+    if (flag) {
+        document.getElementById("userAgeError").style.display = "block";
+    } else {
+        document.getElementById("userAgeError").style.display = "none";
+    }
+}
 // xxxxxxxxxx Check user bio characters. It'll use later xxxxxxxxxx
 function checkUserBio() {
     var userBio = document.getElementById("userBio").value;
@@ -102,10 +112,9 @@ function signUp() {
                 userSurname: userSurname,
                 userEmail: userEmail,
                 userPassword: userPassword,
-                //userFb: "https://www.facebook.com/",
-                //userTw: "https://twitter.com/",
-                //userGp: "https://plus.google.com/",
                 userBio: "User biography",
+                userAge: "User Age",
+
             }
             firebaseRef.child(uid).set(userData);
             swal('Your Account Created', 'Your account was created successfully, you can log in now.',
@@ -215,6 +224,7 @@ firebase.auth().onAuthStateChanged((user) => {
             //document.getElementById("userPfTw").setAttribute('href', dataSnapShot.val().userTw);
             //document.getElementById("userPfGp").setAttribute('href', dataSnapShot.val().userGp);
             document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
+            document.getElementById("userPfAge").innerHTML = dataSnapShot.val().userAge;
         })
     } else {
         //   No user is signed in.
@@ -230,12 +240,14 @@ function showEditProfileForm() {
     //var userPfTw = document.getElementById("userPfTw").getAttribute("href");
     //var userPfGp = document.getElementById("userPfGp").getAttribute("href");
     var userPfBio = document.getElementById("userPfBio").innerHTML;
+    var userPfAge = document.getElementById("userPfAge").innerHTML;
     document.getElementById("userFullName").value = userPfFullName;
     document.getElementById("userSurname").value = userPfSurname;
     //document.getElementById("userFacebook").value = userPfFb; 
     //document.getElementById("userTwitter").value = userPfTw; 
     //document.getElementById("userGooglePlus").value = userPfGp; 
     document.getElementById("userBio").value = userPfBio;
+    document.getElementById("userAge").value = userPfAge;
 }
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm() {
@@ -250,6 +262,7 @@ function saveProfile() {
     //let userTwitter = document.getElementById("userTwitter").value 
     //let userGooglePlus = document.getElementById("userGooglePlus").value 
     let userBio = document.getElementById("userBio").value
+    let userAge = document.getElementById("userAge").value
     var userFullNameFormate = /^([A-Za-z.\s_-])/;
     var checkUserFullNameValid = userFullName.match(userFullNameFormate);
     if (checkUserFullNameValid == null) {
@@ -270,6 +283,7 @@ function saveProfile() {
             //userTw: userTwitter,
             //userGp: userGooglePlus,
             userBio: userBio,
+            userAge: userAge,
         }
         firebaseRef.child(uid).set(userData);
         swal({
@@ -370,6 +384,11 @@ $("#file").on("change", function(event){
 function uploadFile(){
     alert('You have been upload your profile picture!!!!')
     // Create a root reference
+    var user = firebase.auth().currentUser;
+    var uid;
+            if (user != null) {
+                uid = user.uid;
+            }
     var filename = selectedFile.name;
     var storageRef = firebase.storage().ref('/profileImage' + filename);
     var uploadTask = storageRef.put(selectedFile);  
@@ -396,15 +415,17 @@ function uploadFile(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            var postKey = firebase.database().ref().push().key;
+            var postKey = firebase.database().ref('Posts/').push().key;
             var updates = {};
             var postData= {
                 url : downloadURL,
                 user : user.uid,
-            }
+            };
             updates['/Posts/'+postKey] = postData;
             firebase.database().ref().update(updates);
             console.log('File available at', downloadURL);
         });
     });
 }
+
+/*=====================================Display Profile Image=============================================== */

@@ -1,57 +1,62 @@
-body{
+body {
   background-color: white;
 }
 
-.container{
+.container {
   margin-top: 20px;
   margin-left: 10%;
 }
 
-.topcat{
+.topcat {
   padding-left: 2.5rem;
   padding-top: 1.5rem;
 }
 
-img{
-  width:150px;
+img {
+  width: 150px;
   height: 150px;
   object-fit: cover;
   cursor: pointer;
 }
 
-.navbar-brand img{
+.navbar-brand img {
   width: 40px;
   height: 40px;
 }
 
-.card{
-  background-color:white; 
-  border-radius: 20px;  
+.card {
+  background-color: white;
+  border-radius: 20px;
 }
 
-.card img{
+.card img {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
-.mb-4{
+.mb-4 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.card-title{
+.card-title {
   font-size: 15px;
 }
 
-.card-text{
+.card-text {
   font-size: 13px;
 }
 
 .navbarMenu .nav-item.active,
-.navbarMenu .nav-item:hover{
-  color: azure;  
+.navbarMenu .nav-item:hover {
+  color: azure;
   background-color: #333;
 }
-.nav-link { 
-  color: rgb(0, 0, 0); 
-} 
+.nav-link {
+  color: rgb(0, 0, 0);
+}
+
+.contentholder {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}

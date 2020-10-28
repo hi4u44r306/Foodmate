@@ -496,7 +496,7 @@ function EventuploadFile(){
                 uid = user.uid;
             }
     var filename = selectedFile.name;
-    var storageRef = firebase.storage().ref('/EventImageandInfo' + filename);
+    var storageRef = firebase.storage().ref('/Event/' + filename);
     var uploadTask = storageRef.put(selectedFile);  
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
@@ -521,7 +521,7 @@ function EventuploadFile(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            var postKey = firebase.database().ref('/EventImgandInfo/').push().key;
+            var postKey = firebase.database().ref('/Event/').push().key;
             var updates = {};
             var postData= {
                 url : downloadURL,
@@ -534,7 +534,7 @@ function EventuploadFile(){
                 address: $("#address").val(),
                 user : user.uid,
             };
-            updates['/EventImgandInfo/'+postKey] = postData;
+            updates['/Event/'+postKey] = postData;
             firebase.database().ref().update(updates);
             console.log('File available at', downloadURL);
         });
@@ -562,7 +562,7 @@ $(document).ready(function(){
 
 function queryDatabase(token){
         var userId = firebase.auth().currentUser.uid;
-            return firebase.database().ref('/EventImgandInfo/').once('value').then(function(snapshot) {
+            return firebase.database().ref('/Event/').once('value').then(function(snapshot) {
                 var PostObject = snapshot.val();
                 var username= (snapshot.val() && snapshot.val().username) || 'Anonymous';
                 var keys = Object.keys(PostObject);
@@ -575,11 +575,11 @@ function queryDatabase(token){
                         $("#contentholder").append(currentRow);
                     }
                     var row = document.createElement("div");
-                    $(row).addClass("row row-cols-1 row-cols-md-6 ml-auto mr-auto");
+                    $(row).addClass("col mb-6");
                     var col = document.createElement("div");
-                    $(col).addClass("col-lg-4");
+                    $(col).addClass("card h-100");
                     var image = document.createElement("img");
-                    $(image).addClass("ContentImage");
+                    $(image).addClass("card-img-top");
                     image.src = currentObject.url;
                     var p = document.createElement("p");
                     $(p).html(currentObject.FoodCat);
@@ -589,7 +589,7 @@ function queryDatabase(token){
                     $(p).html(currentObject.EventM);
                     $(p).html(currentObject.Des);
                     $(p).html(currentObject.address);
-                    $(p).addClass("contentCaption")
+                    $(p).addClass("card-title");
                     $(col).append(image);
                     $(col).append(p);
                     $(currentRow).append(col);

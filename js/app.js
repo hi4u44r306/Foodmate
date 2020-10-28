@@ -575,7 +575,7 @@ function queryDatabase(token){
                         $("#contentholder").append(currentRow);
                     }
                     var row = document.createElement("div");
-                    $(row).addClass("col mb-6");
+                    $(row).addClass("col-mb-4");
                     var col = document.createElement("div");
                     $(col).addClass("card h-100");
                     var image = document.createElement("img");

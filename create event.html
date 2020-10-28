@@ -1,41 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Create event</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="images/icons/main icon.png" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="css/util.css" />
-  <link rel="stylesheet" type="text/css" href="css/create event.css" />
-  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-  <!--===============================================================================================-->
-  <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
-
-  <!--==========================================Firebase stuff=====================================================-->
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script> 
- <!--==========================================Google map stuff=====================================================-->
-  <script
+<html>
+  <head>
+    <title>Create Event</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/main icon.png" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/create event.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css  " />
+    <script src="./js/sweetalert2.js"></script>
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c3281da27.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--=read url==============================================================================================-->
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
+    ></script>
+    <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
     defer></script>
 
@@ -156,207 +195,271 @@
       });
     }
   </script>
-</head>
+  </head>
 
-<body>
-  
-  <nav class="navbar sticky-top navbar-expand-sm navbar-light" style="background-color: rgb(255, 172, 77)">
-    <!--navbar-->
-    <a href="menu.html" class="navbar-brand"><img src="images/icons/main icon.png" /></a>
-    <!--can put our app name-->
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="nav nav-pills mr-auto">
-        <li class="nav-item">
-          <a href="menu.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="create event.html" class="nav-link active"><i class="fas fa-plus"></i> Creat-Event</a>
-        </li>
-        <li class="nav-item">
-          <a href="chat.html" class="nav-link"><i class="fas fa-comments"></i> Chat</a>
-        </li>
-        <li class="nav-item">
-          <a href="profile.html" class="nav-link"><i class="fas fa-id-card-alt"></i> Profile</a>
-        </li>
-        <li class="nav-item">
-          <a href="notification.html" class="nav-link"><i class="fas fa-bell"></i> Notification</a>
-        </li>
-        <li class="nav-item">
-          <a href="googlemap.html" class="nav-link"><i class="fas fa-map-marked-alt"></i> Search Restaurant</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <body>
+    <nav
+      class="navbar sticky-top navbar-expand-sm navbar-light"
+      style="background-color: rgb(255, 172, 77)"
+    >
+      <!--navbar-->
+      <a href="menu.html" class="navbar-brand"
+        ><img src="images/icons/main icon.png"
+      /></a>
+      <span class="col-mb-4"></span>
+      <!--can put our app name-->
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#navbarMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="nav nav-pills mr-auto">
+          <li class="nav-item">
+            <a href="menu.html" class="nav-link"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="create event.html" class="nav-link active"
+              ><i class="fas fa-plus"></i> Creat-Event</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="chat.html" class="nav-link"
+              ><i class="fas fa-comments"></i> Chat</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="profile.html" class="nav-link"
+              ><i class="fas fa-id-card-alt"></i> Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="notification.html" class="nav-link"
+              ><i class="fas fa-bell"></i> Notification</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="googlemap.html" class="nav-link"
+              ><i class="fas fa-map-marked-alt"></i> Search Restaurant</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <div class="limiter">
-    <div class="container-create100" style="background-color: cornsilk">
-      <div class="create100-form validate-form">
-        <!--enter food category-->
-        <div class="validate-input">
-          <div class="dropdown dropright">
-            <select Id="FoodCategory" class="wrap-input100 p-2 ">
-              <option>Category...</option>
-              <option>Italian cuisine</option>
-              <option>Thai food</option>
-              <option>Japanese food</option>
-              <option>Taiwanese food</option>
-              <option>American food</option>
-              <option>Hong Kong food</option>
-            </select>
-            <span class="focus-input100"></span>
+    <div class="limiter">
+        <div class="container-create100" style="background-color: cornsilk">
+          <div class="create100-form validate-form">
+              <!-- Event Image upload -->
+            <label class="col-12 col-12 mb-3 text-center">
+                Upload Your Event Image!!!!
+              <input type="file" class="upload-group" id="Eventfile" />
+            </label>
+              
+            <!--enter food category-->
+            <div class="validate-input">
+              <div class="dropdown dropright">
+                <select Id="FoodCategory" class="wrap-input100 p-2 ">
+                  <option>Category...</option>
+                  <option>Italian cuisine</option>
+                  <option>Thai food</option>
+                  <option>Japanese food</option>
+                  <option>Taiwanese food</option>
+                  <option>American food</option>
+                  <option>Hong Kong food</option>
+                </select>
+                <span class="focus-input100"></span>
+              </div>
+              <!--enter event name-->
+              <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+                <input Id="EventName" class="input100" type="text" placeholder="Title..." name="eventname" />
+                <span class="focus-input100"></span>
+              </div>
+              <!--select what date-->
+              <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
+                <input Id="EventDate" class="input100" type="date" name="birthday" />
+                <span class="focus-input100"></span>
+              </div>
+              <!--select what time-->
+              <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
+                <input class="input100" type="time" id="Eventtime" name="appt" min="09:00" max="18:00" required>
+                <span class="focus-input100"></span>
+              </div>
+              <!--select how many members-->
+              <div class="dropdown dropright" data-validate="Members is required">
+                <select Id="Eventmember" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
+                  <option>Member...</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+                <span class="focus-input100"></span>
+              </div>
+              <!--Description-->
+              <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+                <input id="Description" class="input100" type="text" placeholder="Description...
+                  " name="Description..." />
+                <span class="focus-input100"></span>
+              </div>
+              <!--Location-->
+              <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+                <input class="input100" type="text" placeholder="Location
+                  " name="Location..." id="address" />
+                <span class="focus-input100"></span>
+              </div>
+              <br>
+              <button
+                type="button"
+                class="btn btn-primary btn-block text-uppercase mb-3"
+                id="EventuploadButton"
+                onclick="EventuploadFile()"
+              >
+                Create Event
+              </button>
+              <br>
+              <!--Send data from foodmate to firebase-->
+              
+              <button id="select" class="create100-form-btn">
+                Select Event
+              </button>
+              <br>
+              <button id="update" class="create100-form-btn">
+                Update Event
+              </button>
+              <br>
+              <button id="delete" class="create100-form-btn">
+                Delete Event
+              </button>
+            </div>
           </div>
-          <!--enter event name-->
-          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input Id="EventName" class="input100" type="text" placeholder="Title..." name="eventname" />
-            <span class="focus-input100"></span>
-          </div>
-          <!--select what date-->
-          <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
-            <input Id="EventDate" class="input100" type="date" name="birthday" />
-            <span class="focus-input100"></span>
-          </div>
-          <!--select what time-->
-          <div class="wrap-input100 validate-input" data-validate="Valid birthday is required: XXXX/XX/XX">
-            <input class="input100" type="time" id="Eventtime" name="appt" min="09:00" max="18:00" required>
-            <span class="focus-input100"></span>
-          </div>
-          <!--select how many members-->
-          <div class="dropdown dropright" data-validate="Members is required">
-            <select Id="Eventmember" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
-              <option>Member...</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-            <span class="focus-input100"></span>
-          </div>
-          <!--Description-->
-          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input id="Description" class="input100" type="text" placeholder="Description...
-              " name="Description..." />
-            <span class="focus-input100"></span>
-          </div>
-          <!--Location-->
-          <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-            <input class="input100" type="text" placeholder="Location
-              " name="Location..." id="address" />
-            <span class="focus-input100"></span>
-          </div>
-          <br>
-          <!--Send data from foodmate to firebase-->
-          <button id="create" class="create100-form-btn">
-            Create Event
-          </button>
-          <br>
-          <button id="select" class="create100-form-btn">
-            Select Event
-          </button>
-          <br>
-          <button id="update" class="create100-form-btn">
-            Update Event
-          </button>
-          <br>
-          <button id="delete" class="create100-form-btn">
-            Delete Event
-          </button>
+          <div id="map"></div>
         </div>
       </div>
-      <div id="map"></div>
     </div>
-  </div>
-</div>
+          <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"
+      ></script>
 
+      <!-- Firebase -->
 
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
 
-<!----------------------------------Firebase stuff------------------------------------------------->
-<script id="MainScript">
-    var firebaseConfig = {
-        apiKey: "AIzaSyBQ82dOmyoQDLaWTGQrWEgSXFkLDcSGP7A",
-        authDomain: "create-event-test.firebaseapp.com",
-        databaseURL: "https://create-event-test.firebaseio.com",
-        projectId: "create-event-test",
-        storageBucket: "create-event-test.appspot.com",
-        messagingSenderId: "88437951827",
-        appId: "1:88437951827:web:b4d35821a31e3e1599e5a6",
-        measurementId: "G-Q2F87M5158"
-      };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
 
-//-------------------------Ready data----------------------------//
+      <!-- Add Firebase products that you want to use -->
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+
+      <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyBQ82dOmyoQDLaWTGQrWEgSXFkLDcSGP7A",
+          authDo: "create-event-test.firebaseapp.com",
+          databaseURL: "https://create-event-test.firebaseio.com",
+          projectId: "create-event-test",
+          storageBucket: "create-event-test.appspot.com",
+          messagingSenderId: "88437951827",
+          appId: "1:88437951827:web:b4d35821a31e3e1599e5a6",
+          measurementId: "G-Q2F87M5158",
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+
+      <script>
+        //-------------------------Ready data----------------------------//
       var cateV, nameV, dateV, timeV, memberV, descV, addressV;
 
-      function Ready(){
-        cateV = document.getElementById('FoodCategory').value;
-        nameV = document.getElementById('EventName').value;
-        dateV = document.getElementById('EventDate').value;
-        timeV = document.getElementById('Eventtime').value;
-        memberV = document.getElementById('Eventmember').value;
-        descV = document.getElementById('Description').value;
-        addressV = document.getElementById('address').value;
-      }
-      
-//-------------------------Create Event----------------------------//
-      document.getElementById('create').onclick = function(){
-        alert('create success');
-         Ready();
-         firebase.database().ref('Event/'+nameV).set({
-            CateofEvent: cateV, 
-            NameofEvent: nameV,
-            DateofEvent: dateV,
-            TimeofEvent: timeV,
-            MemberofEvent: memberV,
-            DescriptionofEvent: descV,
-            LocationofEvent: addressV
-         })
-      }
+          function Ready(){
+            cateV = document.getElementById('FoodCategory').value;
+            nameV = document.getElementById('EventName').value;
+            dateV = document.getElementById('EventDate').value;
+            timeV = document.getElementById('Eventtime').value;
+            memberV = document.getElementById('Eventmember').value;
+            descV = document.getElementById('Description').value;
+            addressV = document.getElementById('address').value;
+          }
 
-//-------------------------Select Event----------------------------//
-      document.getElementById('select').onclick = function(){
-        alert('find result!!!!');
-         Ready();
-         firebase.database().ref('Event/'+nameV).on('value',function(snapshot){
-          document.getElementById('FoodCategory').value= snapshot.val().CateofEvent;
-          document.getElementById('EventName').value= snapshot.val().NameofEvent;
-          document.getElementById('EventDate').value= snapshot.val().DateofEvent;
-          document.getElementById('Eventtime').value= snapshot.val().TimeofEvent;
-          document.getElementById('Eventmember').value= snapshot.val().MemberofEvent;
-          document.getElementById('Description').value= snapshot.val().DescriptionofEvent;
-          document.getElementById('address').value= snapshot.val().LocationofEvent;
-         }
-         )}
+          //-------------------------Create Event----------------------------//
+          document.getElementById('create').onclick = function(){
+            alert('create success');
+            Ready();
+            firebase.database().ref('Event/'+nameV).set({
+                CateofEvent: cateV, 
+                NameofEvent: nameV,
+                DateofEvent: dateV,
+                TimeofEvent: timeV,
+                MemberofEvent: memberV,
+                DescriptionofEvent: descV,
+                LocationofEvent: addressV
+            })
+          }
 
-//-------------------------Update Event----------------------------//
-      document.getElementById('update').onclick = function(){
-        alert('update success');
-         Ready();
-         firebase.database().ref('Event/'+nameV).update({
-            CateofEvent: cateV,
-            DateofEvent: dateV,
-            TimeofEvent: timeV,
-            MemberofEvent: memberV,
-            DescriptionofEvent: descV,
-            LocationofEvent: addressV
-         })
-      }
-//-------------------------Delete Event----------------------------//
-      document.getElementById('delete').onclick = function(){
-        alert('you delete an event!!!!');
-         Ready();
-         firebase.database().ref('Event/'+nameV).remove(); 
-      }
-      
-</script>
-</body>
+          //-------------------------Select Event----------------------------//
+          document.getElementById('select').onclick = function(){
+            alert('find result!!!!');
+            Ready();
+            firebase.database().ref('Event/'+nameV).on('value',function(snapshot){
+              document.getElementById('FoodCategory').value= snapshot.val().CateofEvent;
+              document.getElementById('EventName').value= snapshot.val().NameofEvent;
+              document.getElementById('EventDate').value= snapshot.val().DateofEvent;
+              document.getElementById('Eventtime').value= snapshot.val().TimeofEvent;
+              document.getElementById('Eventmember').value= snapshot.val().MemberofEvent;
+              document.getElementById('Description').value= snapshot.val().DescriptionofEvent;
+              document.getElementById('address').value= snapshot.val().LocationofEvent;
+            }
+            )}
 
+          //-------------------------Update Event----------------------------//
+          document.getElementById('update').onclick = function(){
+            alert('update success');
+            Ready();
+            firebase.database().ref('Event/'+nameV).update({
+                CateofEvent: cateV,
+                DateofEvent: dateV,
+                TimeofEvent: timeV,
+                MemberofEvent: memberV,
+                DescriptionofEvent: descV,
+                LocationofEvent: addressV
+            })
+          }
+          //-------------------------Delete Event----------------------------//
+          document.getElementById('delete').onclick = function(){
+            alert('you delete an event!!!!');
+            Ready();
+            firebase.database().ref('Event/'+nameV).remove(); 
+          }
+      </script>
+      <!-- Custom JavaScript -->
+      <script src="./js/app.js"></script>
+  </body>
 </html>

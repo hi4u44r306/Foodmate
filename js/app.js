@@ -574,6 +574,8 @@ function queryDatabase(token){
                         $(currentRow).addClass("row");
                         $("#contentholder").append(currentRow);
                     }
+                    var row = document.createElement("div");
+                    $(row).addClass("row row-cols-1 row-cols-md-6 ml-auto mr-auto");
                     var col = document.createElement("div");
                     $(col).addClass("col-lg-4");
                     var image = document.createElement("img");

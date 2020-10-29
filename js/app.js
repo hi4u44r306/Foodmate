@@ -57,16 +57,6 @@ function checkUserPassword() {
         document.getElementById("userPasswordError").style.display = "none";
     }
 }
-// xxxxxxxxxx Check user Agexxxxxxxxxx
-function checkUserAge() {
-    var userAge = document.getElementById("userAge").value;
-    var flag = false;
-    if (flag) {
-        document.getElementById("userAgeError").style.display = "block";
-    } else {
-        document.getElementById("userAgeError").style.display = "none";
-    }
-}
 // xxxxxxxxxx Check user bio characters. It'll use later xxxxxxxxxx
 function checkUserBio() {
     var userBio = document.getElementById("userBio").value;
@@ -113,7 +103,6 @@ function signUp() {
                 userEmail: userEmail,
                 userPassword: userPassword,
                 userBio: "User biography",
-                userAge: "User Age",
 
             }
             firebaseRef.child(uid).set(userData);
@@ -219,7 +208,6 @@ firebase.auth().onAuthStateChanged((user) => {
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
             document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
-            document.getElementById("userPfAge").innerHTML = dataSnapShot.val().userAge;
         })
     } else {
         //   No user is signed in.
@@ -242,7 +230,6 @@ function showEditProfileForm() {
     //document.getElementById("userTwitter").value = userPfTw; 
     //document.getElementById("userGooglePlus").value = userPfGp; 
     document.getElementById("userBio").value = userPfBio;
-    document.getElementById("userAge").value = userPfAge;
 }
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm() {
@@ -257,7 +244,6 @@ function saveProfile() {
     //let userTwitter = document.getElementById("userTwitter").value 
     //let userGooglePlus = document.getElementById("userGooglePlus").value 
     let userBio = document.getElementById("userBio").value
-    let userAge = document.getElementById("userAge").value
     var userFullNameFormate = /^([A-Za-z.\s_-])/;
     var checkUserFullNameValid = userFullName.match(userFullNameFormate);
     if (checkUserFullNameValid == null) {
@@ -278,7 +264,6 @@ function saveProfile() {
             //userTw: userTwitter,
             //userGp: userGooglePlus,
             userBio: userBio,
-            userAge: userAge,
         }
         firebaseRef.child(uid).set(userData);
         swal({
@@ -471,4 +456,34 @@ function queryDatabase(token){
                 // ...
       });
 }
+
+
+/*Profile extra */
+const userFullName = document.getElementById('userFullName');
+const userSurname = document.getElementById('userSurname');
+const userBio = document.getElementById('userBio');
+const userEmail = document.getElementById('userEmail');
+const age = document.getElementById('age');
+const birthDay = document.getElementById('birthDay');
+const phoneNumber = document.getElementById('phoneNumber');
+const foodType = document.getElementById('foodType');
+const genDer = document.getElementById('genDer');
+const addBtn = document.getElementById('addBtn');
+
+const database = firebase.database();
+
+addBtn.addEventListener('click',(e) => {
+    e.preventDefault();
+    database.ref('/users/'+userFullName.value).set({
+        userFullName: userFullName.value,
+        userSurname: userSurname.value,
+        userBio: userBio.value,
+        userEmail: userEmail.value,
+        age: age.value,
+        birthDay: birthDay.value,
+        phoneNumber: phoneNumber.value,
+        foodType: foodType.value,
+        genDer: genDer.value
+    });
+});
 

@@ -136,14 +136,14 @@ function queryDatabase(token){
                     //$(p).html(currentObject.Des);
                     //$(p).html(currentObject.address);
                     $(p).addClass("contentcaption");
-                    var button= document.createElement("joinbutton");
+                    var button= document.createElement("button");
                     $(button).on("click", function(event){
                         //join button will add
+                        alert('test');
                     })
-                    $(col).append(button);
                     $(col).append(image);
                     $(col).append(p);
-                    
+                    $(col).append(button);
                     $(currentRow).append(col);
                 }
       });

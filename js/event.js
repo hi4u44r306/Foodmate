@@ -1,7 +1,30 @@
+// xxxxxxxxxx Working For Profile Page xxxxxxxxxx
+// xxxxxxxxxx Get data from server and show in the page xxxxxxxxxx
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        //   User is signed in.
+        let user = firebase.auth().currentUser;
+        let uid
+        if (user != null) {
+            uid = user.uid;
+        }
+        let firebaseRefKey = firebase.database().ref().child(uid);
+        firebaseRefKey.on('value', (dataSnapShot) => {
+            document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
+            document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
+            document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
+            document.getElementById("userPfAge").innerHTML = dataSnapShot.val().userAge;
+        })
+    } else {
+        //   No user is signed in.
+    }
+});
+
+
 /*==================================Create Event Section==========================================*/
 var selectedFile;
 /*hide submit button*/
-$( document ).ready(function(){
+$(document).ready(function(){
     $("#EventuploadButton").hide();
 })
 
@@ -21,7 +44,7 @@ function EventuploadFile(){
                 uid = user.uid;
             }
     var filename = selectedFile.name;
-    var storageRef = firebase.storage().ref('/EventImage' + filename);
+    var storageRef = firebase.storage().ref('/Event/' + filename);
     var uploadTask = storageRef.put(selectedFile);  
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
@@ -46,13 +69,20 @@ function EventuploadFile(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-            var postKey = firebase.database().ref('/EventImg/').push().key;
+            var postKey = firebase.database().ref('/Event/').push().key;
             var updates = {};
             var postData= {
                 url : downloadURL,
+                FoodCat: $("#FoodCategory").val(),
+                EventN: $("#EventName").val(),
+                EventD: $("#EventDate").val(),
+                EventT: $("#Eventtime").val(),
+                EventM: $("#Eventmember").val(),
+                Des: $("#Description").val(),
+                address: $("#address").val(),
                 user : user.uid,
             };
-            updates['/EventImg/'+postKey] = postData;
+            updates['/Event/'+postKey] = postData;
             firebase.database().ref().update(updates);
             console.log('File available at', downloadURL);
         });
@@ -80,30 +110,41 @@ $(document).ready(function(){
 
 function queryDatabase(token){
         var userId = firebase.auth().currentUser.uid;
-            return firebase.database().ref('/EventImg/').once('value').then(function(snapshot) {
+            return firebase.database().ref('/Event/').once('value').then(function(snapshot) {
                 var PostObject = snapshot.val();
                 var username= (snapshot.val() && snapshot.val().username) || 'Anonymous';
                 var keys = Object.keys(PostObject);
                 var currentRow;
                 for (var i = 0; i < keys.length; i++){
                     var currentObject = PostObject[keys[i]];
-                    if (i % 3 ==0){
+                    if (i % 3 == 0){
                         currentRow= document.createElement("div");
-                        $(currentRow).addClass("row");
-                        $("#eventholder").append(currentRow);
+                        $(currentRow).addClass("row p-5");
+                        $("#contentholder").append(currentRow);
                     }
                     var col = document.createElement("div");
                     $(col).addClass("col-lg-4");
                     var image = document.createElement("img");
-                    $(image).addClass("ContentImage");
+                    $(image).addClass("contentImage");
                     image.src = currentObject.url;
                     var p = document.createElement("p");
-                    $(p).html(currentObject.caption);
+                    $(p).html(currentObject.EventN);
+                    //$(p).html(currentObject.FoodCat);
+                    //$(p).html(currentObject.EventD);
+                    //$(p).html(currentObject.EventT);
+                    //$(p).html(currentObject.EventM);
+                    //$(p).html(currentObject.Des);
+                    //$(p).html(currentObject.address);
+                    $(p).addClass("contentcaption");
+                    var button= document.createElement("joinbutton");
+                    $(button).on("click", function(event){
+                        //join button will add
+                    })
+                    $(col).append(button);
                     $(col).append(image);
                     $(col).append(p);
+                    
                     $(currentRow).append(col);
                 }
-
-                // ...
       });
 }

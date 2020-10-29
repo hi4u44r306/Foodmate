@@ -56,7 +56,20 @@ img {
   color: rgb(0, 0, 0);
 }
 
-.contentholder {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+.contentImage {
+  border-radius: 30px;
+  width: 80%;
+  height: 80%;
+}
+
+.contentcaption {
+  text-align: center;
+  font-size: 1.2em;
+  width: 80%;
+}
+
+.joinbutton {
+  width: 50%;
+  height: 50%;
+  font-size: 0.8em;
 }

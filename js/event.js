@@ -136,14 +136,50 @@ function queryDatabase(token){
                     //$(p).html(currentObject.Des);
                     //$(p).html(currentObject.address);
                     $(p).addClass("contentcaption");
-                    var button= document.createElement("button");
-                    $(button).on("click", function(event){
+
+                    /*Join Button Auto Create*/
+                    var joinbtn= document.createElement("button");
+                    joinbtn.innerHTML = "CLICK ME"; 
+                    joinbtn.setAttribute('style', 'background-color: black,font-color: white');
+                    joinbtn.setAttribute('content', 'JOIN');
+                    joinbtn.textContent = 'JOIN';
+                    $(joinbtn).on("click", function(event){
                         //join button will add
-                        alert('test');
-                    })
+                        alert('test Join');
+                    });
+                    /*Search Button Auto Create*/
+                    var searchbtn= document.createElement("button");
+                    searchbtn.innerHTML = "CLICK ME"; 
+                    searchbtn.setAttribute('style', 'background-color: black,font-color: white');
+                    searchbtn.setAttribute('content', 'Search');
+                    searchbtn.textContent = 'Search';
+                    $(searchbtn).on("click", function(event){
+                        //join button will add
+                        alert('test Search');
+                    });
+                    /*Update Button Auto Create*/
+                    var updatebtn= document.createElement("button");
+                    updatebtn.innerHTML = "CLICK ME"; 
+                    updatebtn.setAttribute('style', 'background-color: black,font-color: white');
+                    updatebtn.setAttribute('content', 'Update');
+                    updatebtn.textContent = 'Update';
+                    $(updatebtn).on("click", function(event){
+                        //join button will add
+                        alert('test Update');
+                    });
+                    /*Delete Button Auto Create*/
+                    var deletebtn= document.createElement("button");
+                    deletebtn.innerHTML = "CLICK ME"; 
+                    deletebtn.setAttribute('style', 'background-color: black,font-color: white');
+                    deletebtn.setAttribute('content', 'JOIN');
+                    deletebtn.textContent = 'JOIN';
+                    $(deletebtn).on("click", function(event){
+                        //join button will add
+                        alert('test join');
+                    });
+
                     $(col).append(image);
-                    $(col).append(p);
-                    $(col).append(button);
+                    $(col).append(p,joinbtn,searchbtn,updatebtn,deletebtn);
                     $(currentRow).append(col);
                 }
       });

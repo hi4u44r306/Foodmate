@@ -1,36 +1,37 @@
-body{
-    font-family: 'Nunito', sans-serif;
+body {
+  font-family: "Nunito", sans-serif;
 }
-.divCover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-fluid {
+  background-image: url("https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg");
 }
 
-.divCover img{
-    width: 50px;
-    height: 50px;
+a {
+  text-decoration: none !important;
 }
 
-a{
-    text-decoration: none !important;
+#userFullNameError,
+#userQualificationError,
+#userLocationError,
+#userEmailError,
+#userPasswordError,
+#userSIEmailError,
+#userSIPasswordError,
+#userBioError,
+#editProfileForm {
+  display: none;
 }
 
-#userFullNameError, #userQualificationError, #userLocationError, #userEmailError, #userPasswordError, #userSIEmailError, #userSIPasswordError, #userBioError, #editProfileForm{
-    display: none;
+#userAvatar {
+  width: 120px;
+  height: 120px;
 }
 
-#userAvatar{
-    width: 120px;
-    height: 120px;
-}
-
-.bg-profile{
-    border-radius: 20px;
+.bg-profile {
+  border-radius: 20px;
 }
 
 /*profile image*/
-.p-image{
-    width: 30px;
-    height: 30px;
+.p-image {
+  width: 30px;
+  height: 30px;
 }

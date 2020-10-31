@@ -142,7 +142,7 @@ function queryDatabase(token){
                     joinbtn.innerHTML = "CLICK ME"; 
                     joinbtn.setAttribute('style', 'background-color: black,font-color: white');
                     joinbtn.setAttribute('content', 'JOIN');
-                    joinbtn.textContent = 'JOIN';
+                    joinbtn.textContent = 'Join';
                     $(joinbtn).on("click", function(event){
                         //join button will add
                         alert('test Join');
@@ -171,11 +171,11 @@ function queryDatabase(token){
                     var deletebtn= document.createElement("button");
                     deletebtn.innerHTML = "CLICK ME"; 
                     deletebtn.setAttribute('style', 'background-color: black,font-color: white');
-                    deletebtn.setAttribute('content', 'JOIN');
-                    deletebtn.textContent = 'JOIN';
+                    deletebtn.setAttribute('content', 'DELETE');
+                    deletebtn.textContent = 'Delete';
                     $(deletebtn).on("click", function(event){
                         //join button will add
-                        alert('test join');
+                        alert('test delete');
                     });
 
                     $(col).append(image);

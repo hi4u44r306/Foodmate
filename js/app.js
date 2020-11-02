@@ -1,3 +1,31 @@
+/*const userFullName = document.getElementById('userFullName');
+const userSurname = document.getElementById('userSurname');
+const userBio = document.getElementById('userBio');
+const userEmail = document.getElementById('userEmail');
+const age = document.getElementById('age');
+const birthDay = document.getElementById('birthDay');
+const phoneNumber = document.getElementById('phoneNumber');
+const foodType = document.getElementById('foodType');
+const genDer = document.getElementById('genDer');
+const addBtn = document.getElementById('addBtn');
+
+const database = firebase.database();
+
+addBtn.addEventListener('click',(e) => {
+    e.preventDefault();
+    database.ref('/users/'+userFullName.value).set({
+        userFullName: userFullName.value,
+        userSurname: userSurname.value,
+        userBio: userBio.value,
+        userEmail: userEmail.value,
+        age: age.value,
+        birthDay: birthDay.value,
+        phoneNumber: phoneNumber.value,
+        foodType: foodType.value,
+        genDer: genDer.value
+    });
+});*/
+
 // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Full Name Validation xxxxxxxxxx
 function checkUserFullName(){
@@ -58,6 +86,16 @@ function checkUserPassword(){
     }
 }
 // xxxxxxxxxx Check user bio characters. It'll use later xxxxxxxxxx
+function checkUserAge(){
+    var userAge = document.getElementById("userAge").value;
+    var flag = false;
+    if(flag){
+        document.getElementById("userBioError").style.display = "block";
+    }else{
+        document.getElementById("userBioError").style.display = "none";
+    }
+}
+// xxxxxxxxxx Check user bio characters. It'll use later xxxxxxxxxx
 function checkUserBio(){
     var userBio = document.getElementById("userBio").value;
     var flag = false;
@@ -102,9 +140,6 @@ function signUp(){
                 userSurname: userSurname,
                 userEmail: userEmail,
                 userPassword: userPassword,
-                //userFb: "https://www.facebook.com/",
-                //userTw: "https://twitter.com/",
-                //userGp: "https://plus.google.com/",
                 userBio: "User biography",
             }
             firebaseRef.child(uid).set(userData);
@@ -177,7 +212,7 @@ function signIn(){
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
             swal({
                 type: 'successfull',
-                title: 'Welcome to Foodmate!!!!', 
+                title: 'Welcome To FoodMate !!!!', 
             }).then((value) => {
                 setTimeout(function(){
                     window.location.replace("menu.html");
@@ -209,12 +244,13 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            // userEmail = dataSnapShot.val().userEmail;
-            // userPassword = dataSnapShot.val().userPassword;
-            //document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
-            //document.getElementById("userPfTw").setAttribute('href', dataSnapShot.val().userTw);
-            //document.getElementById("userPfGp").setAttribute('href', dataSnapShot.val().userGp);
             document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
+            /*document.getElementById("userPfEmail").innerHTML = dataSnapShot.val().userEmail;
+            document.getElementById("userPfAge").innerHTML = dataSnapShot.val().userAge;
+            document.getElementById("userPfBirthday").innerHTML = dataSnapShot.val().userBirthday;
+            document.getElementById("userPfPhoneNumber").innerHTML = dataSnapShot.val().userPhoneNumber;
+            document.getElementById("userPfFoodType").innerHTML = dataSnapShot.val().userFoodType;
+            document.getElementById("userPfGender").innerHTML = dataSnapShot.val().userGender;*/
         })
     } else {
     //   No user is signed in.
@@ -226,17 +262,24 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
     var userPfSurname = document.getElementById("userPfSurname").innerHTML;
-    //var userPfFb = document.getElementById("userPfFb").getAttribute("href");
-    //var userPfTw = document.getElementById("userPfTw").getAttribute("href");
-    //var userPfGp = document.getElementById("userPfGp").getAttribute("href");
     var userPfBio = document.getElementById("userPfBio").innerHTML;
+    /*var userPfEmail = document.getElementById("userPfEmail").innerHTML;
+    var userPfAge = document.getElementById("userPfAge").innerHTML;
+    var userPfBirthday = document.getElementById("userPfBirthday").innerHTML;
+    var userPfPhoneNumber = document.getElementById("userPfPhoneNumber").innerHTML;
+    var userPfFoodType = document.getElementById("userPfFoodType").innerHTML;
+    var userPfGender = document.getElementById("userPfGender").innerHTML;*/
     document.getElementById("userFullName").value = userPfFullName; 
     document.getElementById("userSurname").value = userPfSurname; 
-    //document.getElementById("userFacebook").value = userPfFb; 
-    //document.getElementById("userTwitter").value = userPfTw; 
-    //document.getElementById("userGooglePlus").value = userPfGp; 
     document.getElementById("userBio").value = userPfBio; 
+    /*document.getElementById("userEmail").value = userPfEmail; 
+    document.getElementById("age").value = userPfAge; 
+    document.getElementById("birthday").value = userPfBirthday; 
+    document.getElementById("phoneNumber").value = userPfPhoneNumber; 
+    document.getElementById("foodType").value = userPfFoodType; 
+    document.getElementById("genDer").value = userPfGender;*/
 }
+
 // xxxxxxxxxx Hide edit profile form xxxxxxxxxx
 function hideEditProfileForm(){
     document.getElementById("profileSection").style.display = "block";
@@ -246,10 +289,13 @@ function hideEditProfileForm(){
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value 
     let userSurname = document.getElementById("userSurname").value 
-    //let userFacebook = document.getElementById("userFacebook").value 
-    //let userTwitter = document.getElementById("userTwitter").value 
-    //let userGooglePlus = document.getElementById("userGooglePlus").value 
     let userBio = document.getElementById("userBio").value
+    /*let userEmail = document.getElementById("userEmail").value
+    let userAge = document.getElementById("age").value
+    let userBirthday = document.getElementById("birthday").value
+    let userPhoneNumber = document.getElementById("phoneNumber").value
+    let userFoodType = document.getElementById("foodType").value
+    let userGender = document.getElementById("genDer").value*/
     var userFullNameFormate = /^([A-Za-z.\s_-])/; 
     var checkUserFullNameValid = userFullName.match(userFullNameFormate);
     if(checkUserFullNameValid == null){
@@ -266,10 +312,13 @@ function saveProfile(){
         var userData = {
             userFullName: userFullName,
             userSurname: userSurname,
-            //userFb: userFacebook,
-            //userTw: userTwitter,
-            //userGp: userGooglePlus,
             userBio: userBio,
+            /*userEmail: userEmail,
+            userAge: userAge,
+            userBirthday: userBirthday,
+            userPhoneNumber: userPhoneNumber,
+            userFoodType: userFoodType,
+            userGender: userGender,*/
         }
         firebaseRef.child(uid).set(userData);
         swal({
@@ -308,7 +357,11 @@ function signOut(){
     });
 }
 
-/*read URL*/
+
+
+/*Below is okay */
+
+/*read URL
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -323,6 +376,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+*/
 
 /*Forgot Password*/
 $("#btn-resetPassword").click(function()
@@ -352,6 +406,7 @@ $("#btn-resetPassword").click(function()
         window.alert("Please write your email first");
     }
 });
+
 
 /*================================Profile Section======================================*/
 var selectedFile;
@@ -438,10 +493,10 @@ function queryDatabase(token){
             return firebase.database().ref('/UserProfileImg/').once('value').then(function(snapshot) {
                 var PostObject = snapshot.val();
                 var username= (snapshot.val() && snapshot.val().username) || 'Anonymous';
-                var keys = Object.keys(PostObject);
+                var Keys = Object.keys(PostObject);
                 var currentRow;
                 for (var i = 0; i < keys.length; i++){
-                    var currentObject = PostObject[keys[i]];
+                    var currentObject = PostObject[Keys[i]];
                     if (i % 3 == 0){
                         currentRow= document.createElement("div");
                         $(currentRow).addClass("row");
@@ -463,33 +518,4 @@ function queryDatabase(token){
       });
 }
 
-
-/*Profile extra */
-const userFullName = document.getElementById('userFullName');
-const userSurname = document.getElementById('userSurname');
-const userBio = document.getElementById('userBio');
-const userEmail = document.getElementById('userEmail');
-const age = document.getElementById('age');
-const birthDay = document.getElementById('birthDay');
-const phoneNumber = document.getElementById('phoneNumber');
-const foodType = document.getElementById('foodType');
-const genDer = document.getElementById('genDer');
-const addBtn = document.getElementById('addBtn');
-
-const database = firebase.database();
-
-addBtn.addEventListener('click',(e) => {
-    e.preventDefault();
-    database.ref('/users/'+userFullName.value).set({
-        userFullName: userFullName.value,
-        userSurname: userSurname.value,
-        userBio: userBio.value,
-        userEmail: userEmail.value,
-        age: age.value,
-        birthDay: birthDay.value,
-        phoneNumber: phoneNumber.value,
-        foodType: foodType.value,
-        genDer: genDer.value
-    });
-});
 

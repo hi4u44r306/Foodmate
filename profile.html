@@ -151,6 +151,24 @@
                     <span class="h3" id="userPfSurname">Surname</span>
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfEmail">Email</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfAge">Age</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfBirthday">Birthday</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfPhoneNumber">PhoneNumber</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfFoodType">FoodType</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfGender">Gender</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfBio">Biography</p>
                   </div>
                   <div class="col-lg-12 col-md-12 text-center">
@@ -193,7 +211,7 @@
                       class="form-control"
                       id="userFullName"
                       onblur="checkUserFullName()"
-                      placeholder="Firma Adı"
+                      placeholder="FullName"
                     />
                   </div>
                   <div class="form-group">
@@ -205,7 +223,7 @@
                       class="form-control"
                       id="userSurname"
                       onblur="checkUserSurname()"
-                      placeholder="Firma Faliyet Alanı"
+                      placeholder="Surname"
                     />
                     <small id="userSurnameError" class="form-text text-danger"
                       >Please fill the field.</small
@@ -250,6 +268,7 @@
                       class="form-control"
                       name="age"
                       id="age"
+                      onblur="checkUserAge()"
                       placeholder="Age"
                     />
                   </div>
@@ -262,6 +281,7 @@
                       class="form-control"
                       name="birthDay"
                       id="birthDay"
+                      onblur="checkUserBirthday()"
                     />
                   </div>
                   <div class="form-group">
@@ -275,6 +295,7 @@
                       class="form-control"
                       name="phoneNumber"
                       id="phoneNumber"
+                      onblur="checkUserPhoneNumber()"
                       placeholder="PhoneNumber"
                     />
                   </div>
@@ -289,6 +310,7 @@
                       class="form-control"
                       name="foodType"
                       id="foodType"
+                      onblur="checkUserFoodType()"
                       placeholder="Favorite food type"
                     />
                   </div>
@@ -301,11 +323,12 @@
                       class="form-control"
                       name="genDer"
                       id="genDer"
+                      onblur="checkUserGender()"
                       placeholder="male/female"
                     />
                   </div>
                   <button
-                    type="button"
+                    id="addBtn"
                     class="btn btn-outline-primary btn-block text-uppercase mb-3"
                     onclick="saveProfile()"
                   >

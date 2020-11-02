@@ -139,26 +139,28 @@ function queryDatabase(token){
 
                     /*Join Button Auto Create*/
                     var joinbtn= document.createElement("button");
+                    $(joinbtn).addClass("joinbtn")
                     joinbtn.innerHTML = "CLICK ME"; 
                     joinbtn.setAttribute('style', 'background-color: black,font-color: white');
                     joinbtn.setAttribute('content', 'JOIN');
                     joinbtn.textContent = 'Join';
                     $(joinbtn).on("click", function(event){
-                        //join button will add
+                        
                         alert('test Join');
                     });
                     /*Search Button Auto Create*/
-                    var searchbtn= document.createElement("button");
-                    searchbtn.innerHTML = "CLICK ME"; 
-                    searchbtn.setAttribute('style', 'background-color: black,font-color: white');
-                    searchbtn.setAttribute('content', 'Search');
-                    searchbtn.textContent = 'Search';
-                    $(searchbtn).on("click", function(event){
-                        //join button will add
-                        alert('test Search');
+                    var morebtn= document.createElement("button");
+                    $(morebtn).addClass("morebtn")
+                    morebtn.innerHTML = "CLICK ME"; 
+                    morebtn.setAttribute('style', 'background-color: black,font-color: white');
+                    morebtn.setAttribute('content', 'Learn More');
+                    morebtn.textContent = 'Learn More....';
+                    $(morebtn).on("click", function(event){
+                        popUp();
                     });
                     /*Update Button Auto Create*/
                     var updatebtn= document.createElement("button");
+                    $(updatebtn).addClass("updatebtn")
                     updatebtn.innerHTML = "CLICK ME"; 
                     updatebtn.setAttribute('style', 'background-color: black,font-color: white');
                     updatebtn.setAttribute('content', 'Update');
@@ -169,6 +171,7 @@ function queryDatabase(token){
                     });
                     /*Delete Button Auto Create*/
                     var deletebtn= document.createElement("button");
+                    $(deletebtn).addClass("deletebtn")
                     deletebtn.innerHTML = "CLICK ME"; 
                     deletebtn.setAttribute('style', 'background-color: black,font-color: white');
                     deletebtn.setAttribute('content', 'DELETE');
@@ -179,8 +182,23 @@ function queryDatabase(token){
                     });
 
                     $(col).append(image);
-                    $(col).append(p,joinbtn,searchbtn,updatebtn,deletebtn);
+                    $(col).append(p,joinbtn,morebtn,updatebtn,deletebtn);
                     $(currentRow).append(col);
                 }
       });
 }
+
+function popUp(){
+    var popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.id = 'test';
+    var cancel = document.createElement('div');
+    cancel.className = 'cancel';
+    cancel.innerHTML = 'close';
+    cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
+    var message = document.createElement('span');
+    message.innerHTML = "This is a test message";
+    popup.appendChild(message);                                    
+    popup.appendChild(cancel);
+    document.body.appendChild(popup);
+    }

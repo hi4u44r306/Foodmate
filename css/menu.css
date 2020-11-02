@@ -83,16 +83,16 @@ img {
 /*Pop section*/
 .popup {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 20px;
+  left: 26%;
   margin: 100px auto;
-  width: 200px;
-  height: 150px;
+  width: 600px;
+  height: 350px;
   font-family: verdana;
   font-size: 13px;
   padding: 10px;
-  background-color: rgb(240, 240, 240);
-  border: 2px solid grey;
+  background-color: rgb(255, 214, 176);
+  border-radius: 20px;
   z-index: 100000000000000000;
 }
 
@@ -108,11 +108,11 @@ img {
   text-align: center;
   font-weight: bold;
   font-size: 11px;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 3px;
   z-index: 100000000000000000;
 }
 
 .cancel:hover {
-  background: rgb(255, 50, 50);
+  background: rgb(255, 255, 255);
 }

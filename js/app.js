@@ -141,6 +141,11 @@ function signUp(){
                 userEmail: userEmail,
                 userPassword: userPassword,
                 userBio: "User biography",
+                userAge: "User Age",
+                userBio: "User biography",
+                userBio: "User biography",
+                userBio: "User biography",
+                userBio: "User biography",
             }
             firebaseRef.child(uid).set(userData);
             swal('Your Account Created','Your account was created successfully, you can log in now.',

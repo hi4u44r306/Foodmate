@@ -43,13 +43,6 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
 body,
 html {
   height: 100%;
@@ -61,7 +54,7 @@ a {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.7;
-  color: #666666;
+  color: #707070;
   margin: 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -92,7 +85,7 @@ p {
   font-family: Poppins-Regular;
   font-size: 14px;
   line-height: 1.7;
-  color: #666666;
+  color: #707070;
   margin: 0px;
 }
 
@@ -190,23 +183,20 @@ iframe {
   border: none !important;
 }
 
-/*//////////////////////////////////////////////////////////////////
-[ utility ]*/
-
 /*==================================================================
 [ Text ]*/
 .txt1 {
   font-family: Montserrat-Regular;
   font-size: 13px;
   line-height: 1.4;
-  color: #555555;
+  color: #707070;
 }
 
 .txt2 {
   font-family: Montserrat-Regular;
   font-size: 13px;
   line-height: 1.4;
-  color: #999999;
+  color: #707070;
 }
 
 /*==================================================================
@@ -220,22 +210,8 @@ iframe {
   width: calc(100% - 43px);
 }
 
-/*==================================================================
-[ Background ]*/
-.bg1 {
-  background: #4285f4;
-}
-.bg3 {
-  background: #cd201f;
-}
-
 /*//////////////////////////////////////////////////////////////////
 [ signup ]*/
-.limiter {
-  width: 100%;
-  margin: 0 auto;
-}
-
 .container-create100 {
   width: 100vw;
   min-height: 100vh;
@@ -440,57 +416,6 @@ input.input100 {
   font-size: 13px;
 }
 
-/*==================================================================
-[ Restyle Checkbox ]*/
-
-.input-checkbox100 {
-  display: none;
-}
-
-.label-checkbox100 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #999999;
-  line-height: 1.4;
-
-  display: block;
-  position: relative;
-  padding-left: 26px;
-  cursor: pointer;
-}
-
-.label-checkbox100::before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  font-size: 13px;
-  color: transparent;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  background: #fff;
-  border: 1px solid #6675df;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.input-checkbox100:checked + .label-checkbox100::before {
-  color: #6675df;
-}
-
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-create100-form-btn {
@@ -533,108 +458,6 @@ input.input100 {
 
 .create100-form-btn:hover {
   background: #333333;
-}
-
-/*------------------------------------------------------------------
-[ Responsive ]*/
-
-@media (max-width: 992px) {
-  .create100-form {
-    width: 50%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .create100-more {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .create100-form {
-    width: 100%;
-  }
-
-  .create100-more {
-    display: none;
-  }
-}
-
-@media (max-width: 576px) {
-  .create100-form {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 70px;
-  }
-}
-
-/*------------------------------------------------------------------
-[ Alert validate ]*/
-
-.validate-input {
-  position: relative;
-}
-
-.alert-validate::before {
-  content: attr(data-validate);
-  position: absolute;
-  z-index: 100;
-  max-width: 70%;
-  background-color: #fff;
-  border: 1px solid #c80000;
-  border-radius: 2px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 12px;
-  pointer-events: none;
-
-  font-family: Poppins-Regular;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-  content: "\f12a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  z-index: 110;
-  color: #c80000;
-  font-size: 16px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 18px;
-}
-
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 /*==================================================================

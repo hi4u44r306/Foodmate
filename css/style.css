@@ -32,6 +32,24 @@ a {
   border-radius: 20px;
 }
 
+.btn-signin {
+  background-color: #fbaf02;
+  color: white;
+}
+
+.btn-signup {
+  background-color: #fbaf02;
+  color: white;
+}
+
+.btn-signup .text-signup {
+  color: rgb(248, 183, 130);
+}
+
+.text-forgot {
+  color: rgb(248, 183, 130);
+}
+
 /*profile image*/
 .p-image {
   width: 30px;

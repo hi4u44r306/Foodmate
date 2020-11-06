@@ -267,7 +267,7 @@ iframe {
   display: block;
   border-radius: 30px;
   background-color: #fff;
-  padding: 0px 55px 0px 55px;
+  padding: 10px 55px 0px 55px;
 }
 
 .create100-form-google {
@@ -276,7 +276,7 @@ iframe {
   display: block;
   border-radius: 30px;
   background-color: #fff;
-  padding: 0px 55px 0px 55px;
+  padding: 30px 55px 0px 55px;
 }
 
 .create100-form-title {
@@ -487,18 +487,14 @@ img {
 .nav-link {
   color: rgb(0, 0, 0);
 }
-/*Map
-#map {
-  background: #ccc;
-}
 
 #map {
-  min-height: 80vh;
-  width: 50vw;
+  height: 100%;
+  width: 100%;
   position: relative;
   top: 0px;
   background: #ccc;
-}*/
+}
 
 /*Navbar*/
 .navbar-nav > .active > a {

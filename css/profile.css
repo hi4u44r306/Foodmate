@@ -50,7 +50,6 @@
   box-sizing: border-box;
 }
 
-
 html {
   height: 100%;
   font-family: Poppins-Regular, sans-serif;
@@ -177,11 +176,9 @@ label {
 
 /*---------------------------------------------*/
 
-
 iframe {
   border: none !important;
 }
-
 
 /*==================================================================
 [ Text ]*/
@@ -209,10 +206,6 @@ iframe {
 .size2 {
   width: calc(100% - 43px);
 }
-
-
-
-
 
 /*==================================================================
 [ Form ]*/
@@ -419,7 +412,6 @@ input.input100 {
 /*------------------------------------------------------------------
 [ Button ]*/
 
-
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
@@ -537,29 +529,29 @@ input.input100 {
   color: #fff;
 }
 
-img{
+img {
   width: 100px;
   height: 100px;
 }
 
-.primary{
+.primary {
   color: #f1c573;
 }
 /*Profile*/
-body{
+body {
   background-color: white;
 }
-.emp-profile{
+.emp-profile {
   padding: 3%;
   margin-top: 3%;
   margin-bottom: 3%;
   border-radius: 0.5rem;
   background: #fff;
 }
-.profile-img{
+.profile-img {
   text-align: center;
 }
-.profile-img img{
+.profile-img img {
   width: 70%;
   height: 100%;
 }
@@ -579,13 +571,13 @@ body{
   right: 0;
   top: 0;
 }
-.profile-head h5{
+.profile-head h5 {
   color: #333;
 }
-.profile-head h6{
+.profile-head h6 {
   color: #0062cc;
 }
-.profile-edit-btn{
+.profile-edit-btn {
   border: none;
   border-radius: 1.5rem;
   width: 70%;
@@ -594,78 +586,89 @@ body{
   color: #6c757d;
   cursor: pointer;
 }
-.proile-rating{
+.proile-rating {
   font-size: 12px;
   color: #818182;
   margin-top: 5%;
 }
-.proile-rating span{
+.proile-rating span {
   color: #495057;
   font-size: 15px;
   font-weight: 600;
 }
-.profile-head .nav-tabs{
-  margin-bottom:5%;
+.profile-head .nav-tabs {
+  margin-bottom: 5%;
 }
-.profile-head .nav-tabs .nav-link{
-  font-weight:600;
+.profile-head .nav-tabs .nav-link {
+  font-weight: 600;
   border: none;
 }
-.profile-head .nav-tabs .nav-link.active{
+.profile-head .nav-tabs .nav-link.active {
   border: none;
-  border-bottom:2px solid #ff0000;
+  border-bottom: 2px solid #ff0000;
 }
-.profile-work{
+.profile-work {
   padding: 14%;
   margin-top: -15%;
 }
-.profile-work p{
+.profile-work p {
   font-size: 12px;
   color: #818182;
   font-weight: 600;
   margin-top: 10%;
 }
-.profile-work a{
+.profile-work a {
   text-decoration: none;
   color: #495057;
   font-weight: 600;
   font-size: 14px;
 }
-.profile-work ul{
+.profile-work ul {
   list-style: none;
 }
-.profile-tab label{
+.profile-tab label {
   font-weight: 600;
 }
-.profile-tab p{
+.profile-tab p {
   font-weight: 600;
   color: #0062cc;
 }
 
-img{
-  width:120px;
+img {
+  width: 120px;
   height: 200px;
   object-fit: cover;
 }
 
-
-.card-title{
+.card-title {
   font-size: 15px;
 }
 
-.card-text{
+.card-text {
   font-size: 13px;
 }
 
-.card{
-  background-color:white; 
+.card {
+  background-color: white;
   border-radius: 20px;
 }
 
-.mb-4{
+.mb-4 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-.nav-link { 
-  color: rgb(0, 0, 0); 
-} 
+.nav-link {
+  color: rgb(0, 0, 0);
+}
+/*Navbar*/
+.navbar-nav > .active > a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+}
+.nav-item > a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: rgb(255, 0, 0);
+}

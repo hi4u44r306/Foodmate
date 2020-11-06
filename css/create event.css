@@ -89,12 +89,6 @@ p {
   margin: 0px;
 }
 
-ul,
-li {
-  margin: 0px;
-  list-style-type: none;
-}
-
 /*---------------------------------------------*/
 input {
   outline: none;
@@ -214,7 +208,7 @@ iframe {
 [ signup ]*/
 .container-create100 {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -225,7 +219,6 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #ffffff;
 }
 
 .wrap-create100 {
@@ -269,11 +262,21 @@ iframe {
 [ Form ]*/
 
 .create100-form {
-  width: 560px;
-  min-height: 100vh;
+  width: 48%;
+  height: 85vh;
   display: block;
+  border-radius: 30px;
   background-color: #fff;
-  padding: 40px 55px 55px 55px;
+  padding: 0px 55px 0px 55px;
+}
+
+.create100-form-google {
+  width: 48%;
+  height: 85vh;
+  display: block;
+  border-radius: 30px;
+  background-color: #fff;
+  padding: 0px 55px 0px 55px;
 }
 
 .create100-form-title {
@@ -358,7 +361,7 @@ input.input100 {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #6675df;
+  border: 1.5px solid #6675df;
   border-radius: 10px;
 
   visibility: hidden;
@@ -484,14 +487,34 @@ img {
 .nav-link {
   color: rgb(0, 0, 0);
 }
-/*Map*/
+/*Map
 #map {
   background: #ccc;
 }
 
 #map {
-  height: 100vh;
+  min-height: 80vh;
   width: 50vw;
   position: relative;
+  top: 0px;
   background: #ccc;
+}*/
+
+/*Navbar*/
+.navbar-nav > .active > a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+}
+.nav-item > a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: rgb(255, 0, 0);
+}
+
+.ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

@@ -47,13 +47,23 @@ img {
   font-size: 13px;
 }
 
-.navbarMenu .nav-item.active,
-.navbarMenu .nav-item:hover {
-  color: azure;
-  background-color: #333;
+/*Navbar*/
+.navbar-nav > .active > a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
 }
-.nav-link {
-  color: rgb(0, 0, 0);
+.nav-item > a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: rgb(255, 0, 0);
+}
+
+.ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .contentImage {
@@ -115,4 +125,17 @@ img {
 
 .cancel:hover {
   background: rgb(255, 255, 255);
+}
+
+a {
+  color: black;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ffffff;
 }

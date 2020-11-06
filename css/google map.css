@@ -653,20 +653,33 @@ input.input100 {
   color: #fff;
 }
 
-.nav-link { 
-  color: rgb(0, 0, 0); 
-} 
+.nav-link {
+  color: rgb(0, 0, 0);
+}
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       #map {
-        height: 100%;
-      }
-      
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*Navbar*/
+.navbar-nav > .active > a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+}
+.nav-item > a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.active {
+  background-color: rgb(255, 0, 0);
+}

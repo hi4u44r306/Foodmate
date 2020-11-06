@@ -158,7 +158,7 @@ function queryDatabase(token){
                     $(morebtn).on("click", function(event){
                         popUp();
                     });
-                    /*Update Button Auto Create*/
+                    /*Update Button Auto Create
                     var updatebtn= document.createElement("button");
                     $(updatebtn).addClass("updatebtn")
                     updatebtn.innerHTML = "CLICK ME"; 
@@ -169,7 +169,7 @@ function queryDatabase(token){
                         //join button will add
                         alert('test Update');
                     });
-                    /*Delete Button Auto Create*/
+                    /*Delete Button Auto Create
                     var deletebtn= document.createElement("button");
                     $(deletebtn).addClass("deletebtn")
                     deletebtn.innerHTML = "CLICK ME"; 
@@ -179,10 +179,10 @@ function queryDatabase(token){
                     $(deletebtn).on("click", function(event){
                         //join button will add
                         alert('test delete');
-                    });
+                    });*/
 
                     $(col).append(image);
-                    $(col).append(p,joinbtn,morebtn,updatebtn,deletebtn);
+                    $(col).append(p,joinbtn,morebtn);
                     $(currentRow).append(col);
                 }
       });

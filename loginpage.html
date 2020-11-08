@@ -24,27 +24,29 @@
           <div class="row mx-1">
             <div class="col-lg-12 col-md-12 p-lg-5 p-md-5 px-3 py-4">
               <div id="signInForm">
-                <h1 class="h1 text-center text-dark mb-3">Foodmate</h2>
-                  <h2 class="h2 text-center text-dark mb-3">Login</h2>
+                <h1 class="h1 text-center text-dark mb-3">Foodmate</h1>
+                  <!--<h2 class="h2 text-center text-dark mb-3">Login</h2>-->
                   <div class="form-group">
                     <label for="userSIEmail">Email Address<span class="text-danger ml-1">*</span></label>
                     <input type="email" class="form-control" id="userSIEmail" onblur="checkUserSIEmail()"
-                      placeholder="mail@mail.com">
+                      placeholder="Username">
                     <small id="userSIEmailError" class="form-text text-danger">Please check your login
                       information.</small>
                   </div>
                   <div class="form-group">
                     <label for="userSIPassword">Password<span class="text-danger">*</span></label>
                     <input type="password" class="form-control" id="userSIPassword" onblur="checkUserSIPassword()"
-                      placeholder="password">
+                      placeholder="Password">
                     <small id="userSIPasswordError" class="form-text text-danger">Please check your
                       password.</small>
                   </div>
-                  <button type="button" class="btn btn-signin text-uppercase mb-3" onclick="signIn()">Sign
+                  <p> <a href="forgotpassword.html"><strong class="text-forgot">Reset Password?</strong></a></p>
+                </br>
+                  <button type="button" class="btn btn-signin mb-3" onclick="signIn()">Sign
                     In</button>
-                  <p>Not a member yet? Become a member: <a href="sign-up.html"><strong
-                        class="text-signup text-uppercase showSignUpForm">Sign Up</strong></a></p>
-                  <p>Forgot Password: <a href="forgotpassword.html"><strong class="text-forgot text-uppercase">Reset Password</strong></a></p>
+                  <p><a href="sign-up.html"><strong
+                        class="text-signup showSignUpForm">Sign Up</strong></a></p>
+                  
               </div>
             </div>
           </div>

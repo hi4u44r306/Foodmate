@@ -255,14 +255,14 @@
               <!-- Event Image upload -->
             <label class="col-12 col-12 mb-3 text-center">
               <h6><i class="fas fa-upload"></i> Upload Your Event Image!!!!</h6>
-              <input type="file" class="upload-group" id="Eventfile" />
+              <input type="file" class="form-group" id="Eventfile" />
             </label>
               
             <!--enter food category-->
             <div class="validate-input">
               <div class="dropdown dropright">
                 <select Id="FoodCategory" class="wrap-input100 p-2 ">
-                  <option>Category...</option>
+                  <option>Category</option>
                   <option>Italian cuisine</option>
                   <option>Thai food</option>
                   <option>Japanese food</option>
@@ -274,7 +274,13 @@
               </div>
               <!--enter event name-->
               <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-                <input Id="EventName" class="input100" type="text" placeholder="Title..." name="eventname" />
+                <input Id="EventName" class="input100" type="text" placeholder="Title" name="eventname" />
+                <span class="focus-input100"></span>
+              </div>
+              <!--Description-->
+              <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
+                <input id="Description" class="input100" type="text" placeholder="Description
+                  " name="Description..." />
                 <span class="focus-input100"></span>
               </div>
               <!--select what date-->
@@ -289,8 +295,8 @@
               </div>
               <!--select how many members-->
               <div class="dropdown dropright" data-validate="Members is required">
-                <select Id="Eventmember" class="wrap-input100 p-2" type="select" placeholder="Members..." name="food type">
-                  <option>Member...</option>
+                <select Id="Eventmember" class="wrap-input100 p-2" type="select" placeholder="Members" name="food type">
+                  <option>Members</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -301,21 +307,26 @@
                   <option>8</option>
                   <option>9</option>
                   <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                  <option>16</option>
+                  <option>17</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
                 </select>
                 <span class="focus-input100"></span>
               </div>
-              <!--Description-->
-              <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
-                <input id="Description" class="input100" type="text" placeholder="Description...
-                  " name="Description..." />
-                <span class="focus-input100"></span>
-              </div>
-              <!--Location-->
+              
+              <!--Location
               <div class="wrap-input100 validate-input" data-validate="Valid Username is required: ABC123">
                 <input class="input100" type="text" placeholder="Location
                   " name="Location..." id="address" />
                 <span class="focus-input100"></span>
-              </div>
+              </div>-->
               <br>
               <button
                 type="button"
@@ -350,7 +361,7 @@
                     <div class="col google-map">
                       <h5><i class="fas fa-search-location"></i> Search which restaurant by yourself：</h5>
                         <div class="form-group">
-                            <input type="text" class="form-control" ref="site" v-model="site">
+                            <input type="text" class="form-control " ref="site" v-model="site" id="address">
                         </div>
                     </div>
                 </div>

@@ -117,25 +117,38 @@ function queryDatabase(token){
                 var currentRow;
                 for (var i = 0; i < keys.length; i++){
                     var currentObject = PostObject[keys[i]];
-                    if (i % 3 == 0){
+                    if (i % 4 == 0){
                         currentRow= document.createElement("div");
                         $(currentRow).addClass("row p-5");
                         $("#contentholder").append(currentRow);
                     }
                     var col = document.createElement("div");
-                    $(col).addClass("col-lg-4");
+                    $(col).addClass("col-lg-3");
                     var image = document.createElement("img");
                     $(image).addClass("contentImage");
                     image.src = currentObject.url;
-                    var p = document.createElement("p");
-                    $(p).html(currentObject.EventN);
-                    //$(p).html(currentObject.FoodCat);
-                    //$(p).html(currentObject.EventD);
-                    //$(p).html(currentObject.EventT);
-                    //$(p).html(currentObject.EventM);
-                    //$(p).html(currentObject.Des);
-                    //$(p).html(currentObject.address);
-                    $(p).addClass("contentcaption");
+                    var p1 = document.createElement("p");
+                    $(p1).html(currentObject.EventN);
+                    $(p1).addClass("EventTitle");
+                    /*var p2 = document.createElement("p");
+                    $(p2).html(currentObject.FoodCat);
+                    $(p2).addClass("contentcaption");*/
+                    var p3 = document.createElement("p");
+                    $(p3).html(currentObject.EventD);
+                    $(p3).addClass("EDate");
+                    var p4 = document.createElement("p");
+                    $(p4).html(currentObject.EventT);
+                    $(p4).addClass("ETime");
+                    var p5 = document.createElement("p");
+                    $(p5).html(currentObject.EventM);
+                    $(p5).append('<i class="fas fa-user"></i>')
+                    $(p5).addClass("EMember");
+                    /*var p6 = document.createElement("p");
+                    $(p6).html(currentObject.Des);
+                    $(p6).addClass("contentcaption");
+                    var p7 = document.createElement("p");
+                    $(p7).html(currentObject.address);
+                    $(p7).addClass("contentcaption");*/
 
                     /*Join Button Auto Create*/
                     var joinbtn= document.createElement("button");
@@ -182,7 +195,8 @@ function queryDatabase(token){
                     });*/
 
                     $(col).append(image);
-                    $(col).append(p,joinbtn,morebtn);
+                    $(col).append(p1,p3,p4,p5,joinbtn,morebtn);
+                    
                     $(currentRow).append(col);
                 }
       });

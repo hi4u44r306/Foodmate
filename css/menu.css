@@ -60,11 +60,6 @@ img {
   background-color: rgb(255, 0, 0);
 }
 
-.ul {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
 .contentholder {
   top: auto;
 }

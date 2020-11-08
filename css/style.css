@@ -51,6 +51,27 @@ a {
   border-radius: 30px;
 }
 
+.save-button {
+  background-color: #fbaf02;
+  color: white;
+  border-radius: 8px;
+}
+
+.cancel-button {
+  background-color: #ff2323;
+  color: white;
+  border-radius: 8px;
+}
+
+.edit-button {
+  background-color: #ffffffb0;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  position: relative;
+  margin-left: center;
+  width: 200px;
+}
+
 .btn-signup .text-signup {
   color: #fbaf02;
 }

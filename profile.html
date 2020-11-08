@@ -127,6 +127,14 @@
             >
           </li>
         </ul>
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          onclick="signOut()"
+        >
+          <i class="fas fa-sign-out-alt"></i>
+          Sign Out
+        </button>
       </div>
     </nav>
 
@@ -143,20 +151,29 @@
                 <div id="profileSection">
                   <!-- display user profile img -->
                   <div class="col-12 col-12 mb-4 text-center">
-                    <div id="ImgHolder"></div>
+                    <div id="file"></div>
                   </div>
                   <!--display user name-->
                   <div class="col-12 col-12 mb-4 text-center">
                     <span class="h3" id="userPfFullName">Name</span>
                     <span class="h3" id="userPfSurname">Surname</span>
                   </div>
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfEmail">Email</p>
+                  <div class="col-lg-12 col-md-12 text-center edit-button">
+                    <button
+                      type="button"
+                      class="edit-button btn-block"
+                      onclick="showEditProfileForm()"
+                    >
+                      Edit Profile<small></small>
+                    </button>
                   </div>
+                  <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
+                    <p id="userPfEmail">Email</p>
+                  </div>-->
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfAge">Age</p>
                   </div>
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
+                  <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfBirthday">Birthday</p>
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
@@ -164,28 +181,12 @@
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfFoodType">FoodType</p>
-                  </div>
+                  </div>-->
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfGender">Gender</p>
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfBio">Biography</p>
-                  </div>
-                  <div class="col-lg-12 col-md-12 text-center">
-                    <button
-                      type="button"
-                      class="btn btn-outline-primary btn-block text-uppercase mb-3"
-                      onclick="showEditProfileForm()"
-                    >
-                      Edit Profile<small></small>
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-outline-secondary text-uppercase"
-                      onclick="signOut()"
-                    >
-                      Sign Out
-                    </button>
                   </div>
                 </div>
                 <div id="editProfileForm">
@@ -196,7 +197,7 @@
                   </label>
                   <button
                     type="button"
-                    class="btn btn-primary btn-block text-uppercase mb-3"
+                    class="btn btn-primary btn-block mb-3"
                     id="uploadButton"
                     onclick="uploadFile()"
                   >
@@ -241,7 +242,7 @@
                       placeholder="Biography"
                     ></textarea>
                   </div>
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label for="userEmail"
                       >Email adress<span class="text-danger ml-1"
                         >*</span
@@ -258,7 +259,7 @@
                     <small id="userEmailError" class="form-text text-danger"
                       >Please check your email address.</small
                     >
-                  </div>
+                  </div>-->
                   <div class="form-group">
                     <label for="age"
                       >Age<span class="text-danger ml-1">*</span></label
@@ -272,7 +273,7 @@
                       placeholder="Age"
                     />
                   </div>
-                  <div class="form-group">
+                  <!--<div class="form-group">
                     <label for="birthDay"
                       >Birthday<span class="text-danger ml-1">*</span></label
                     >
@@ -313,7 +314,7 @@
                       onblur="checkUserFoodType()"
                       placeholder="Favorite food type"
                     />
-                  </div>
+                  </div>-->
                   <div class="form-group">
                     <label for="genDer"
                       >Gender<span class="text-danger ml-1">*</span></label
@@ -329,14 +330,14 @@
                   </div>
                   <button
                     id="addBtn"
-                    class="btn btn-outline-primary btn-block text-uppercase mb-3"
+                    class="save-button btn-block mb-3"
                     onclick="saveProfile()"
                   >
                     Save
                   </button>
                   <button
                     type="button"
-                    class="btn btn-outline-secondary btn-block text-uppercase"
+                    class="cancel-button btn-block"
                     onclick="hideEditProfileForm()"
                   >
                     Cancel

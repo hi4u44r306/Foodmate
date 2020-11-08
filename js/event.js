@@ -36,7 +36,7 @@ $("#Eventfile").on("change", function(event){
 
 /*Submit function*/
 function EventuploadFile(){
-    alert('You have been upload your Event image!!!!')
+    alert('Create Event Successfully!!!!!!!!!!!!!')
     // Create a root reference
     var user = firebase.auth().currentUser;
     var uid;

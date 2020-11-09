@@ -1,217 +1,405 @@
 <html>
-<head>
+  <head>
     <title>Google Map</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="google-signin-client_id"
-        content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="google-signin-client_id"
+      content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com"
+    />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id"
-        content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com">
+    <meta
+      name="google-signin-client_id"
+      content="595659111390-5bp1ap7i91b2cbl271895ut30nt0iuvp.apps.googleusercontent.com"
+    />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c3281da27.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/main icon.png" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css" />
     <link rel="stylesheet" type="text/css" href="css/google map.css" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <script src="https://kit.fontawesome.com/1c3281da27.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c3281da27.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
-        defer></script>
-        <script>
-          // This example displays a marker at the center of Australia.
-          // When the user clicks the marker, an info window opens.
-          function initMap() {
-            const name1 = { lat: 24.988469, lng: 121.343767 };
-            const name2 = { lat: 24.989672, lng: 121.344226 };
-            const name3 = { lat: 24.988666, lng: 121.343277 };
-            const name4 = { lat: 24.990219, lng: 121.344342 };
-            const name5 = { lat: 24.989890, lng: 121.343559 };
-            const map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 17,
-              center: name1,
-              center: name2,
-              center: name3,
-              center: name4,
-              center: name5,
-            });
-            const contentString1 =
-              '<div id="content1">' +
-              '<h4><b>里吉拿義大利麵</b></h4>' +
-              "<p>營業時間: 早上11點至晚上9點</p>" +
-              '<a href="menu.html">' +
-              "Select this place</a> " +
-              "</div>";
-            const contentString2 =
-              '<div id="content2">' +
-              '<h4><b>八哥重慶酸辣粉</b></h4>' +
-              "<p>營業時間: 早上11點至晚上9點</p>" +
-              '<a href="menu.html">' +
-              "Select this place</a> " +
-              "</div>";
-            const contentString3 =
-              '<div id="content3">' +
-              '<h4><b>品誠豆花</b></h4>' +
-              "<p>營業時間: 早上11點至晚上9點</p>" +
-              '<a href="menu.html">' +
-              "Select this place</a> " +
-              "</div>";
-            const contentString4 =
-              '<div id="content4">' +
-              '<h4 id="address"><b>泰皇泰式料理</b></h4>' +
-              "<p>營業時間: 早上11點至晚上9點</p>" +
-              '<button onclick="sendlc(document.getElementById("address"))">' +
-              "Select this place</button> " +
-              "</div>";
-              const contentString5 =
-              '<div id="content5">' +
-              '<h4 id="address"><b>小判拉麵</b></h4>' +
-              "<p>營業時間: 早上11點至晚上9點</p>" +
-              '<button onclick="sendlc(document.getElementById("address"))">' +
-              "Select this place</button> " +
-              "</div>";
-            const image = {
-              url: "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
-              size: new google.maps.Size(20, 32),
-            };
-            const infowindow1 = new google.maps.InfoWindow({
-              content: contentString1,
-            });
-            const infowindow2 = new google.maps.InfoWindow({
-              content: contentString2,
-            });
-            const infowindow3 = new google.maps.InfoWindow({
-              content: contentString3,
-            });
-            const infowindow4 = new google.maps.InfoWindow({
-              content: contentString4,
-            });
-            const infowindow5 = new google.maps.InfoWindow({
-              content: contentString5,
-            });
-            const marker1 = new google.maps.Marker({
-              position: name1,
-              map,
-              title: "里吉拿義大利麵",
-            });
-            const marker2 = new google.maps.Marker({
-              position: name2,
-              map,
-              title: "八哥重慶酸辣粉",
-      
-            });
-            const marker3 = new google.maps.Marker({
-              position: name3,
-              map,
-              title: "品誠豆花",
-            });
-            const marker4 = new google.maps.Marker({
-              position: name4,
-              map,
-              title: "泰皇泰式料理",
-            });
-            const marker5 = new google.maps.Marker({
-              position: name5,
-              map,
-              title: "小判拉麵",
-            });
-            marker1.addListener("click", () => {
-              infowindow1.open(map, marker1);
-            });
-            marker2.addListener("click", () => {
-              infowindow2.open(map, marker2);
-            });
-            marker3.addListener("click", () => {
-              infowindow3.open(map, marker3);
-            });
-            marker4.addListener("click", () => {
-              infowindow4.open(map, marker4);
-            });
-            marker5.addListener("click", () => {
-              infowindow5.open(map, marker5);
-            });
-          }
-        </script>
-</head>
-<body>
-  <nav
-  class="navbar navbar-expand-sm navbar-light"
-  style="background-color: rgb(253, 202, 144)"
->
-  <!--navbar-->
-  <a href="menu.html" class="navbar-brand"
-    ><img src="images/icons/main icon.png"
-  /></a>
-  <span>Foodmate</span>
-  <!--can put our app name-->
-  <button
-    class="navbar-toggler"
-    data-toggle="collapse"
-    data-target="#navbarMenu"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarMenu">
-    <ul class="nav nav-pills mr-auto ml-auto">
-      <li class="nav-item">
-        <a href="menu.html" class="nav-link"
-          ><i class="fas fa-home"></i> Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="create event.html" class="nav-link "
-          ><i class="fas fa-plus"></i> Creat-Event</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="chat.html" class="nav-link"
-          ><i class="fas fa-comments"></i> Chat</a
-        >
-      </li>
-      
-      <li class="nav-item">
-        <a href="notification.html" class="nav-link"
-          ><i class="fas fa-bell"></i> Notification</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="googlemap.html" class="nav-link active"
-          ><i class="fas fa-map-marked-alt"></i> Nearby Restaurant</a
-        >
-      </li>
-      <li style="float:right" class="nav-item">
-        <a href="profile.html" class="nav-link"
-          ><i class="fas fa-id-card-alt"></i> Profile</a
-        >
-      </li>
-    </ul>
-  </div>
-</nav>
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script>
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+      function initMap() {
+        const name1 = { lat: 24.988469, lng: 121.343767 }; //里吉拿義大利麵
+        const name2 = { lat: 24.989672, lng: 121.344226 }; //八哥重慶酸辣粉
+        const name3 = { lat: 24.988666, lng: 121.343277 }; //品誠豆花
+        const name4 = { lat: 24.990219, lng: 121.344342 }; //泰皇泰式料理
+        const name5 = { lat: 24.98989, lng: 121.343559 }; //小判拉麵
+        const name6 = { lat: 24.988771, lng: 121.343428 }; //晨間廚房
+        const name7 = { lat: 24.988516, lng: 121.343093 }; //樂活早午餐
+        const name8 = { lat: 24.988814, lng: 121.344075 }; //五味臭臭鍋
+        const name9 = { lat: 24.988675, lng: 121.343066 }; //鮮味坊
+        const name10 = { lat: 24.988666, lng: 121.34305 }; //麥斯漢堡
+        const name11 = { lat: 24.988761, lng: 121.342868 }; //醇滷味
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 18,
+          center: name1,
+          center: name2,
+          center: name3,
+          center: name4,
+          center: name5,
+          center: name6,
+          center: name7,
+          center: name8,
+          center: name9,
+          center: name10,
+          center: name11,
+        });
+        //里吉拿義大利麵
+        const contentString1 =
+          '<div id="content1">' +
+          "<h4><b>里吉拿義大利麵</b></h4>" +
+          "<p>營業時間: 早上11點至晚上9點</p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //八哥重慶酸辣粉
+        const contentString2 =
+          '<div id="content2">' +
+          "<h4><b>八哥重慶酸辣粉</b></h4>" +
+          "<p>營業時間: 早上11點至晚上9點</p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //品誠豆花
+        const contentString3 =
+          '<div id="content3">' +
+          "<h4><b>品誠豆花</b></h4>" +
+          "<p>營業時間: 早上11點至晚上9點</p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //泰皇泰式料理
+        const contentString4 =
+          '<div id="content4">' +
+          '<h4 id="address"><b>泰皇泰式料理</b></h4>' +
+          "<p>營業時間: 早上11點至晚上9點</p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //小判拉麵
+        const contentString5 =
+          '<div id="content5">' +
+          '<h4 id="address"><b>小判拉麵</b></h4>' +
+          "<p>營業時間: 早上11點至晚上9點</p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //晨間廚房
+        const contentString6 =
+          '<div id="content6">' +
+          '<h4 id="address"><b>晨間廚房</b></h4>' +
+          "<p>營業時間: 6:00~13:00 </p>" +
+          "<p>營業時間: 星期日公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //樂活早午餐
+        const contentString7 =
+          '<div id="content7">' +
+          '<h4 id="address"><b>樂活早午餐</b></h4>' +
+          "<p>營業時間: 7:00~14:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //五味臭臭鍋
+        const contentString8 =
+          '<div id="content8">' +
+          '<h4 id="address"><b>五味臭臭鍋</b></h4>' +
+          "<p>營業時間: 10:00~23:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //鮮味坊
+        const contentString9 =
+          '<div id="content9">' +
+          '<h4 id="address"><b>鮮味坊</b></h4>' +
+          "<p>營業時間: 11:30–14:00 17:00–21:00 </p>" +
+          "<p>營業時間: 星期六公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //麥斯漢堡
+        const contentString10 =
+          '<div id="content10">' +
+          '<h4 id="address"><b>晨間廚房</b></h4>' +
+          "<p>營業時間: 06:30–14:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //醇滷味
+        const contentString11 =
+          '<div id="content11">' +
+          '<h4 id="address"><b>醇滷味</b></h4>' +
+          "<p>營業時間: 12:00~23:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        const image = {
+          url:
+            "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
+          size: new google.maps.Size(20, 32),
+        };
+        const infowindow1 = new google.maps.InfoWindow({
+          content: contentString1,
+        });
+        const infowindow2 = new google.maps.InfoWindow({
+          content: contentString2,
+        });
+        const infowindow3 = new google.maps.InfoWindow({
+          content: contentString3,
+        });
+        const infowindow4 = new google.maps.InfoWindow({
+          content: contentString4,
+        });
+        const infowindow5 = new google.maps.InfoWindow({
+          content: contentString5,
+        });
+        const infowindow6 = new google.maps.InfoWindow({
+          content: contentString6,
+        });
+        const infowindow7 = new google.maps.InfoWindow({
+          content: contentString7,
+        });
+        const infowindow8 = new google.maps.InfoWindow({
+          content: contentString8,
+        });
+        const infowindow9 = new google.maps.InfoWindow({
+          content: contentString9,
+        });
+        const infowindow10 = new google.maps.InfoWindow({
+          content: contentString10,
+        });
+        const infowindow11 = new google.maps.InfoWindow({
+          content: contentString11,
+        });
+        const marker1 = new google.maps.Marker({
+          position: name1,
+          map,
+          title: "里吉拿義大利麵",
+        });
+        const marker2 = new google.maps.Marker({
+          position: name2,
+          map,
+          title: "八哥重慶酸辣粉",
+        });
+        const marker3 = new google.maps.Marker({
+          position: name3,
+          map,
+          title: "品誠豆花",
+        });
+        const marker4 = new google.maps.Marker({
+          position: name4,
+          map,
+          title: "泰皇泰式料理",
+        });
+        const marker5 = new google.maps.Marker({
+          position: name5,
+          map,
+          title: "小判拉麵",
+        });
+        const marker6 = new google.maps.Marker({
+          position: name6,
+          map,
+          title: "晨間廚房",
+        });
+        const marker7 = new google.maps.Marker({
+          position: name7,
+          map,
+          title: "樂活早午餐",
+        });
+        const marker8 = new google.maps.Marker({
+          position: name8,
+          map,
+          title: "五味臭臭鍋",
+        });
+        const marker9 = new google.maps.Marker({
+          position: name9,
+          map,
+          title: "鮮味坊",
+        });
+        const marker10 = new google.maps.Marker({
+          position: name10,
+          map,
+          title: "麥斯漢堡",
+        });
+        const marker11 = new google.maps.Marker({
+          position: name11,
+          map,
+          title: "醇滷味",
+        });
+        marker1.addListener("click", () => {
+          infowindow1.open(map, marker1);
+        });
+        marker2.addListener("click", () => {
+          infowindow2.open(map, marker2);
+        });
+        marker3.addListener("click", () => {
+          infowindow3.open(map, marker3);
+        });
+        marker4.addListener("click", () => {
+          infowindow4.open(map, marker4);
+        });
+        marker5.addListener("click", () => {
+          infowindow5.open(map, marker5);
+        });
+        marker6.addListener("click", () => {
+          infowindow6.open(map, marker6);
+        });
+        marker7.addListener("click", () => {
+          infowindow7.open(map, marker7);
+        });
+        marker8.addListener("click", () => {
+          infowindow8.open(map, marker8);
+        });
+        marker9.addListener("click", () => {
+          infowindow9.open(map, marker9);
+        });
+        marker10.addListener("click", () => {
+          infowindow10.open(map, marker10);
+        });
+        marker11.addListener("click", () => {
+          infowindow11.open(map, marker11);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-sm navbar-light"
+      style="background-color: rgb(253, 202, 144)"
+    >
+      <!--navbar-->
+      <a href="menu.html" class="navbar-brand"
+        ><img src="images/icons/main icon.png"
+      /></a>
+      <span>Foodmate</span>
+      <!--can put our app name-->
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#navbarMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="nav nav-pills mr-auto ml-auto">
+          <li class="nav-item">
+            <a href="menu.html" class="nav-link"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="create event.html" class="nav-link"
+              ><i class="fas fa-plus"></i> Creat-Event</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="chat.html" class="nav-link"
+              ><i class="fas fa-comments"></i> Chat</a
+            >
+          </li>
 
-    <body>
-        <div id="map"></div>
+          <li class="nav-item">
+            <a href="notification.html" class="nav-link"
+              ><i class="fas fa-bell"></i> Notification</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="googlemap.html" class="nav-link active"
+              ><i class="fas fa-map-marked-alt"></i> Nearby Restaurant</a
+            >
+          </li>
+          <li style="float: right" class="nav-item">
+            <a href="profile.html" class="nav-link"
+              ><i class="fas fa-id-card-alt"></i> Profile</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    </body>
-
-</html> 
+    <div class="limiter">
+      <div class="container-googlemap100">
+        <div class="googlemap100-form" id="map"></div>
+      </div>
+    </div>
+  </body>
+</html>

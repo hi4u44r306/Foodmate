@@ -28,7 +28,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: -34.397, lng: 150.644 },
-          zoom: 14,
+          zoom: 18,
         });
 
         infoWindow = new google.maps.InfoWindow();
@@ -116,7 +116,7 @@
           </li>
           <li class="nav-item">
             <a href="googlemap.html" class="nav-link"
-              ><i class="fas fa-map-marked-alt"></i> Search Restaurant</a
+              ><i class="fas fa-map-marked-alt"></i> Nearby Restaurant</a
             >
           </li>
           <li style="float: right" class="nav-item">
@@ -138,6 +138,9 @@
     </nav>
 
     <!--User current location-->
+    <h6 class="topcat">
+      <i class="fas fa-map-marked-alt"></i> Current Location
+    </h6>
     <div class="container">
       <div class="menu100-form" id="map"></div>
     </div>

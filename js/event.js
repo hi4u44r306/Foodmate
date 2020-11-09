@@ -154,7 +154,6 @@ function queryDatabase(token){
                     var joinbtn= document.createElement("button");
                     $(joinbtn).addClass("joinbtn")
                     joinbtn.innerHTML = "CLICK ME"; 
-                    joinbtn.setAttribute('style', 'background-color: black,font-color: white');
                     joinbtn.setAttribute('content', 'JOIN');
                     joinbtn.textContent = 'Join';
                     $(joinbtn).on("click", function(event){

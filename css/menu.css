@@ -89,13 +89,28 @@ img {
 
 .EMember {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 100%;
 }
 .contentcaption {
   text-align: center;
   font-size: 0.5em;
   width: 80%;
+}
+
+.joinbtn {
+  background-color: #fd4848bb;
+  color: white;
+  border-radius: 8px;
+  width: 100px;
+}
+
+.morebtn {
+  background-color: #237bff;
+  color: white;
+  border-radius: 8px;
+  width: 200px;
+  margin-left: 25px;
 }
 
 .button {

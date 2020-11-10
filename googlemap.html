@@ -104,6 +104,17 @@
         const name9 = { lat: 24.988675, lng: 121.343066 }; //鮮味坊
         const name10 = { lat: 24.988666, lng: 121.34305 }; //麥斯漢堡
         const name11 = { lat: 24.988761, lng: 121.342868 }; //醇滷味
+        const name12 = { lat: 24.988333, lng: 121.343381 }; //蘿西媽媽漢堡
+        const name13 = { lat: 24.988515, lng: 121.343646 }; //Unni's Korean Kitchen
+        const name14 = { lat: 24.98867, lng: 121.343608 }; //大呼過癮臭臭鍋
+        const name15 = { lat: 24.988611, lng: 121.343995 }; //今晚吃雞(銘傳店)
+        const name16 = { lat: 24.988442, lng: 121.343167 }; //高雄黑輪大王-桃園銘傳店
+        const name17 = { lat: 24.988246, lng: 121.34379 }; //幸福食堂複合式餐飲
+        const name18 = { lat: 24.98814, lng: 121.343605 }; //香料小廚-隱藏版美食
+        const name19 = { lat: 24.988244, lng: 121.343493 }; //雙醬咖哩
+        const name20 = { lat: 24.988285, lng: 121.343452 }; //有食早午餐
+        const name21 = { lat: 24.988568, lng: 121.343604 }; //蘿媽媽牛肉麵鍋燒麵
+
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 18,
           center: name1,
@@ -117,6 +128,16 @@
           center: name9,
           center: name10,
           center: name11,
+          center: name12,
+          center: name13,
+          center: name14,
+          center: name15,
+          center: name16,
+          center: name17,
+          center: name18,
+          center: name19,
+          center: name20,
+          center: name21,
         });
         //里吉拿義大利麵
         const contentString1 =
@@ -212,6 +233,96 @@
           '<a href="menu.html">' +
           "Select this place</a> " +
           "</div>";
+        //蘿西媽媽漢堡(銘傳店)
+        const contentString12 =
+          '<div id="content12">' +
+          '<h4 id="address"><b>醇滷味</b></h4>' +
+          "<p>營業時間: 6:30~13:00 </p>" +
+          "<p>營業時間: 星期日公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //Unni's Korean Kitchen
+        const contentString13 =
+          '<div id="content13">' +
+          '<h4 id="address"><b>Unnis Korean Kitchen</b></h4>' +
+          "<p>營業時間: 11:30~21:00 </p>" +
+          "<p>營業時間: 星期六公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //大呼過癮臭臭鍋
+        const contentString14 =
+          '<div id="content14">' +
+          '<h4 id="address"><b>大呼過癮臭臭鍋</b></h4>' +
+          "<p>營業時間: 11:00~22:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //今晚吃雞(銘傳店)
+        const contentString15 =
+          '<div id="content15">' +
+          '<h4 id="address"><b>今晚吃雞(銘傳店)</b></h4>' +
+          "<p>營業時間: 15:00~3:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //高雄黑輪大王-桃園銘傳店
+        const contentString16 =
+          '<div id="content16">' +
+          '<h4 id="address"><b>高雄黑輪大王-桃園銘傳店</b></h4>' +
+          "<p>營業時間: 11:00~23:30 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //幸福食堂複合式餐飲
+        const contentString17 =
+          '<div id="content17">' +
+          '<h4 id="address"><b>幸福食堂複合式餐飲</b></h4>' +
+          "<p>營業時間: 7:00~20:00 </p>" +
+          "<p>營業時間: 星期六公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //香料小廚-隱藏版美食
+        const contentString18 =
+          '<div id="content18">' +
+          '<h4 id="address"><b>香料小廚-隱藏版美食</b></h4>' +
+          "<p>營業時間: 12:00–14:00 17:00–20:30 </p>" +
+          "<p>營業時間: 星期六、日公休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //雙醬咖哩
+        const contentString19 =
+          '<div id="content19">' +
+          '<h4 id="address"><b>雙醬咖哩</b></h4>' +
+          "<p>營業時間: 11:00~21:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //有食早午餐
+        const contentString20 =
+          '<div id="content20">' +
+          '<h4 id="address"><b>有食早午餐</b></h4>' +
+          "<p>營業時間: 7:30~16:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
+        //蘿媽媽牛肉麵鍋燒麵
+        const contentString21 =
+          '<div id="content21">' +
+          '<h4 id="address"><b>蘿媽媽牛肉麵鍋燒麵</b></h4>' +
+          "<p>營業時間: 11:00~22:00 </p>" +
+          "<p>營業時間: 全年無休 </p>" +
+          '<a href="menu.html">' +
+          "Select this place</a> " +
+          "</div>";
         const image = {
           url:
             "https://www.clermontauvergnetourisme.com/wp-content/uploads/2018/04/ico-restaurant-2x-100x100.png",
@@ -249,6 +360,36 @@
         });
         const infowindow11 = new google.maps.InfoWindow({
           content: contentString11,
+        });
+        const infowindow12 = new google.maps.InfoWindow({
+          content: contentString12,
+        });
+        const infowindow13 = new google.maps.InfoWindow({
+          content: contentString13,
+        });
+        const infowindow14 = new google.maps.InfoWindow({
+          content: contentString14,
+        });
+        const infowindow15 = new google.maps.InfoWindow({
+          content: contentString15,
+        });
+        const infowindow16 = new google.maps.InfoWindow({
+          content: contentString16,
+        });
+        const infowindow17 = new google.maps.InfoWindow({
+          content: contentString17,
+        });
+        const infowindow18 = new google.maps.InfoWindow({
+          content: contentString18,
+        });
+        const infowindow19 = new google.maps.InfoWindow({
+          content: contentString19,
+        });
+        const infowindow20 = new google.maps.InfoWindow({
+          content: contentString20,
+        });
+        const infowindow21 = new google.maps.InfoWindow({
+          content: contentString21,
         });
         const marker1 = new google.maps.Marker({
           position: name1,
@@ -305,6 +446,56 @@
           map,
           title: "醇滷味",
         });
+        const marker12 = new google.maps.Marker({
+          position: name12,
+          map,
+          title: "蘿西媽媽漢堡",
+        });
+        const marker13 = new google.maps.Marker({
+          position: name13,
+          map,
+          title: "Unni's Korean Kitchen",
+        });
+        const marker14 = new google.maps.Marker({
+          position: name14,
+          map,
+          title: "大呼過癮臭臭鍋",
+        });
+        const marker15 = new google.maps.Marker({
+          position: name15,
+          map,
+          title: "今晚吃雞(銘傳店)",
+        });
+        const marker16 = new google.maps.Marker({
+          position: name16,
+          map,
+          title: "高雄黑輪大王-桃園銘傳店",
+        });
+        const marker17 = new google.maps.Marker({
+          position: name17,
+          map,
+          title: "幸福食堂複合式餐飲",
+        });
+        const marker18 = new google.maps.Marker({
+          position: name18,
+          map,
+          title: "香料小廚-隱藏版美食",
+        });
+        const marker19 = new google.maps.Marker({
+          position: name19,
+          map,
+          title: "雙醬咖哩",
+        });
+        const marker20 = new google.maps.Marker({
+          position: name20,
+          map,
+          title: "有食早午餐",
+        });
+        const marker21 = new google.maps.Marker({
+          position: name21,
+          map,
+          title: "蘿媽媽牛肉麵鍋燒麵",
+        });
         marker1.addListener("click", () => {
           infowindow1.open(map, marker1);
         });
@@ -337,6 +528,36 @@
         });
         marker11.addListener("click", () => {
           infowindow11.open(map, marker11);
+        });
+        marker12.addListener("click", () => {
+          infowindow12.open(map, marker12);
+        });
+        marker13.addListener("click", () => {
+          infowindow13.open(map, marker13);
+        });
+        marker14.addListener("click", () => {
+          infowindow14.open(map, marker14);
+        });
+        marker15.addListener("click", () => {
+          infowindow15.open(map, marker15);
+        });
+        marker16.addListener("click", () => {
+          infowindow16.open(map, marker16);
+        });
+        marker17.addListener("click", () => {
+          infowindow17.open(map, marker17);
+        });
+        marker18.addListener("click", () => {
+          infowindow18.open(map, marker18);
+        });
+        marker19.addListener("click", () => {
+          infowindow19.open(map, marker19);
+        });
+        marker20.addListener("click", () => {
+          infowindow20.open(map, marker20);
+        });
+        marker21.addListener("click", () => {
+          infowindow21.open(map, marker21);
         });
       }
     </script>

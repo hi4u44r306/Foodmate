@@ -474,7 +474,7 @@ function uploadFile(){
     });
 }
 
-/*=====================================Display Profile Image=============================================== */
+/*=====================================Display Profile Image===============================================
 var user = firebase.auth().currentUser;
 var uid;
             if (user != null) {
@@ -522,5 +522,5 @@ function queryDatabase(token){
                 // ...
       });
 }
-
+ */
 

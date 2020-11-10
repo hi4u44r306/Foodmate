@@ -139,7 +139,7 @@
       </div>
     </nav>
 
-    <body class="bg-light">
+    <body>
       <div class="container-fluid">
         <div class="row mx-10">
           <div
@@ -151,28 +151,41 @@
               >
                 <div id="profileSection">
                   <!-- display user profile img -->
-                  <div class="col-12 col-12 mb-4 text-center">
-                    <div id="file"></div>
+                  <div class="col-12 col-12 mb-2 text-center">
+                    <img
+                      class="profile-img"
+                      src="https://images.theconversation.com/files/182925/original/file-20170822-30538-gebk45.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+                      alt=""
+                    />
                   </div>
                   <!--display user name-->
-                  <div class="col-12 col-12 mb-4 text-center">
+                  <div class="col-12 col-12 mb-2 text-center">
                     <span class="h3" id="userPfFullName">Name</span>
                     <span class="h3" id="userPfSurname">Surname</span>
                   </div>
-                  <div class="col-lg-12 col-md-12 text-center edit-button">
+                  <div class="col-lg-12 col-md-12 text-center">
                     <button
                       type="button"
-                      class="edit-button btn-block"
+                      class="profile-edit-btn btn-block"
                       onclick="showEditProfileForm()"
                     >
                       Edit Profile<small></small>
                     </button>
                   </div>
+                  <div class="profile-stats">
+                    <ul>
+                      <li><span class="profile-stat-count">4</span> created</li>
+                      <li><span class="profile-stat-count">10</span> joined</li>
+                      <li><span class="profile-stat-count">14</span> total</li>
+                    </ul>
+                  </div>
+
                   <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfEmail">Email</p>
                   </div>-->
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfAge">Age</p>
+                    <!--Age id="userPfAge"-->
+                    <p class="h4">21</p>
                   </div>
                   <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
                     <p id="userPfBirthday">Birthday</p>
@@ -184,16 +197,31 @@
                     <p id="userPfFoodType">FoodType</p>
                   </div>-->
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfGender">Gender</p>
+                    <!--id="userPfGender"-->
+                    <p class="h5">Female</p>
                   </div>
                   <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfBio">Biography</p>
+                    <p class="h5" id="userPfBio">Biography</p>
                   </div>
+                  <!--Current Event-->
+                  <h6 class="topcat">
+                    <i class="fas fa-calendar-alt"></i> Current Event
+                  </h6>
+                  <div id="contentholder"></div>
+                  <!--End of Current Event-->
                 </div>
+
                 <div id="editProfileForm">
                   <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
+                  <div class="col-12 col-12 mb-2 text-center">
+                    <img
+                      class="profile-img"
+                      src="https://images.theconversation.com/files/182925/original/file-20170822-30538-gebk45.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+                      alt=""
+                    />
+                  </div>
                   <label class="col-12 col-12 mb-3 text-center">
-                    Upload img
+                    <span class="changeprofileimage">Change Profile Photo</span>
                     <input type="file" class="upload-group" id="file" />
                   </label>
                   <button
@@ -260,7 +288,7 @@
                     <small id="userEmailError" class="form-text text-danger"
                       >Please check your email address.</small
                     >
-                  </div>-->
+                  </div>
                   <div class="form-group">
                     <label for="age"
                       >Age<span class="text-danger ml-1">*</span></label
@@ -274,7 +302,7 @@
                       placeholder="Age"
                     />
                   </div>
-                  <!--<div class="form-group">
+                  <div class="form-group">
                     <label for="birthDay"
                       >Birthday<span class="text-danger ml-1">*</span></label
                     >
@@ -315,7 +343,7 @@
                       onblur="checkUserFoodType()"
                       placeholder="Favorite food type"
                     />
-                  </div>-->
+                  </div>
                   <div class="form-group">
                     <label for="genDer"
                       >Gender<span class="text-danger ml-1">*</span></label
@@ -328,7 +356,7 @@
                       onblur="checkUserGender()"
                       placeholder="male/female"
                     />
-                  </div>
+                  </div>-->
                   <button
                     id="addBtn"
                     class="save-button btn-block mb-3"
@@ -399,6 +427,7 @@
 
       <!-- Custom JavaScript -->
       <script src="./js/app.js"></script>
+      <script src="./js/event.js"></script>
     </body>
   </body>
 </html>

@@ -263,7 +263,7 @@ iframe {
 
 .create100-form {
   width: 48%;
-  height: 85vh;
+  height: 90vh;
   display: block;
   border-radius: 30px;
   background-color: #fff;
@@ -272,11 +272,11 @@ iframe {
 
 .create100-form-google {
   width: 48%;
-  height: 85vh;
+  height: 90vh;
   display: block;
   border-radius: 30px;
   background-color: #fff;
-  padding: 30px 55px 0px 55px;
+  padding: 10px 55px 0px 55px;
 }
 
 .create100-form-title {

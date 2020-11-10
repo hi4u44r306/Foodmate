@@ -53,7 +53,7 @@ img {
   background-color: rgb(255, 0, 0);
 }
 .nav-item > a:hover {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 152, 67, 0.993);
 }
 
 .active {
@@ -99,17 +99,21 @@ img {
 }
 
 .joinbtn {
-  background-color: #fd4848bb;
+  background-color: #f0dccf;
   color: white;
+  border-width: 2px;
+  border-color: rgb(243, 211, 122);
   border-radius: 8px;
   width: 100px;
 }
 
 .morebtn {
-  background-color: #237bff;
+  background-color: #f0dccf;
   color: white;
+  border-color: rgb(243, 211, 122);
+  border-width: 2px;
   border-radius: 8px;
-  width: 200px;
+  width: 120px;
   margin-left: 25px;
 }
 
@@ -176,7 +180,7 @@ a:hover {
 }
 
 .menu100-form {
-  width: 100%;
+  width: 90%;
   height: 50vh;
   border-radius: 30px;
   background-color: rgb(255, 218, 218);

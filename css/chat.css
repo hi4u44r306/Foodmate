@@ -669,3 +669,9 @@ input.input100 {
 .active {
   background-color: rgb(255, 0, 0);
 }
+
+/*warning*/
+.warning {
+  text-align: center;
+  justify-content: center;
+}

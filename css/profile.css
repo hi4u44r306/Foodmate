@@ -708,22 +708,22 @@ body {
 }
 
 .joinbtn {
-  background-color: #f0dccf;
-  color: white;
+  background-color: #f4d35e;
+  color: black;
   border-width: 2px;
   border-color: rgb(243, 211, 122);
   border-radius: 8px;
-  width: 60px;
+  width: 90px;
 }
 
 .morebtn {
-  background-color: #f0dccf;
+  background-color: #f95738;
   color: white;
   border-color: rgb(243, 211, 122);
   border-width: 2px;
   border-radius: 8px;
-  width: 100px;
-  margin-left: 25px;
+  width: 130px;
+  margin-left: 20px;
 }
 
 .button {
@@ -821,7 +821,7 @@ body {
 
 /*profile button*/
 .save-button {
-  background-color: #fbaf02;
+  background-color: #2374ab;
   height: 40px;
   color: white;
   border-color: white;
@@ -829,7 +829,7 @@ body {
 }
 
 .cancel-button {
-  background-color: #ff2323;
+  background-color: #ff8484;
   height: 40px;
   color: white;
   border-color: white;

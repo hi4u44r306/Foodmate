@@ -131,18 +131,14 @@ img {
 
 /*Pop section*/
 .popup {
-  position: absolute;
-  top: 20px;
-  left: 26%;
-  margin: 100px auto;
-  width: 600px;
-  height: 350px;
-  font-family: verdana;
-  font-size: 13px;
-  padding: 10px;
-  background-color: rgb(255, 214, 176);
-  border-radius: 20px;
-  z-index: 100000000000000000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 5px;
+  top: 5px;
+  z-index: 600;
+  border-radius: 25px;
+  display: block;
 }
 
 .cancel {
@@ -150,7 +146,7 @@ img {
   cursor: pointer;
   margin: 0;
   float: right;
-  height: 10px;
+  height: 40px;
   width: 14px;
   padding: 0 0 5px 0;
   background-color: red;

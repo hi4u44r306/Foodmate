@@ -217,7 +217,7 @@ function signIn(){
         firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
             swal({
                 type: 'successfull',
-                title: 'Welcome To foodmate', 
+                title: 'Welcome to foodmate', 
             }).then((value) => {
                 setTimeout(function(){
                     window.location.replace("menu.html");
@@ -345,7 +345,7 @@ function signOut(){
         // Sign-out successful.
         swal({
             type: 'successfull',
-            title: 'Signed Out', 
+            title: 'Log Out', 
         }).then((value) => {
             setTimeout(function(){
                 window.location.replace("loginpage.html");

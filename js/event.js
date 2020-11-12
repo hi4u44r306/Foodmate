@@ -36,7 +36,7 @@ $("#Eventfile").on("change", function(event){
 
 /*Submit function*/
 function EventuploadFile(){
-    alert('Create Event Successfully')
+    alert('Event created succesfully')
     // Create a root reference
     var user = firebase.auth().currentUser;
     var uid;
@@ -207,11 +207,38 @@ function popUp(){
     popup.id = 'test';
     var cancel = document.createElement('div');
     cancel.className = 'cancel';
-    cancel.innerHTML = 'close';
+    cancel.innerHTML = '&times;';
     cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
     var message = document.createElement('span');
-    message.innerHTML = "This is a test message";
+    message.innerHTML = "There will have event detail here";
     popup.appendChild(message);                                    
     popup.appendChild(cancel);
     document.body.appendChild(popup);
     }
+
+
+ // Get the modal
+ var modal = document.getElementById("myModal");
+
+ // Get the button that opens the modal
+ var btn = document.getElementsByClassName("morebtn");
+
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+ // When the user clicks the button, open the modal
+ btn.onclick = function () {
+   modal.style.display = "block";
+ };
+
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function () {
+   modal.style.display = "none";
+ };
+
+ // When the user clicks anywhere outside of the modal, close it
+ window.onclick = function (event) {
+   if (event.target == modal) {
+     modal.style.display = "none";
+   }
+ };

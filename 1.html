@@ -1,135 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Create event</title>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
-  </head>
-
-  <body>
-    <select id="FoodCategory" class="wrap-input100 p-2">
-      <option>Category...</option>
-      <option>Italian cuisine</option>
-      <option>Thai food</option>
-      <option>Japanese food</option>
-      <option>Taiwanese food</option>
-      <option>American food</option>
-      <option>Hong Kong food</option>
-    </select>
-    <br />
-    <input
-      id="EventName"
-      class="input100"
-      type="text"
-      placeholder="Title..."
-      name="eventname"
-    />
-    <br />
-    <input id="EventDate" class="input100" type="date" name="birthday" />
-    <br />
-    <input
-      class="input100"
-      type="time"
-      id="Eventtime"
-      name="appt"
-      min="09:00"
-      max="18:00"
-      required
-    />
-    <br />
-    <select
-      id="Eventmember"
-      class="wrap-input100 p-2"
-      type="select"
-      placeholder="Members..."
-      name="food type"
-    >
-      <br />
-      <option>Member...</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
-    </select>
-    <br />
-    <input
-      id="Description"
-      class="input100"
-      type="text"
-      placeholder="Description...
-              "
-      name="Description..."
-    />
-    <br />
-    <input
-      class="input100"
-      type="text"
-      placeholder="Location
-              "
-      name="Location..."
-      id="address"
-    />
-    <br />
-    <!--Send data from foodmate to firebase-->
-    <button id="create" class="create100-form-btn">Create Event</button>
-    <br />
-    <button id="select" class="create100-form-btn">Select Event</button>
-    <br />
-    <button id="update" class="create100-form-btn">Update Event</button>
-    <br />
-    <button id="delete" class="create100-form-btn">Delete Event</button>
-
-    <!----------------------------------Firebase stuff------------------------------------------------->
-    <script id="MainScript">
-      var firebaseConfig = {
-        apiKey: "AIzaSyBQ82dOmyoQDLaWTGQrWEgSXFkLDcSGP7A",
-        authDomain: "create-event-test.firebaseapp.com",
-        databaseURL: "https://create-event-test.firebaseio.com",
-        projectId: "create-event-test",
-        storageBucket: "create-event-test.appspot.com",
-        messagingSenderId: "88437951827",
-        appId: "1:88437951827:web:b927e38b008d1a1e99e5a6",
-        measurementId: "G-EMZH5X2CPH",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-
-      //-------------------------Ready data----------------------------//
-      var cateV, nameV, dateV, timeV, memberV, descV, addressV;
-
-      function Ready() {
-        cateV = document.getElementById("FoodCategory").value;
-        nameV = document.getElementById("EventName").value;
-        dateV = document.getElementById("EventDate").value;
-        timeV = document.getElementById("Eventtime").value;
-        memberV = document.getElementById("Eventmember").value;
-        descV = document.getElementById("Description").value;
-        addressV = document.getElementById("address").value;
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
       }
 
-      //-------------------------Ready data----------------------------//
-      document.getElementById("create").onclick = function () {
-        alert("成功");
-        Ready();
-        firebase
-          .database()
-          .ref("Event/" + nameV)
-          .set({
-            CateofEvent: cateV,
-            NameofEvent: nameV,
-            DateofEvent: dateV,
-            TimeofEvent: timeV,
-            MemberofEvent: memberV,
-            DescriptionofEvent: descV,
-            LocationofEvent: addressV,
-          });
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      @keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }
+
+      .modal-body {
+        padding: 2px 16px;
+      }
+
+      .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Animated Modal with Header and Footer</h2>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+          <h3>Modal Footer</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
       };
     </script>
   </body>

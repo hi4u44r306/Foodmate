@@ -29,9 +29,9 @@ addBtn.addEventListener('click',(e) => {
 // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Full Name Validation xxxxxxxxxx
 function checkUserFullName(){
-    var userSurname = document.getElementById("userFullName").value;
+    var userFullName = document.getElementById("userFullName").value;
     var flag = false;
-    if(userSurname === ""){
+    if(userFullName === ""){
         flag = true;
     }
     if(flag){
@@ -41,7 +41,7 @@ function checkUserFullName(){
     }
 }
 // xxxxxxxxxx User Surname Validation xxxxxxxxxx
-function checkUserSurname(){
+/*function checkUserSurname(){
     var userSurname = document.getElementById("userSurname").value;
     var flag = false;
     if(userSurname === ""){
@@ -52,7 +52,7 @@ function checkUserSurname(){
     }else{
         document.getElementById("userSurnameError").style.display = "none";
     }
-}
+}*/
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
     var userEmail = document.getElementById("userEmail");
@@ -108,7 +108,7 @@ function checkUserBio(){
 // xxxxxxxxxx Submitting and Creating new user in firebase authentication xxxxxxxxxx
 function signUp(){
     var userFullName = document.getElementById("userFullName").value;
-    var userSurname = document.getElementById("userSurname").value;
+    //var userSurname = document.getElementById("userSurname").value;
     var userEmail = document.getElementById("userEmail").value;
     var userPassword = document.getElementById("userPassword").value;
     var userFullNameFormate = /^([A-Za-z.\s_-])/;    
@@ -121,9 +121,11 @@ function signUp(){
 
     if(checkUserFullNameValid == null){
         return checkUserFullName();
-    }else if(userSurname === ""){
-        return checkUserSurname();
-    }else if(checkUserEmailValid == null){
+    }
+    //else if(userSurname === ""){
+    //    return checkUserSurname();
+    //}
+    else if(checkUserEmailValid == null){
         return checkUserEmail();
     }else if(checkUserPasswordValid == null){
         return checkUserPassword();
@@ -137,15 +139,11 @@ function signUp(){
             var firebaseRef = firebase.database().ref();
             var userData = {
                 userFullName: userFullName,
-                userSurname: userSurname,
+                //userSurname: userSurname,
                 userEmail: userEmail,
                 userPassword: userPassword,
-                userBio: "User biography",
+                userBio: "Write something in here",
                 userAge: "User Age",
-                userBio: "User biography",
-                userBio: "User biography",
-                userBio: "User biography",
-                userBio: "User biography",
             }
             firebaseRef.child(uid).set(userData);
             swal('Your Account Created','Your account was created successfully, you can log in now.',
@@ -248,7 +246,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         let firebaseRefKey = firebase.database().ref().child(uid);
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
-            document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
+            //document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
             document.getElementById("userPfBio").innerHTML = dataSnapShot.val().userBio;
             /*document.getElementById("userPfEmail").innerHTML = dataSnapShot.val().userEmail;
             document.getElementById("userPfAge").innerHTML = dataSnapShot.val().userAge;
@@ -266,7 +264,7 @@ function showEditProfileForm(){
     document.getElementById("profileSection").style.display = "none"
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
-    var userPfSurname = document.getElementById("userPfSurname").innerHTML;
+    //var userPfSurname = document.getElementById("userPfSurname").innerHTML;
     var userPfBio = document.getElementById("userPfBio").innerHTML;
     /*var userPfEmail = document.getElementById("userPfEmail").innerHTML;
     var userPfAge = document.getElementById("userPfAge").innerHTML;
@@ -275,7 +273,7 @@ function showEditProfileForm(){
     var userPfFoodType = document.getElementById("userPfFoodType").innerHTML;
     var userPfGender = document.getElementById("userPfGender").innerHTML;*/
     document.getElementById("userFullName").value = userPfFullName; 
-    document.getElementById("userSurname").value = userPfSurname; 
+    //document.getElementById("userSurname").value = userPfSurname; 
     document.getElementById("userBio").value = userPfBio; 
     /*document.getElementById("userEmail").value = userPfEmail; 
     document.getElementById("age").value = userPfAge; 
@@ -293,7 +291,7 @@ function hideEditProfileForm(){
 // xxxxxxxxxx Save profile and update database xxxxxxxxxx
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value 
-    let userSurname = document.getElementById("userSurname").value 
+    //let userSurname = document.getElementById("userSurname").value 
     let userBio = document.getElementById("userBio").value
     /*let userEmail = document.getElementById("userEmail").value
     let userAge = document.getElementById("age").value
@@ -305,9 +303,11 @@ function saveProfile(){
     var checkUserFullNameValid = userFullName.match(userFullNameFormate);
     if(checkUserFullNameValid == null){
         return checkUserFullName();
-    }else if(userSurname === ""){
-        return checkUserSurname();
-    }else{
+    }
+    //}else if(userSurname === ""){
+    //    return checkUserSurname();
+    //}
+    else{
         let user = firebase.auth().currentUser;
         let uid;
         if(user != null){
@@ -316,7 +316,7 @@ function saveProfile(){
         var firebaseRef = firebase.database().ref();
         var userData = {
             userFullName: userFullName,
-            userSurname: userSurname,
+            //userSurname: userSurname,
             userBio: userBio,
             /*userEmail: userEmail,
             userAge: userAge,

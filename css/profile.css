@@ -725,9 +725,15 @@ body {
   width: 130px;
   margin-left: 20px;
 }
+
+.arrow {
+  width: 1000px;
+  height: 100px;
+}
+
 .gobackarrow {
-  width: 60px;
-  height: 60px;
+  padding-left: 20px;
+  padding-top: 0px;
 }
 .button {
   width: 50%;

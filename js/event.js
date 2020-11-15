@@ -201,17 +201,4 @@ function queryDatabase(token){
 function personalevent(){
     window.location.href = "./personal event.html";
 }
-function popUp(){
-    var popup = document.createElement('div');
-    popup.className = 'popup';
-    popup.id = 'test';
-    var cancel = document.createElement('div');
-    cancel.className = 'cancel';
-    cancel.innerHTML = '&times;';
-    cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
-    var message = document.createElement('span');
-    message.innerHTML = "There will have event detail here";
-    popup.appendChild(message);                                    
-    popup.appendChild(cancel);
-    document.body.appendChild(popup);
-    }
+

@@ -104,224 +104,33 @@
                   </div>
                   <!-- display user profile img -->
                   <div class="col-12 col-12 mb-2 text-center">
-                    <img
-                      class="profile-img"
-                      src="https://images.theconversation.com/files/182925/original/file-20170822-30538-gebk45.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
-                      alt=""
-                    />
+                    Event Image
+                    <img class="profile-img" src="" alt="" />
                   </div>
                   <!--display user name-->
                   <div class="col-12 col-12 mb-2 text-center">
-                    <span class="h3" id="userPfFullName">Name</span>
+                    Title:<span class="h6" id=""></span>
                   </div>
-                  <div class="col-lg-12 col-md-12 text-center">
-                    <button
-                      type="button"
-                      class="profile-edit-btn btn-block"
-                      onclick="showEditProfileForm()"
-                    >
-                      Edit Profile<small></small>
-                    </button>
-                  </div>
-                  <div class="profile-stats">
-                    <ul>
-                      <li><span class="profile-stat-count">4</span> created</li>
-                      <li><span class="profile-stat-count">10</span> joined</li>
-                      <li><span class="profile-stat-count">14</span> total</li>
-                    </ul>
-                  </div>
-
-                  <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfEmail">Email</p>
-                  </div>-->
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <!--Age id="userPfAge"-->
-                    <p class="h4">21</p>
-                  </div>
-                  <!--<div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfBirthday">Birthday</p>
-                  </div>
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfPhoneNumber">PhoneNumber</p>
-                  </div>
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p id="userPfFoodType">FoodType</p>
-                  </div>-->
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <!--id="userPfGender"-->
-                    <p class="h5">Female</p>
-                  </div>
-                  <div class="col-lg-12 col-md-12 mb-4 text-center">
-                    <p class="h5" id="userPfBio">Biography</p>
-                  </div>
-                  <!--Current Event-->
-                  <h6 class="topcat">
-                    <i class="fas fa-calendar-alt"></i> Current Event
-                  </h6>
-                  <div id="contentholder"></div>
-                  <!--End of Current Event-->
-                </div>
-
-                <div id="editProfileForm">
-                  <h2 class="h2 text-center text-dark mb-3">Edit Profile</h2>
                   <div class="col-12 col-12 mb-2 text-center">
-                    <img
-                      class="profile-img"
-                      src="https://images.theconversation.com/files/182925/original/file-20170822-30538-gebk45.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
-                      alt=""
-                    />
+                    <i class="fas fa-calendar-alt"></i>
+                    Date:<span class="h6" id=""></span>
                   </div>
-                  <label class="col-12 col-12 mb-3 text-center">
-                    <span class="changeprofileimage">Change Profile Photo</span>
-                    <input type="file" class="upload-group" id="file" />
-                  </label>
-                  <button
-                    type="button"
-                    class="btn btn-primary btn-block mb-3"
-                    id="uploadButton"
-                    onclick="uploadFile()"
-                  >
-                    Submit
-                  </button>
-                  <div class="form-group">
-                    <label for="userFullName"
-                      >Username<span class="text-danger ml-1">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="userFullName"
-                      onblur="checkUserFullName()"
-                      placeholder="Username"
-                    />
+                  <div class="col-12 col-12 mb-2 text-center">
+                    <i class="fas fa-clock"></i>
+                    Time:<span class="h6" id=""></span>
                   </div>
-                  <!--<div class="form-group">
-                    <label for="userSurname"
-                      >Surname<span class="text-danger ml-1">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="userSurname"
-                      onblur="checkUserSurname()"
-                      placeholder="Surname"
-                    />
-                    <small id="userSurnameError" class="form-text text-danger"
-                      >Please fill the field.</small
-                    >
-                  </div>-->
-                  <div class="form-group">
-                    <label for="userBio"
-                      >Bio<span class="text-danger ml-1">*</span></label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="userBio"
-                      rows="4"
-                      onblur="checkUserBio()"
-                      placeholder="Biography"
-                    ></textarea>
+                  <div class="col-12 col-12 mb-2 text-center">
+                    <i class="fas fa-user"></i>
+                    Members:<span class="h6" id="">
+                      <a href="member.html"
+                        ><i class="fas fa-arrow-alt-circle-right"></i
+                      ></a>
+                    </span>
                   </div>
-                  <!--<div class="form-group">
-                    <label for="userEmail"
-                      >Email adress<span class="text-danger ml-1"
-                        >*</span
-                      ></label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="userEmail"
-                      id="userEmail"
-                      onblur="checkUserEmail()"
-                      placeholder="mail@mail.com"
-                    />
-                    <small id="userEmailError" class="form-text text-danger"
-                      >Please check your email address.</small
-                    >
+                  <div class="col-12 col-12 mb-2 text-center">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Restaurant:<span class="h6" id=""></span>
                   </div>
-                  <div class="form-group">
-                    <label for="age"
-                      >Age<span class="text-danger ml-1">*</span></label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      name="age"
-                      id="age"
-                      onblur="checkUserAge()"
-                      placeholder="Age"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="birthDay"
-                      >Birthday<span class="text-danger ml-1">*</span></label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      name="birthDay"
-                      id="birthDay"
-                      onblur="checkUserBirthday()"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="phoneNumber"
-                      >Phone number<span class="text-danger ml-1"
-                        >*</span
-                      ></label
-                    >
-                    <input
-                      type="tel"
-                      class="form-control"
-                      name="phoneNumber"
-                      id="phoneNumber"
-                      onblur="checkUserPhoneNumber()"
-                      placeholder="PhoneNumber"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="foodType"
-                      >Favorite food type<span class="text-danger ml-1"
-                        >*</span
-                      ></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="foodType"
-                      id="foodType"
-                      onblur="checkUserFoodType()"
-                      placeholder="Favorite food type"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="genDer"
-                      >Gender<span class="text-danger ml-1">*</span></label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="genDer"
-                      id="genDer"
-                      onblur="checkUserGender()"
-                      placeholder="male/female"
-                    />
-                  </div>-->
-                  <button
-                    id="addBtn"
-                    class="save-button btn-block mb-3"
-                    onclick="saveProfile()"
-                  >
-                    Save
-                  </button>
-                  <button
-                    type="button"
-                    class="cancel-button btn-block"
-                    onclick="hideEditProfileForm()"
-                  >
-                    Cancel
-                  </button>
                 </div>
               </div>
             </div>

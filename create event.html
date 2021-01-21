@@ -242,7 +242,6 @@
           </div>
           <div  class="create100-form-google validate-form">
             <div id="app">
-
                 <!-- 搜尋框 -->
                 <div class="row">
                     <div class="col google-map">
@@ -252,22 +251,17 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- 放google map的div -->
                 <div class="row">
                     <div class="col google-map">
                         <div id="map" class="embed-responsive embed-responsive-16by9"></div>
                     </div>
                 </div>
-
                 <hr>
             </div>
-
-            <!-- 將 YOUR_API_KEY 替換成你的 API Key 即可 -->
             <script
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-
             <!-- map -->
             <script>
                 const googleMap = new Vue({
@@ -275,11 +269,10 @@
                     data: {
                         map: null,
                         autocomplete: null,
-                        site: '', // place API要綁定的搜尋框
-                        place: null // 存place確定後回傳的資料
+                        site: '',
+                        place: null 
                     },
                     methods: {
-                        // init google map
                         initMap() {
 
                             let location = {

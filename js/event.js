@@ -130,9 +130,6 @@ function queryDatabase(token){
                     var p1 = document.createElement("p");
                     $(p1).html(currentObject.EventN);
                     $(p1).addClass("EventTitle");
-                    /*var p2 = document.createElement("p");
-                    $(p2).html(currentObject.FoodCat);
-                    $(p2).addClass("contentcaption");*/
                     var p3 = document.createElement("p");
                     $(p3).html(currentObject.EventD);
                     $(p3).addClass("EDate");
@@ -143,13 +140,6 @@ function queryDatabase(token){
                     $(p5).html(currentObject.EventM);
                     $(p5).append('<i class="fas fa-user"></i>')
                     $(p5).addClass("EMember");
-                    /*var p6 = document.createElement("p");
-                    $(p6).html(currentObject.Des);
-                    $(p6).addClass("contentcaption");
-                    var p7 = document.createElement("p");
-                    $(p7).html(currentObject.address);
-                    $(p7).addClass("contentcaption");*/
-
                     /*Join Button Auto Create*/
                     var joinbtn= document.createElement("button");
                     $(joinbtn).addClass("joinbtn")

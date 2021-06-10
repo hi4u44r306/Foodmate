@@ -846,3 +846,7 @@ body {
   border-radius: 8px;
   width: 200px;
 }
+
+.profile-stat-count {
+  font-size: 20px;
+}

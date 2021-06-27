@@ -182,3 +182,7 @@ a:hover {
   background-color: rgb(255, 218, 218);
   padding: 0 0 0 0;
 }
+
+.event {
+  flex-direction: row-reverse;
+}

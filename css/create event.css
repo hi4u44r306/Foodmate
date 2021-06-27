@@ -7,31 +7,6 @@
 }
 
 @font-face {
-  font-family: Poppins-Medium;
-  src: url("../fonts/poppins/Poppins-Medium.ttf");
-}
-
-@font-face {
-  font-family: Poppins-Bold;
-  src: url("../fonts/poppins/Poppins-Bold.ttf");
-}
-
-@font-face {
-  font-family: Poppins-SemiBold;
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
-}
-
-@font-face {
-  font-family: Montserrat-SemiBold;
-  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf");
-}
-
-@font-face {
   font-family: Montserrat-Regular;
   src: url("../fonts/montserrat/Montserrat-Regular.ttf");
 }
@@ -43,34 +18,6 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
-body,
-html {
-  height: 100%;
-  font-family: Poppins-Regular, sans-serif;
-}
-
-/*---------------------------------------------*/
-a {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #707070;
-  margin: 0px;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-  outline: none !important;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #6675df;
-}
-
 /*---------------------------------------------*/
 h1,
 h2,
@@ -98,37 +45,6 @@ input {
 textarea {
   outline: none;
   border: none;
-}
-
-textarea:focus,
-input:focus {
-  border-color: transparent !important;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-input:focus:-moz-placeholder {
-  color: transparent;
-}
-input:focus::-moz-placeholder {
-  color: transparent;
-}
-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-
-textarea:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-textarea:focus:-moz-placeholder {
-  color: transparent;
-}
-textarea:focus::-moz-placeholder {
-  color: transparent;
-}
-textarea:focus:-ms-input-placeholder {
-  color: transparent;
 }
 
 input::-webkit-input-placeholder {
@@ -161,49 +77,6 @@ label {
   display: block;
   margin: 0;
 }
-
-/*---------------------------------------------*/
-button {
-  outline: none !important;
-  border: none;
-  background: transparent;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-iframe {
-  border: none !important;
-}
-
-/*==================================================================
-[ Text ]*/
-.txt1 {
-  font-family: Montserrat-Regular;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #707070;
-}
-
-.txt2 {
-  font-family: Montserrat-Regular;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #707070;
-}
-
-/*==================================================================
-[ Size ]*/
-.size1 {
-  width: 355px;
-  max-width: 100%;
-}
-
-.size2 {
-  width: calc(100% - 43px);
-}
-
 /*//////////////////////////////////////////////////////////////////
 [ signup ]*/
 .container-create100 {
@@ -261,21 +134,17 @@ iframe {
 /*==================================================================
 [ Form ]*/
 
-.create100-form {
-  width: 48%;
-  height: 90vh;
-  display: block;
-  border-radius: 30px;
-  background-color: #fff;
-  padding: 10px 55px 110px 55px;
+.left {
+  left: 0;
+  background-color: #7395ae;
+  font-family: "Spartan", sans-serif;
+  padding: 55px 55px 110px 55px;
 }
 
-.create100-form-google {
-  width: 48%;
-  height: 90vh;
-  display: block;
-  border-radius: 30px;
-  background-color: #fff;
+.right {
+  right: 0;
+  background-color: #b1a296;
+  font-family: "Spartan", sans-serif;
   padding: 10px 55px 0px 55px;
 }
 

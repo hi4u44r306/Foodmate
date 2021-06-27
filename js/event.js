@@ -192,3 +192,10 @@ function personalevent(){
     window.location.href = "./personal event.html";
 }
 
+// Create Option //
+$(function(){
+    var $select = $(".eventmember");
+    for (i=1;i<=100;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});

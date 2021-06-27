@@ -180,6 +180,7 @@ function checkUserSIEmail(){
     }else{
         document.getElementById("userSIEmailError").style.display = "none";
     }
+    
 }
 // xxxxxxxxxx Sign In Password Validation xxxxxxxxxx
 function checkUserSIPassword(){

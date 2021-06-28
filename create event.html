@@ -219,90 +219,91 @@
               -->
             </div>
           </div>
-          <div  class="right validate-form">
-            <div id="app">
-                <!-- 搜尋框 -->
-                <div class="row">
-                    <div class="col google-map">
-                      <h5><i class="fas fa-search-location"></i> Search restaurant：</h5>
-                        <div class="form-group">
-                            <input type="text" class="form-control " ref="site" v-model="site" id="address">
-                        </div>
+          <div id="app">
+            <!-- 搜尋框 -->
+            <div class="row">
+                <div class="col google-map">
+                  <h5><i class="fas fa-search-location"></i> Search restaurant：</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control " ref="site" v-model="site" id="address">
                     </div>
                 </div>
-                <!-- 放google map的div -->
-                <div class="row">
-                    <div class="col google-map">
-                        <div id="map" class="embed-responsive embed-responsive-16by9"></div>
-                    </div>
-                </div>
-                <hr>
             </div>
-            <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkaXVYmnVR91ymR14WVU5OTz27crLSxEU&libraries=places"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-            <!-- map -->
-            <script>
-                const googleMap = new Vue({
-                    el: '#app',
-                    data: {
-                        map: null,
-                        autocomplete: null,
-                        site: '',
-                        place: null 
+            <!-- 放google map的div -->
+            <div class="row">
+                <div class="col google-map">
+                    <div id="map" class="embed-responsive embed-responsive-16by9"></div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBupJWuCfekKdvLi2Pra-nO1Mr3GitpO64&libraries=places"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+        <!-- map -->
+        <script>
+            const googleMap = new Vue({
+                el: '#app',
+                data: {
+                    map: null,
+                    autocomplete: null,
+                    site: '',
+                    place: null 
+                },
+                methods: {
+                    initMap() {
+
+                        let location = {
+                            lat: 24.985208,
+                            lng: 121.343280
+                        };
+
+                        this.map = new google.maps.Map(document.getElementById('map'), {
+                            center: location,
+                            zoom: 17
+                        });
                     },
-                    methods: {
-                        initMap() {
+                    // 地址自動完成 + 地圖的中心移到輸入結果的地址上
+                    siteAuto() {
 
-                            let location = {
-                                lat: 24.985208,
-                                lng: 121.343280
-                            };
+                        let options = {
+                            componentRestrictions: { country: 'tw' } // 限制在台灣範圍
+                        };
+                        this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
+                        this.autocomplete.addListener('place_changed', () => {
+                            this.place = this.autocomplete.getPlace();
+                            if (this.place.geometry) {
+                                let searchCenter = this.place.geometry.location;
+                                this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
 
-                            this.map = new google.maps.Map(document.getElementById('map'), {
-                                center: location,
-                                zoom: 17
-                            });
-                        },
-                        // 地址自動完成 + 地圖的中心移到輸入結果的地址上
-                        siteAuto() {
+                                // 放置標記
+                                let marker = new google.maps.Marker({
+                                    position: searchCenter,
+                                    map: this.map
+                                });
 
-                            let options = {
-                                componentRestrictions: { country: 'tw' } // 限制在台灣範圍
-                            };
-                            this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
-                            this.autocomplete.addListener('place_changed', () => {
-                                this.place = this.autocomplete.getPlace();
-                                if (this.place.geometry) {
-                                    let searchCenter = this.place.geometry.location;
-                                    this.map.panTo(searchCenter); // panTo是平滑移動、setCenter是直接改變地圖中心
+                                // info window
+                                let infowindow = new google.maps.InfoWindow({
+                                    content: this.place.formatted_address
+                                });
+                                infowindow.open(this.map, marker);
 
-                                    // 放置標記
-                                    let marker = new google.maps.Marker({
-                                        position: searchCenter,
-                                        map: this.map
-                                    });
-
-                                    // info window
-                                    let infowindow = new google.maps.InfoWindow({
-                                        content: this.place.formatted_address
-                                    });
-                                    infowindow.open(this.map, marker);
-
-                                }
-                            });
-                        }
-                    },
-                    mounted() {
-                        window.addEventListener('load', () => {
-
-                            this.initMap();
-                            this.siteAuto();
-
+                            }
                         });
                     }
-                })
-            </script>
+                },
+                mounted() {
+                    window.addEventListener('load', () => {
+
+                        this.initMap();
+                        this.siteAuto();
+
+                    });
+                }
+            })
+        </script>
+          <div  class="right validate-form">
+            
           <!--div class="create100-form-google validate-form" id="map"></div>-->
         </div>
       </div>
